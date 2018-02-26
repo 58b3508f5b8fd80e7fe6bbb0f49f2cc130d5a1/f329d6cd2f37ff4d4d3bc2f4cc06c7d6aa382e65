@@ -1,9 +1,3 @@
-@php
-    $public='';
-    if(config('app.env') == 'production')
-    $public ='public';
-@endphp
-
         <!DOCTYPE html>
 <html lang="en">
 
@@ -17,23 +11,23 @@
     <!-- PAGE TITLE -->
     <title>{{ 'Home | ' . config('app.name', 'Touching Lives Skills') }}</title>
     <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
     <!-- ALL GOOGLE FONTS -->
-    <link href="{{asset($public.'/css/css14d1.css?family=Raleway:300,400,500,600,700,800,900')}}" rel="stylesheet">
-    <link href="{{asset($public.'/css/css0bf3.css?family=Average:300,400,500,600,700,800,900')}}" rel="stylesheet">
+    <link href="{{asset('/css/css14d1.css?family=Raleway:300,400,500,600,700,800,900')}}" rel="stylesheet">
+    <link href="{{asset('/css/css0bf3.css?family=Average:300,400,500,600,700,800,900')}}" rel="stylesheet">
     <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/font-awesome.min.css')}}">
     <!-- OWL CAROSEL CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset($public.'/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/owl.theme.css')}}">
     <!-- MAGNIFIC CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/magnific-popup.css')}}">
     <!-- ANIMATE CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/animate.min.css')}}">
     <!-- MAIN STYLE CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <!-- RESPONSIVE CSS -->
-    <link rel="stylesheet" href="{{asset($public.'/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/responsive.css')}}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -235,31 +229,31 @@
 <!-- / END SCROOL UP DESIGN AREA -->
 
 <!-- LATEST JQUERY -->
-<script src="{{asset($public.'/js/jquery.min.js')}}"></script>
+<script src="{{asset('/js/jquery.min.js')}}"></script>
 <!-- BOOTSTRAP JS -->
-<script src="{{asset($public.'/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/js/bootstrap.min.js')}}"></script>
 <!-- OWL CAROUSEL JS  -->
-<script src="{{asset($public.'/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('/js/owl.carousel.min.js')}}"></script>
 <!-- MAGNIFICANT JS -->
-<script src="{{asset($public.'/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('/js/jquery.magnific-popup.min.js')}}"></script>
 <!-- STEALLER JS -->
-<script src="{{asset($public.'/js/jquery.stellar.min.js')}}"></script>
+<script src="{{asset('/js/jquery.stellar.min.js')}}"></script>
 <!-- COUNTER UP JS -->
-<script src="{{asset($public.'/js/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset($public.'/js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('/js/jquery.counterup.min.js')}}"></script>
 <!-- WOW JS -->
-<script src="{{asset($public.'/js/wow.min.js')}}"></script>
+<script src="{{asset('/js/wow.min.js')}}"></script>
 <!-- ISOTOP JS -->
-<script src="{{asset($public.'/js/isotope.pkgd.js')}}"></script>
+<script src="{{asset('/js/isotope.pkgd.js')}}"></script>
 <!-- STICKY JS -->
-<script src="{{asset($public.'/js/jquery.sticky.js')}}"></script>
+<script src="{{asset('/js/jquery.sticky.js')}}"></script>
 <!-- FOEEM JS -->
-<script src="{{asset($public.'/js/form-contact.js')}}"></script>
+<script src="{{asset('/js/form-contact.js')}}"></script>
 <!-- GOOGLE MAP JS -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJRdF8oMTWsiE-532dlZINEg-EmRxH0Hc"></script>
-<script src="{{asset($public.'/js/gmap3.min.js')}}"></script>
+<script src="{{asset('/js/gmap3.min.js')}}"></script>
 <!-- scripts js -->
-<script src="{{asset($public.'/js/scripts.js')}}"></script>
+<script src="{{asset('/js/scripts.js')}}"></script>
 @yield('scripts')
 
 </body>

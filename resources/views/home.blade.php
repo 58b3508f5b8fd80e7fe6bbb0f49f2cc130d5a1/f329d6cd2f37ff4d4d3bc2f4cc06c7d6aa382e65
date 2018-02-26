@@ -1,8 +1,3 @@
-@php
-    $public='';
-    if(config('app.env') == 'production')
-    $public ='public';
-@endphp
 @extends('layouts.app')
 @section('styles')
     <style>
@@ -117,7 +112,7 @@
 
                 <div class="col-md-5 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.5s" data-wow-offset="0">
                     <div class="about-image-area">
-                        <img src="{{asset($public.'/jpg/why-choose-us.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/why-choose-us.jpg')}}" alt="">
                     </div>
                 </div>
 
@@ -216,7 +211,7 @@
                 <!-- START SINGLE TEAM DESIGN AREA -->
                 <div class="col-md-3 col-sm-6">
                     <div class="single-team">
-                        <img src="{{asset($public.'/jpg/ceo.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/ceo.jpg')}}" alt="">
                         <h4>Gospel Christian</h4>
                         <h6 class="text-muted">CEO/Founder</h6>
                         <p>A preacher and Pastor of a Believers Loveworld Inc Church branch AKA
@@ -230,7 +225,7 @@
                 <!-- START SINGLE TEAM DESIGN AREA -->
                 <div class="col-md-3 col-sm-6">
                     <div class="single-team">
-                        <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/governor.jpg')}}" alt="">
                         <h4>Elisha Wealth</h4>
                         <h6 class="text-muted">Governor/Executive Director</h6>
                         <p>A preacher and Pastor of a branch of Believers Loveworld Inc. (Christ Embassy).
@@ -243,7 +238,7 @@
                 <!-- START SINGLE TEAM DESIGN AREA -->
                 <div class="col-md-3 col-sm-6">
                     <div class="single-team">
-                        <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/deputygovernor.jpg')}}" alt="">
                         <h4>pastor linus effiong</h4>
                         <h6 class="text-muted">Deputy Governor</h6>
                         <p>A Pastor of a branch of Assemblies of God Church.
@@ -255,7 +250,7 @@
                 <!-- START SINGLE TEAM DESIGN AREA -->
                 <div class="col-md-3 col-sm-6">
                     <div class="single-team">
-                        <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/accountant.jpg')}}" alt="">
                         <h4>joyce joseph</h4>
                         <h6 class="text-muted">Accountant General</h6>
                         <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
@@ -266,7 +261,7 @@
                 <!-- START SINGLE TEAM DESIGN AREA -->
                 <div class="col-md-3 col-sm-6">
                     <div class="single-team">
-                        <img src="{{asset($public.'/jpg/secretary.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/secretary.jpg')}}" alt="">
                         <h4>blessing linus effiong</h4>
                         <h6 class="text-muted">secretary general</h6>
                         <p>A cosmetologist, make up artist and Designer.
@@ -277,7 +272,7 @@
                 <!-- START SINGLE TEAM DESIGN AREA -->
             {{--<div class="col-md-3 col-sm-6">
                 <div class="single-team">
-                    <img src="{{asset($public.'/jpg/01.jpg')}}" alt="">
+                    <img src="{{asset('/jpg/01.jpg')}}" alt="">
                     <h4>Arfan hridoy</h4>
                     <h6 class="text-muted">Developer</h6>
                 </div>
@@ -286,7 +281,7 @@
             <!-- START SINGLE TEAM DESIGN AREA -->
             <div class="col-md-3 col-sm-6">
                 <div class="single-team">
-                    <img src="{{asset($public.'/jpg/02.jpg')}}" alt="">
+                    <img src="{{asset('/jpg/02.jpg')}}" alt="">
                     <h4>Tarin rahman</h4>
                     <h6 class="text-muted">Project manager</h6>
                 </div>
@@ -295,7 +290,7 @@
             <!-- START SINGLE TEAM DESIGN AREA -->
             <div class="col-md-3 col-sm-6">
                 <div class="single-team">
-                    <img src="{{asset($public.'/jpg/06.jpg')}}" alt="">
+                    <img src="{{asset('/jpg/06.jpg')}}" alt="">
                     <h4>maria sid</h4>
                     <h6 class="text-muted">programmer</h6>
                 </div>
@@ -339,7 +334,7 @@
                 <!-- START WHY CHOOSE US IMAGE DESIGN AREA -->
                 <div class="col-md-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s" data-wow-offset="0">
                     <div class="why-chosse-image">
-                        <img src="{{asset($public.'/jpg/why-choose-us.jpg')}}" alt="">
+                        <img src="{{asset('/jpg/why-choose-us.jpg')}}" alt="">
                     </div>
                 </div>
                 <!-- / END WHY CHOOSE US IMAGE DESIGN AREA -->
@@ -407,8 +402,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 web commissioning">
                         <div class="item wow fadeInUp" data-wow-delay=".2s">
-                            <a href="{{asset($public.'/jpg/commissioning-1.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/commissioning-1.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/commissioning-1.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/commissioning-1.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -423,8 +418,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 web commissioning">
                         <div class="item wow fadeInUp" data-wow-delay=".2s">
-                            <a href="{{asset($public.'/jpg/commissioning-2.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/commissioning-2.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/commissioning-2.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/commissioning-2.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -439,8 +434,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 graphic inauguration">
                         <div class="item wow fadeInUp" data-wow-delay=".4s">
-                            <a href="{{asset($public.'/jpg/inauguration-1.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/inauguration-1.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/inauguration-1.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/inauguration-1.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -455,8 +450,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 graphic inauguration">
                         <div class="item wow fadeInUp" data-wow-delay=".4s">
-                            <a href="{{asset($public.'/jpg/inauguration-2.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/inauguration-2.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/inauguration-2.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/inauguration-2.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -471,8 +466,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 graphic inauguration">
                         <div class="item wow fadeInUp" data-wow-delay=".4s">
-                            <a href="{{asset($public.'/jpg/inauguration-3.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/inauguration-3.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/inauguration-3.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/inauguration-3.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -487,8 +482,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 graphic inauguration">
                         <div class="item wow fadeInUp" data-wow-delay=".4s">
-                            <a href="{{asset($public.'/jpg/inauguration-4.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/inauguration-4.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/inauguration-4.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/inauguration-4.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -503,8 +498,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 graphic inauguration">
                         <div class="item wow fadeInUp" data-wow-delay=".4s">
-                            <a href="{{asset($public.'/jpg/inauguration-5.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/inauguration-5.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/inauguration-5.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/inauguration-5.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -519,8 +514,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 graphic inauguration">
                         <div class="item wow fadeInUp" data-wow-delay=".4s">
-                            <a href="{{asset($public.'/jpg/inauguration-6.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/inauguration-6.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/inauguration-6.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/inauguration-6.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -535,8 +530,8 @@
                     <!-- START SINGLE WORK DESIGN AREA -->
                     <div class="col-md-4 col-sm-6 interview">
                         <div class="item wow fadeInUp" data-wow-delay=".6s">
-                            <a href="{{asset($public.'/jpg/interview-1.jpg')}}" class="work-popup">
-                                <img src="{{asset($public.'/jpg/interview-1.jpg')}}" alt="img18">
+                            <a href="{{asset('/jpg/interview-1.jpg')}}" class="work-popup">
+                                <img src="{{asset('/jpg/interview-1.jpg')}}" alt="img18">
                                 <div class="img-overlay">
                                     <i class="fa fa-search"></i>
                                 </div>
@@ -606,7 +601,7 @@
                     <div class="testimonial-list">
                         <!-- START SINGLE TESTIMONIAL DESIGN AREA -->
                         <div class="single-testimonial text-center">
-                            <img src="{{asset($public.'/jpg/1-2.jpg')}}" class="img-circle" alt="">
+                            <img src="{{asset('/jpg/1-2.jpg')}}" class="img-circle" alt="">
                             <h6 class="text-muted">Gospel Christian</h6>
                             <h5>CEO of Touching Lives Skills</h5>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
@@ -618,7 +613,7 @@
                         <!-- / END SINGLE TESTIMONIAL DESIGN AREA -->
                         <!-- START SINGLE TESTIMONIAL DESIGN AREA -->
                         <div class="single-testimonial text-center">
-                            <img src="{{asset($public.'/jpg/1-2.jpg')}}" class="img-circle" alt="">
+                            <img src="{{asset('/jpg/1-2.jpg')}}" class="img-circle" alt="">
                             <h6 class="text-muted">john doe(Founder)</h6>
                             <h5>CEO of google</h5>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
@@ -630,7 +625,7 @@
                         <!-- / END SINGLE TESTIMONIAL DESIGN AREA -->
                         <!-- START SINGLE TESTIMONIAL DESIGN AREA -->
                         <div class="single-testimonial text-center">
-                            <img src="{{asset($public.'/jpg/1-2.jpg')}}" class="img-circle" alt="">
+                            <img src="{{asset('/jpg/1-2.jpg')}}" class="img-circle" alt="">
                             <h6 class="text-muted">john doe(Founder)</h6>
                             <h5>CEO of google</h5>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum

@@ -17,7 +17,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Email
+    | Application miscellaneous
     |--------------------------------------------------------------------------
     |
     | This value is the email of your application. This value is used when the
@@ -27,18 +27,6 @@ return [
     */
 
     'email' => 'info@tlskills.com',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Phone
-    |--------------------------------------------------------------------------
-    |
-    | This value is the phone of your application. This value is used when the
-    | framework needs to place the application's phone in a notification or
-    | any other location as required by the application or its packages.
-    |
-    */
-
     'phone' => '+2349069911327, +2348035929609',
     'designer' => 'GreenWhiteDev',
     'designer_url' => 'http://greenwhitedev.com',
@@ -80,7 +68,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://touchinglivesskills.xyz'),
 
     /*
     |--------------------------------------------------------------------------
@@ -132,7 +120,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'base64:IJjfUnbxD9E4eFEA3h7tHWTk2VBJnFXodEKnpnOYeoA='),
 
     'cipher' => 'AES-256-CBC',
 

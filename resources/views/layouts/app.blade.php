@@ -204,6 +204,7 @@
                 </div>
             </div>
             <!-- / END SINGLE FOOTER DESIGN AREA -->
+            <!-- -->
         </div>
     </div>
 </section>

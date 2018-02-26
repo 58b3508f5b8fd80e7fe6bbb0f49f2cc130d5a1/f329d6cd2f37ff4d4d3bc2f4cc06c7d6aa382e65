@@ -13,7 +13,35 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Touching Lives Skills'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Email
+    |--------------------------------------------------------------------------
+    |
+    | This value is the email of your application. This value is used when the
+    | framework needs to place the application's email in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'email' => 'info@tlskills.com',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Phone
+    |--------------------------------------------------------------------------
+    |
+    | This value is the phone of your application. This value is used when the
+    | framework needs to place the application's phone in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'phone' => '+2349069911327, +2348035929609',
+    'designer' => 'GreenWhiteDev',
+    'designer_url' => 'http://greenwhitedev.com',
 
     /*
     |--------------------------------------------------------------------------

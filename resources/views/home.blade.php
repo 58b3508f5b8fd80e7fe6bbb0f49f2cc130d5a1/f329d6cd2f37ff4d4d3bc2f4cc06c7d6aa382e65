@@ -9,6 +9,7 @@
         .single-team p {
             font-size: 12px;
             line-height: 12px;
+            font-align: text-justify;
         }
     </style>
 @endsection
@@ -132,7 +133,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-title white-title text-center">
-                        <h2>best service we are providing</h2>
+                        <h2>Services we provide</h2>
                     </div>
                 </div>
             </div>
@@ -141,7 +142,7 @@
                 <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                     <div class="single-service">
                         <i class="fa fa-camera"></i>
-                        <h4>photography & portrait</h4>
+                        <h4>skills and business training</h4>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         <a href="#">learn more</a>
                     </div>
@@ -151,7 +152,7 @@
                 <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="single-service">
                         <i class="fa fa-laptop"></i>
-                        <h4>Web Design & development</h4>
+                        <h4>empowerment</h4>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         <a href="#">learn more</a>
                     </div>
@@ -160,8 +161,8 @@
                 <!-- START SINGLE SERVICES DESIGN AREA -->
                 <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="single-service">
-                        <i class="fa fa-bullhorn"></i>
-                        <h4>Social media marketing</h4>
+                        <i class="fa fa-hospital-o"></i>
+                        <h4>free health services</h4>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         <a href="#">learn more</a>
                     </div>
@@ -171,7 +172,7 @@
                 <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
                     <div class="single-service">
                         <i class="fa fa-cloud-download"></i>
-                        <h4>website hosting</h4>
+                        <h4>business consultancy</h4>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         <a href="#">learn more</a>
                     </div>
@@ -181,7 +182,7 @@
                 <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="1s">
                     <div class="single-service">
                         <i class="fa fa-line-chart"></i>
-                        <h4>increase website traffic</h4>
+                        <h4>micro finance services</h4>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         <a href="#">learn more</a>
                     </div>
@@ -190,8 +191,8 @@
                 <!-- START SINGLE SERVICES DESIGN AREA -->
                 <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="1.2s">
                     <div class="single-service">
-                        <i class="fa fa-users"></i>
-                        <h4>24 hour friendly support</h4>
+                        <i class="fa fa-legal"></i>
+                        <h4>free legal services</h4>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                         <a href="#">learn more</a>
                     </div>
@@ -214,64 +215,105 @@
             </div>
             <div class="row">
                 <!-- START SINGLE TEAM DESIGN AREA -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team">
-                        <img src="{{asset($public.'/jpg/ceo.jpg')}}" alt="">
-                        <h4>Gospel Christian</h4>
-                        <h6 class="text-muted">CEO/Founder</h6>
-                        <p>A preacher and Pastor of a Believers Loveworld Inc Church branch AKA
-                            Christ Embassy. A motivational speaker who has pioneered over 30 successful projects and
-                            humanitarian services. The Managing Director of Gr8 Coins
-                            Ltd, The Chief Executive Officer of Klinkings Ltd. A business Consultant and a team
-                            builder.</p>
+                <div style="display: table;">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/ceo.jpg')}}" alt="">
+                            <h4>Gospel Christian</h4>
+                            <h6 class="text-muted">CEO/Founder</h6>
+                            <p>A preacher and Pastor of a Believers Loveworld Inc Church branch AKA
+                                Christ Embassy. A motivational speaker who has pioneered over 30 successful projects and
+                                humanitarian services. The Managing Director of Gr8 Coins
+                                Ltd, The Chief Executive Officer of Klinkings Ltd. A business Consultant and a team
+                                builder.</p>
+                        </div>
                     </div>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
+                    <!-- START SINGLE TEAM DESIGN AREA -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
+                            <h4>Elisha Wealth</h4>
+                            <h6 class="text-muted">Governor/Executive Director</h6>
+                            <p>A preacher and Pastor of a branch of Believers Loveworld Inc. (Christ Embassy).
+                                A business Man, Business consultant and Managing Director of Praesto Technologies Ltd.
+                                Also skilled in Programming and a passionate musician. Networking and fibre optics,
+                                Computer
+                                Music Production and graphics designs.</p>
+                        </div>
+                    </div>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
+                    <!-- START SINGLE TEAM DESIGN AREA -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
+                            <h4>pastor linus effiong</h4>
+                            <h6 class="text-muted">Deputy Governor</h6>
+                            <p>A Pastor of a branch of Assemblies of God Church.
+                                The Managing Director of Linae Construction Company Ltd.
+                                Skill in Making furniture, wood work, carvings and sculptures.</p>
+                        </div>
+                    </div>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
+                    <!-- START SINGLE TEAM DESIGN AREA -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
+                            <h4>joyce joseph</h4>
+                            <h6 class="text-muted">Accountant General</h6>
+                            <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
+                                executive officer of Jorhema Styling Ltd.</p>
+                        </div>
+                    </div>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
                 </div>
-                <!-- / END SINGLE TEAM DESIGN AREA -->
-                <!-- START SINGLE TEAM DESIGN AREA -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team">
-                        <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
-                        <h4>Elisha Wealth</h4>
-                        <h6 class="text-muted">Governor/Executive Director</h6>
-                        <p>A preacher and Pastor of a branch of Believers Loveworld Inc. (Christ Embassy).
-                            A business Man, Business consultant and Managing Director of Praesto Technologies Ltd.
-                            Also skilled in Programming and a passionate musician. Networking and fibre optics, Computer
-                            Music Production and graphics designs.</p>
+                <div style="display: table;">
+                    <!-- START SINGLE TEAM DESIGN AREA -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/secretary.jpg')}}" alt="">
+                            <h4>blessing linus effiong</h4>
+                            <h6 class="text-muted">secretary general</h6>
+                            <p>A cosmetologist, make up artist and Designer.
+                                The Managing Director of Eddyz Ltd.</p>
+                        </div>
                     </div>
-                </div>
-                <!-- / END SINGLE TEAM DESIGN AREA -->
-                <!-- START SINGLE TEAM DESIGN AREA -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team">
-                        <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
-                        <h4>pastor linus effiong</h4>
-                        <h6 class="text-muted">Deputy Governor</h6>
-                        <p>A Pastor of a branch of Assemblies of God Church.
-                            The Managing Director of Linae Construction Company Ltd.
-                            Skill in Making furniture, wood work, carvings and sculptures.</p>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
+                            <h4>joyce joseph</h4>
+                            <h6 class="text-muted">Accountant General</h6>
+                            <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
+                                executive officer of Jorhema Styling Ltd.</p>
+                        </div>
                     </div>
-                </div>
-                <!-- / END SINGLE TEAM DESIGN AREA -->
-                <!-- START SINGLE TEAM DESIGN AREA -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team">
-                        <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
-                        <h4>joyce joseph</h4>
-                        <h6 class="text-muted">Accountant General</h6>
-                        <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
-                            executive officer of Jorhema Styling Ltd.</p>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
+                    <!-- START SINGLE TEAM DESIGN AREA -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
+                            <h4>Elisha Wealth</h4>
+                            <h6 class="text-muted">Governor/Executive Director</h6>
+                            <p>A preacher and Pastor of a branch of Believers Loveworld Inc. (Christ Embassy).
+                                A business Man, Business consultant and Managing Director of Praesto Technologies Ltd.
+                                Also skilled in Programming and a passionate musician. Networking and fibre optics,
+                                Computer
+                                Music Production and graphics designs.</p>
+                        </div>
                     </div>
-                </div>
-                <!-- / END SINGLE TEAM DESIGN AREA -->
-                <!-- START SINGLE TEAM DESIGN AREA -->
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team">
-                        <img src="{{asset($public.'/jpg/secretary.jpg')}}" alt="">
-                        <h4>blessing linus effiong</h4>
-                        <h6 class="text-muted">secretary general</h6>
-                        <p>A cosmetologist, make up artist and Designer.
-                            The Managing Director of Eddyz Ltd.</p>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
+                    <!-- START SINGLE TEAM DESIGN AREA -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-team">
+                            <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
+                            <h4>pastor linus effiong</h4>
+                            <h6 class="text-muted">Deputy Governor</h6>
+                            <p>A Pastor of a branch of Assemblies of God Church.
+                                The Managing Director of Linae Construction Company Ltd.
+                                Skill in Making furniture, wood work, carvings and sculptures.</p>
+                        </div>
                     </div>
+                    <!-- / END SINGLE TEAM DESIGN AREA -->
                 </div>
                 <!-- / END SINGLE TEAM DESIGN AREA -->
                 <!-- START SINGLE TEAM DESIGN AREA -->
@@ -597,7 +639,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-title">
-                        <h2>our <span>clients</span></h2>
+                        <h2>Testimonials</h2>
                     </div>
                 </div>
             </div>

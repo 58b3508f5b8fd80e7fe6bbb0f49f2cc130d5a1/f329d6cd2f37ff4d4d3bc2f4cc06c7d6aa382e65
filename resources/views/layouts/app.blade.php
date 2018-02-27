@@ -67,14 +67,25 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="header-top-info-right">
-                        <ul class="header-social">
-                            <li><a href="https://facebook.com/projectproduceabakinitiative/"><i class="fa fa-facebook"></i></a>
+                        <ul class="list-inline text-right">
+                            <li>
+                                <ul class="header-social">
+                                    <li><a href="https://facebook.com/projectproduceabakinitiative/"><i
+                                                    class="fa fa-facebook"></i></a>
+                                    </li>
+                                    {{--     <li><a href="#"><i class="fa fa-twitter"></i></a>
+                                         </li>
+                                         <li><a href="#"><i class="fa fa-dribbble"></i></a>
+                                         </li>
+                                         <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                                         </li>--}}
+                                </ul>
                             </li>
-                       {{--     <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            {{--<li>
+                                <a href ="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                            <li>
+                                <a href ="{{url('/register')}}" class="btn btn-sm btn-primary">Join</a>
                             </li>--}}
                         </ul>
                     </div>
@@ -140,7 +151,8 @@
             <div class="col-md-3 col-sm-6">
                 <div class="single-footer wow fadeInUp" data-wow-delay=".2s">
                     <h2>about company</h2>
-                    <p>We aim is to reach out to the poor population with skills and empowerment for development, hence fulfilling the vision of the
+                    <p>We aim is to reach out to the poor population with skills and empowerment for development, hence
+                        fulfilling the vision of the
                         United nations development Program UNDP.</p>
                 </div>
             </div>
@@ -189,7 +201,8 @@
                     <h2>social links</h2>
                     <div class="footer-social-link">
                         <ul>
-                            <li><a href="https://facebook.com/projectproduceabakinitiative/"><i class="fa fa-facebook"></i></a>
+                            <li><a href="https://facebook.com/projectproduceabakinitiative/"><i
+                                            class="fa fa-facebook"></i></a>
                             </li>
                             {{--<li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>

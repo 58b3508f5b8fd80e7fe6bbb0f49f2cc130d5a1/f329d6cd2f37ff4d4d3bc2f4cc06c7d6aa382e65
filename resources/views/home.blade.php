@@ -9,7 +9,6 @@
         .single-team p {
             font-size: 12px;
             line-height: 12px;
-            font-align: text-justify;
         }
     </style>
 @endsection

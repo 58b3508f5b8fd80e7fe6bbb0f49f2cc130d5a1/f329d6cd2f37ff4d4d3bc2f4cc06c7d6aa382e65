@@ -81,12 +81,12 @@
                                          </li>--}}
                                 </ul>
                             </li>
-                            {{--<li>
+                            <li>
                                 <a href ="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
                             </li>
                             <li>
                                 <a href ="{{url('/register')}}" class="btn btn-sm btn-primary">Join</a>
-                            </li>--}}
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -116,16 +116,16 @@
                             </div>
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a class="smoth-scroll" href="#home">Home
+                                    <li class="active"><a class="smoth-scroll" href="{{url('')}}">Home
                                             <div class="ripple-wrapper"></div>
                                         </a></li>
-                                    <li><a class="smoth-scroll" href="#about">about</a></li>
-                                    <li><a class="smoth-scroll" href="#service">service</a></li>
-                                    <li><a class="smoth-scroll" href="#team">team</a></li>
-                                    <li><a class="smoth-scroll" href="#gallery">Gallery</a></li>
-                                    <li><a class="smoth-scroll" href="#testimonial">testimonial</a></li>
+                                    <li><a class="smoth-scroll" href="{{url('/#about')}}">about</a></li>
+                                    <li><a class="smoth-scroll" href="{{url('/#service')}}">service</a></li>
+                                    <li><a class="smoth-scroll" href="{{url('/#team')}}">team</a></li>
+                                    <li><a class="smoth-scroll" href="{{url('/#gallery')}}">Gallery</a></li>
+                                    <li><a class="smoth-scroll" href="{{url('/#testimonial')}}">testimonial</a></li>
                                     {{--<li><a class="smoth-scroll" href="#pricing">pricing</a></li>--}}
-                                    <li><a class="smoth-scroll" href="#contact">contact</a></li>
+                                    <li><a class="smoth-scroll" href="{{url('/#contact')}}">contact</a></li>
                                     {{--<li><a href="#">Blog </a>--}}
                                     {{--<ul class="sub-menu">--}}
                                     {{--<li class=""><a href="blog.html">Blog Page</a></li>--}}
@@ -163,13 +163,13 @@
                     <h2>Footer menu</h2>
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="#">home</a>
+                            <li><a href="{{url('/#home')}}">home</a>
                             </li>
-                            <li><a href="#">about</a>
+                            <li><a href="{{url('/#about')}}">about</a>
                             </li>
-                            <li><a href="#">services</a>
+                            <li><a href="{{url('/#service')}}">services</a>
                             </li>
-                            <li><a href="#gallery">gallery</a>
+                            <li><a href="{{url('/#gallery')}}">gallery</a>
                             </li>
                         </ul>
                     </div>

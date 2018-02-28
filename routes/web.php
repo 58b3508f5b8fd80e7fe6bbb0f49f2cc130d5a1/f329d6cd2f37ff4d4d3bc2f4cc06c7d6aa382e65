@@ -13,10 +13,14 @@
 
 Auth::routes();
 
-Route::get('/',function(){
-    return view('home');
+Route::middleware(['checkMaintenance'])->group(function () {
+        Auth::routes();
+        Route::get('/', function () {
+            return view('home');
+        });
+    });
+Route::get('/maintenance',function(){
+    return view('errors.503');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+#Route::get('/home', 'HomeController@index')->name('home');

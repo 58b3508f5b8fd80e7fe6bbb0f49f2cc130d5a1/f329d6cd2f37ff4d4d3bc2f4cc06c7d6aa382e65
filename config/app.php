@@ -30,7 +30,7 @@ return [
     'phone' => '+2349069911327, +2348035929609',
     'designer' => 'GreenWhiteDev',
     'designer_url' => 'http://greenwhitedev.com',
-
+    'maintenance' => env('APP_MAINTENANCE', true),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

@@ -190,9 +190,9 @@
 <!-- Slideshow -->
 <script type="text/javascript">
     $('#page-bg').backstretch([
-        'img/bg-1.jpg',
-        'jpg/bg-2.jpg',
-        'jpg/bg-3.jpg'
+        '{{$public}}/mtce/jpg/bg-1.jpg',
+        '{{$public}}/mtce/jpg/bg-2.jpg',
+        '{{$public}}/mtce/jpg/bg-3.jpg'
     ], {
         fade: 750,
         duration: 4000

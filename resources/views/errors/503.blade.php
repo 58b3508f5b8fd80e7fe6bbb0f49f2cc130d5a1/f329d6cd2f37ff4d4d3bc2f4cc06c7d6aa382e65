@@ -143,13 +143,13 @@
                         <h3 class="section-title with-border">Subscribe</h3>
                         <div class="subscribe-box">
                             <!-- Subscribe form -->
-                            <form action="http://adamostry.com/preview/html/dominion/slideshow/php/subscribe.php"
-                                  method="post" id="subscribe-form">
+                            <form action="{{url('/subscribe')}}"
+                                  method="post" id="subscribe-form" onsubmit="subscribe(); return false;">
                                 <p id="subscribe-message" class="form-message"></p>
                                 <div class="form-wrap">
                                     <div class="form-field">
-                                        <input type="text" name="email" id="subscribe-email"
-                                               placeholder="Enter your email..."/>
+                                        <input type="email" name="email" id="subscribe-email"
+                                               placeholder="Enter your email..." required/>
                                     </div>
                                     <div class="form-submit">
                                         <input type="submit" name="submit" id="subscribe-submit" value="Subscribe"/>
@@ -163,7 +163,7 @@
                         <!-- Social Icons -->
                         <div id="social-box">
                             <ul>
-                                <li><a href="#" class="btn" title="Facebook"><i class="fa-facebook"></i></a></li>
+                                <li><a href="https://facebook.com/projectproduceabakinitiative/" class="btn" title="Facebook"><i class="fa-facebook"></i></a></li>
                                 <li><a href="#" class="btn" title="Twitter"><i class="fa-twitter"></i></a></li>
                                 <li><a href="#" class="btn" title="Pinterest"><i class="fa-pinterest"></i></a></li>
                                 <li><a href="#" class="btn" title="Flickr"><i class="fa-flickr"></i></a></li>
@@ -200,11 +200,25 @@
 </script>
 <script type="text/javascript">
     $("#counter")
-        .countdown("2018/03/04", function(event) {
+        .countdown("{{config('app.mtce_end')}}", function(event) {
             $(this).text(
                 event.strftime('%D days %H:%M:%S')
             );
         });
+
+    function subscribe() {
+        var data = {
+            'email': $('#subscribe-form #subscribe-email').val()
+        };
+        $.post('/subscribe', data, function (result) {
+            alert(result.message);
+        }).fail(function () {
+            alert('Sorry, an error occurred');
+        });
+    }
+</script>
+<script>
+
 </script>
 <!-- /Slideshow -->
 </body>

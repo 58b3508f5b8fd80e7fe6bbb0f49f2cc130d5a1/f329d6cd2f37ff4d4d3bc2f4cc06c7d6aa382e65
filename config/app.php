@@ -31,6 +31,7 @@ return [
     'designer' => 'GreenWhiteDev',
     'designer_url' => 'http://greenwhitedev.com',
     'maintenance' => env('APP_MAINTENANCE', true),
+    'mtce_end' => env('APP_MTCE_END','2018/03/07'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

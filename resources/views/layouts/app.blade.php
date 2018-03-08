@@ -82,10 +82,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href ="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
+                                <a href="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
                             </li>
                             <li>
-                                <a href ="{{url('/register')}}" class="btn btn-sm btn-primary">Join</a>
+                                <a href="{{url('/join')}}" class="btn btn-sm btn-primary">Join</a>
                             </li>
                         </ul>
                     </div>
@@ -200,18 +200,28 @@
                 <div class="single-footer wow fadeInUp" data-wow-delay=".8s">
                     <h2>social links</h2>
                     <div class="footer-social-link">
-                        <ul>
-                            <li><a href="https://facebook.com/projectproduceabakinitiative/"><i
-                                            class="fa fa-facebook"></i></a>
+                        <ul class="list-inline text-right">
+                            <li>
+                                <ul>
+                                    <li><a href="https://facebook.com/projectproduceabakinitiative/"><i
+                                                    class="fa fa-facebook"></i></a>
+                                    </li>
+                                    {{--<li><a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-youtube"></i></a>
+                                    </li>--}}
+                                </ul>
                             </li>
-                            {{--<li><a href="#"><i class="fa fa-twitter"></i></a>
+                            <li>
+                                <a href="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a>
+                            <li>
+                                <a href="{{url('/join')}}" class="btn btn-sm btn-primary">Join</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a>
-                            </li>--}}
                         </ul>
                     </div>
                 </div>

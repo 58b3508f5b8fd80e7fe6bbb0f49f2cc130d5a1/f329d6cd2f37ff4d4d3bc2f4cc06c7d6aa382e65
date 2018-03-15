@@ -10,6 +10,24 @@
             font-size: 12px;
             line-height: 12px;
         }
+
+        .our-services {
+            font-size: 13px;
+            text-align: justify;
+            padding-right: 13px;
+        }
+
+        .our-services .modal-header {
+            text-align: center;
+            margin-top: 8px;
+            color: #ffffff;
+            background-color: #61A4DB;
+            border-radius: 6px;
+        }
+
+        .our-services button {
+            color: #ffffff;
+        }
     </style>
 @endsection
 @section('content')
@@ -142,8 +160,9 @@
                     <div class="single-service">
                         <i class="fa fa-camera"></i>
                         <h4>skills and business training</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                        <a href="#">learn more</a>
+                        <p>We engage our trainees on business and entrepreneurial training program thereby grooming them
+                            to become successful in business</p>
+                        <a href="#" data-toggle="modal" data-target="#skills-business">learn more</a>
                     </div>
                 </div>
                 <!-- / END SINGLE SERVICES DESIGN AREA -->
@@ -152,8 +171,9 @@
                     <div class="single-service">
                         <i class="fa fa-laptop"></i>
                         <h4>empowerment</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                        <a href="#">learn more</a>
+                        <p>To encourage the expansion, growth and economic base of our trainees with reference to those
+                            who already have existing businesses</p>
+                        <a href="#" data-toggle="modal" data-target="#empowerment">learn more</a>
                     </div>
                 </div>
                 <!-- / END SINGLE SERVICES DESIGN AREA -->
@@ -162,8 +182,9 @@
                     <div class="single-service">
                         <i class="fa fa-hospital-o"></i>
                         <h4>free health services</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                        <a href="#">learn more</a>
+                        <p>Touching lives signature is clearly demonstrated in the health sector in every community were
+                            our presence is felt.</p>
+                        <a href="#" data-toggle="modal" data-target="#health-services">learn more</a>
                     </div>
                 </div>
                 <!-- / END SINGLE SERVICES DESIGN AREA -->
@@ -172,8 +193,9 @@
                     <div class="single-service">
                         <i class="fa fa-cloud-download"></i>
                         <h4>business consultancy</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                        <a href="#">learn more</a>
+                        <p>Touching lives team of business consultants assist trainees achieve efficiency and
+                            effectiveness in their businesses.</p>
+                        <a href="#" data-toggle="modal" data-target="#business-consultancy">learn more</a>
                     </div>
                 </div>
                 <!-- / END SINGLE SERVICES DESIGN AREA -->
@@ -182,8 +204,9 @@
                     <div class="single-service">
                         <i class="fa fa-line-chart"></i>
                         <h4>micro finance services</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                        <a href="#">learn more</a>
+                        <p>Our Micro-Credit Bank offers interest free loans to various category of business owners to
+                            assist in growing and expanding their businesses</p>
+                        <a href="#" data-toggle="modal" data-target="#micro-credit">learn more</a>
                     </div>
                 </div>
                 <!-- / END SINGLE SERVICES DESIGN AREA -->
@@ -192,8 +215,9 @@
                     <div class="single-service">
                         <i class="fa fa-legal"></i>
                         <h4>free legal services</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                        <a href="#">learn more</a>
+                        <p>TLS legal service department is equipped with well trained and highly experienced legal
+                            experts. We offer free legal services.</p>
+                        <a href="#" data-toggle="modal" data-target="#legal-services">learn more</a>
                     </div>
                 </div>
                 <!-- / END SINGLE SERVICES DESIGN AREA -->
@@ -214,8 +238,8 @@
             </div>
             <div class="row">
                 <!-- START SINGLE TEAM DESIGN AREA -->
-                <div style="display: table;">
-                    <div class="col-md-3 col-sm-6">
+                <div class="col-md-12" style="display: table;">
+                    <div class="col-md-4 col-sm-10">
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/ceo.jpg')}}" alt="">
                             <h4>Gospel Christian</h4>
@@ -229,7 +253,7 @@
                     </div>
                     <!-- / END SINGLE TEAM DESIGN AREA -->
                     <!-- START SINGLE TEAM DESIGN AREA -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-4 col-sm-10">
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
                             <h4>Elisha Wealth</h4>
@@ -243,7 +267,7 @@
                     </div>
                     <!-- / END SINGLE TEAM DESIGN AREA -->
                     <!-- START SINGLE TEAM DESIGN AREA -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-4 col-sm-10">
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
                             <h4>pastor linus effiong</h4>
@@ -251,33 +275,13 @@
                             <p>A Pastor of a branch of Assemblies of God Church.
                                 The Managing Director of Linae Construction Company Ltd.
                                 Skill in Making furniture, wood work, carvings and sculptures.</p>
-                        </div>
-                    </div>
-                    <!-- / END SINGLE TEAM DESIGN AREA -->
-                    <!-- START SINGLE TEAM DESIGN AREA -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
-                            <h4>joyce joseph</h4>
-                            <h6 class="text-muted">Accountant General</h6>
-                            <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
-                                executive officer of Jorhema Styling Ltd.</p>
                         </div>
                     </div>
                     <!-- / END SINGLE TEAM DESIGN AREA -->
                 </div>
                 <div style="display: table;">
                     <!-- START SINGLE TEAM DESIGN AREA -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="{{asset($public.'/jpg/secretary.jpg')}}" alt="">
-                            <h4>blessing linus effiong</h4>
-                            <h6 class="text-muted">secretary general</h6>
-                            <p>A cosmetologist, make up artist and Designer.
-                                The Managing Director of Eddyz Ltd.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-4 col-sm-10">
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
                             <h4>joyce joseph</h4>
@@ -288,35 +292,30 @@
                     </div>
                     <!-- / END SINGLE TEAM DESIGN AREA -->
                     <!-- START SINGLE TEAM DESIGN AREA -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-4 col-sm-10">
                         <div class="single-team">
-                            <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
-                            <h4>Elisha Wealth</h4>
-                            <h6 class="text-muted">Governor/Executive Director</h6>
-                            <p>A preacher and Pastor of a branch of Believers Loveworld Inc. (Christ Embassy).
-                                A business Man, Business consultant and Managing Director of Praesto Technologies Ltd.
-                                Also skilled in Programming and a passionate musician. Networking and fibre optics,
-                                Computer
-                                Music Production and graphics designs.</p>
+                            <img src="{{asset($public.'/jpg/directorhealth.jpg')}}" alt="">
+                            <h4>dorcas linus</h4>
+                            <h6 class="text-muted">Director of Health</h6>
+                            <p>The Managing Director Cheryl Health care and Maternity.
+                                Having a track record of over 35years of no loss or casualty of patients during child
+                                birth or treatment in the clinic.</p>
                         </div>
                     </div>
-                    <!-- / END SINGLE TEAM DESIGN AREA -->
-                    <!-- START SINGLE TEAM DESIGN AREA -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-4 col-sm-10">
                         <div class="single-team">
-                            <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
-                            <h4>pastor linus effiong</h4>
-                            <h6 class="text-muted">Deputy Governor</h6>
-                            <p>A Pastor of a branch of Assemblies of God Church.
-                                The Managing Director of Linae Construction Company Ltd.
-                                Skill in Making furniture, wood work, carvings and sculptures.</p>
+                            <img src="{{asset($public.'/jpg/secretary.jpg')}}" alt="">
+                            <h4>Blessing Linus Effiong</h4>
+                            <h6 class="text-muted">Secretary General</h6>
+                            <p>A cosmetologist, make up artist and Designer.
+                                The Managing Director of Eddyz Ltd.</p>
                         </div>
                     </div>
                     <!-- / END SINGLE TEAM DESIGN AREA -->
                 </div>
                 <!-- / END SINGLE TEAM DESIGN AREA -->
                 <!-- START SINGLE TEAM DESIGN AREA -->
-            {{--<div class="col-md-3 col-sm-6">
+            {{--<div class="col-md-4 col-sm-10">
                 <div class="single-team">
                     <img src="{{asset($public.'/jpg/01.jpg')}}" alt="">
                     <h4>Arfan hridoy</h4>
@@ -325,7 +324,7 @@
             </div>
             <!-- / END SINGLE TEAM DESIGN AREA -->
             <!-- START SINGLE TEAM DESIGN AREA -->
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-10">
                 <div class="single-team">
                     <img src="{{asset($public.'/jpg/02.jpg')}}" alt="">
                     <h4>Tarin rahman</h4>
@@ -334,7 +333,7 @@
             </div>
             <!-- / END SINGLE TEAM DESIGN AREA -->
             <!-- START SINGLE TEAM DESIGN AREA -->
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-10">
                 <div class="single-team">
                     <img src="{{asset($public.'/jpg/06.jpg')}}" alt="">
                     <h4>maria sid</h4>
@@ -355,71 +354,72 @@
                     <div class="get-text text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                          data-wow-offset="0">
                         <h2>are you ready to get started?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed elit tortor. Quisque
-                            bibendum
-                            mauris velit, sed tincidunt massa lacinia nec.</p>
-                        <a href="#contact" class="read-more">get started</a>
+                        <p>We aim is to reach out to the poor population with skills and empowerment for development,
+                            hence fulfilling the vision of the United nations development Program UNDP.</p>
+                        <a href="{{url('join')}}" class="read-more">get started</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- / END GET STARTED DESIGN AREA -->
+    {{--
 
-    <!-- START WHY CHOOSE US DESIGN AREA -->
-    <section class="why-choose-us-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2>why choose us</h2>
+        <!-- START WHY CHOOSE US DESIGN AREA -->
+        <section class="why-choose-us-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-title">
+                            <h2>why choose us</h2>
+                        </div>
                     </div>
+                </div>
+                <div class="row">
+                    <!-- START WHY CHOOSE US IMAGE DESIGN AREA -->
+                    <div class="col-md-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s" data-wow-offset="0">
+                        <div class="why-chosse-image">
+                            <img src="{{asset($public.'/jpg/why-choose-us.jpg')}}" alt="">
+                        </div>
+                    </div>
+                    <!-- / END WHY CHOOSE US IMAGE DESIGN AREA -->
+                    <!-- START WHY CHOOSE TEXT DESIGN AREA -->
+                    <div class="col-md-6">
+                        <div class="why-choose-text">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been
+                                the industry's standard dummy text ever since the 1500s</p>
+                            <ul>
+                                <li><i class="fa fa-check"></i> Bootstrap Latest version</li>
+                                <li><i class="fa fa-check"></i>Clean and optimize code for easy</li>
+                                <li><i class="fa fa-check"></i>Well documented and organized properly</li>
+                                <li><i class="fa fa-check"></i>Lorem Ipsum is simply dummy text of the printing.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- / END WHY CHOOSE TEXT DESIGN AREA -->
                 </div>
             </div>
-            <div class="row">
-                <!-- START WHY CHOOSE US IMAGE DESIGN AREA -->
-                <div class="col-md-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s" data-wow-offset="0">
-                    <div class="why-chosse-image">
-                        <img src="{{asset($public.'/jpg/why-choose-us.jpg')}}" alt="">
-                    </div>
-                </div>
-                <!-- / END WHY CHOOSE US IMAGE DESIGN AREA -->
-                <!-- START WHY CHOOSE TEXT DESIGN AREA -->
-                <div class="col-md-6">
-                    <div class="why-choose-text">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's standard dummy text ever since the 1500s</p>
-                        <ul>
-                            <li><i class="fa fa-check"></i> Bootstrap Latest version</li>
-                            <li><i class="fa fa-check"></i>Clean and optimize code for easy</li>
-                            <li><i class="fa fa-check"></i>Well documented and organized properly</li>
-                            <li><i class="fa fa-check"></i>Lorem Ipsum is simply dummy text of the printing.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- / END WHY CHOOSE TEXT DESIGN AREA -->
-            </div>
-        </div>
-    </section>
-    <!-- / END WHY CHOOSE US DESIGN AREA -->
+        </section>
+        <!-- / END WHY CHOOSE US DESIGN AREA -->
 
-    <!-- VIDEO BACKGROUND DESIGN AREA -->
-    <section class="video-area" data-stellar-background-ratio="0.6">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="video-area-text text-center wow bounceIn">
-                        <a href="https://www.youtube.com/watch?v=6NC_ODHu5jg" class="video-play mfp-iframe">
-                            <i class="fa fa-play"></i>
-                        </a>
-                        <h2>Watch Our Story</h2>
+        <!-- VIDEO BACKGROUND DESIGN AREA -->
+        <section class="video-area" data-stellar-background-ratio="0.6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="video-area-text text-center wow bounceIn">
+                            <a href="https://www.youtube.com/watch?v=6NC_ODHu5jg" class="video-play mfp-iframe">
+                                <i class="fa fa-play"></i>
+                            </a>
+                            <h2>Watch Our Story</h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- / END VIDEO BACKGROUND DESIGN AREA -->
+        </section>
+        <!-- / END VIDEO BACKGROUND DESIGN AREA -->
+    --}}
 
     <!-- START WORK DESIGN AREA -->
     <section id="gallery" class="work section-padding">
@@ -595,32 +595,32 @@
     </section>
     <!-- / END START WORK DESIGN AREA -->
 
-    <!-- PROJECT COMPLETE DESIGN AREA -->
+    {{--<!-- PROJECT COMPLETE DESIGN AREA -->
     <section class="project-complete-area section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-10">
                     <div class="single-project-complete">
                         <i class="fa fa-bar-chart"></i>
                         <h2 class="counter-num">1200</h2>
                         <h6 class="text-muted">project complete</h6>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-10">
                     <div class="single-project-complete">
                         <i class="fa fa-users"></i>
                         <h2 class="counter-num">1000</h2>
                         <h6 class="text-muted">Happy Clients</h6>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-10">
                     <div class="single-project-complete">
                         <i class="fa fa-clone"></i>
                         <h2 class="counter-num">56090</h2>
                         <h6 class="text-muted">Line Of Coding</h6>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-10">
                     <div class="single-project-complete">
                         <i class="fa fa-graduation-cap"></i>
                         <h2 class="counter-num">31</h2>
@@ -630,9 +630,9 @@
             </div>
         </div>
     </section>
-    <!-- / END PROJECT COMPLETE DESIGN AREA -->
+    <!-- / END PROJECT COMPLETE DESIGN AREA -->--}}
 
-    <!-- START TESTIMONIAL DESIGN AREA -->
+    {{--<!-- START TESTIMONIAL DESIGN AREA -->
     <section id="testimonial" class="testimonial-area section-padding">
         <div class="container">
             <div class="row">
@@ -686,7 +686,7 @@
             </div>
         </div>
     </section>
-    <!-- / END TESTIMONIAL DESIGN AREA -->
+    <!-- / END TESTIMONIAL DESIGN AREA -->--}}
 
     <!-- START PRICING DESIGN AREA -->
     {{--<section id="pricing" class="pricing-area section-padding">
@@ -782,7 +782,7 @@
                          data-wow-offset="0">
                         <h2>so what are you waiting for?</h2>
                         <p>Join our skill training programme</p>
-                        <a href="#contact" class="read-more">join now</a>
+                        <a href="{{url('/join')}}" class="read-more">Join Now</a>
                     </div>
                 </div>
             </div>
@@ -805,6 +805,7 @@
                     <!-- START CONTACT FORM DESIGN AREA -->
                     <div class="contact-form">
                         <form id="contact-form" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="form-group col-md-6">
                                 <input type="text" name="name" class="form-control" id="first-name" placeholder="Name"
                                        required="required">
@@ -839,4 +840,180 @@
     <!-- TART MAP DESIGN AREA -->
     <div id="map"></div>
     <!-- / END MAP DESIGN AREA -->
+
+    <div id="skills-business" class="modal fade our-services" role="dialog">
+        <div class="modal-dialog modal-dialog-popout">
+
+            <!-- Modal content-->
+            <div class="modal-content col-md-12">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Skills and business training</h4>
+                </div>
+                <div class="col-md-12 modal-body" id="registerModalContent">
+                    <p>In line with our major focus which is that of improving the standard of living of the people.
+                        Touching lives of train the people in various field of human empowerment and trade ranging from
+                        Accessories, Agriculture(Fish farming/ Poultry) Cosmetology which encompasses makeup, Hair
+                        dressing,
+                        Clothing and Textile, Media, Pastries, Paint production, Paper production, Solar panel
+                        production,
+                        Web design and Programming.</p>
+                    <p>We also engage our trainees on business and entrepreneurial training program thereby grooming
+                        them
+                        to become successful in business.</p>
+                    <p>The primary aim is to groom the people to be of help not only to themselves and live an
+                        independent
+                        life but to also contribute their wealth of experience to the growth and development of the
+                        society
+                        and the nation at large.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="empowerment" class="modal fade our-services" role="dialog">
+        <div class="modal-dialog modal-dialog-slideleft">
+
+            <!-- Modal content-->
+            <div class="modal-content col-md-12">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Empowerment</h4>
+                </div>
+                <div class="col-md-12 modal-body" id="registerModalContent">
+                    <p>To encourage the expansion, growth and economic base of our trainees with reference to those who
+                        already have existing businesses, Touching lives gives grants to such persons to inject into
+                        their
+                        businesses.</p>
+                    <p>This however is made possible after our ILO's have inspected such businesses, assess their
+                        performance and commitment on the part of the business owner and made recommendation for
+                        financial
+                        assistance to be extended to the business.</p>
+                    <p>For those who do not have any business of their own, after the entrepreneurial training coupled
+                        with
+                        the choice of the skill the trainee decided to embark on, Financial assistance in form of
+                        grants/interest Free loans is also extended to them to commence or start up their business or
+                        trade.
+                        In order to ensure that our beneficiaries utilizes the funds for the purpose it was given ILO's
+                        are
+                        always on ground to closely monitor and assist them to make a success out of their
+                        businesses.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="health-services" class="modal fade our-services" role="dialog">
+        <div class="modal-dialog modal-dialog-fromright">
+
+            <!-- Modal content-->
+            <div class="modal-content col-md-12">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Free Health Services</h4>
+                </div>
+                <div class="col-md-12 modal-body" id="registerModalContent">
+                    <p>Touching lives signature is clearly demonstrated in the health sector in every community were our
+                        presence is felt. Our Organization has made significant and substantial investment in the
+                        promotion
+                        of healthy living and provision of free health services. Our deliberate commitment in this
+                        sector is
+                        in line with our philosophy "A Healthy People are A Happy People".</p>
+                    <p>Our commitment in seeking good health for all cut across all classes of people.</p>
+                    <p>Hence, our free health Care are easily accessible by the pregnant women, nursing mothers,
+                        children
+                        including the men and the Elderly. Under Free health services, Touching lives also provides
+                        services
+                        such as free eye test, free surgery, counselling, free drugs, health materials etc.</p>
+                    <p>Touching lives health care service is fashioned at par with world class medical services with the
+                        best practice and standard.</p>
+                    <p>With our team of experts we also organise free health talks for communities, organizations and
+                        bodies as well as mount campaigns for sustainable healthy living.</p>
+                    <p>Our health centers are equipped with state of the art facilities with an array of sound, trusted
+                        and
+                        tested medical practitioners which includes, doctors, pharmacists, nurses, laboratory
+                        scientists,
+                        experts in ICT as well as qualified consultants and specialists.
+                        Interestingly, this covers both primary and secondary health care system.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="business-consultancy" class="modal fade our-services" role="dialog">
+        <div class="modal-dialog modal-dialog-slideup">
+
+            <!-- Modal content-->
+            <div class="modal-content col-md-12">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Business Consultancy</h4>
+                </div>
+                <div class="col-md-12 modal-body" id="registerModalContent">
+                    <p>Our team of experts in the field of businesses are always at hand to train the people on how they
+                        can make success in their businesses, achieve maximum profit. Touching lives team of business
+                        consultants assist trainees achieve efficiency and effectiveness in their businesses.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="micro-credit" class="modal fade our-services" role="dialog">
+        <div class="modal-dialog modal-dialog-slideright">
+
+            <!-- Modal content-->
+            <div class="modal-content col-md-12">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Micro-credit Bank</h4>
+                </div>
+                <div class="col-md-12 modal-body" id="registerModalContent">
+                    <p>In line with the objective of Touching lives as it pertains to raising the economic status of the
+                        people, our Micro-Credit Bank offers interest free loans to various category of business owners
+                        to
+                        assist in growing and expanding their businesses. TLS main credit scheme also promote the spirit
+                        of
+                        cooperation among members thereby encouraging the development of co-operatives within its area
+                        of
+                        operation.</p>
+                    <p>The micro credit bank known as TLS savings is developed in a manner where its policies and
+                        programmes is formulated to enhance the socio-economic growth of the society as well as the
+                        members
+                        well-being.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="legal-services" class="modal fade our-services" role="dialog">
+        <div class="modal-dialog modal-dialog-fromleft">
+
+            <!-- Modal content-->
+            <div class="modal-content col-md-12">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Legal Services</h4>
+                </div>
+                <div class="col-md-12 modal-body" id="registerModalContent">
+                    <p>TLS legal service department is equipped with well trained and highly experienced legal
+                        experts.</p>
+                    <p>Our dedicated team of Lawyers offer free legal services.</p>
+                    <p>In order to spread our legal service to those at the grass root level our legal team partners
+                        with
+                        civil society groups and international agencies thereby gaining wider spread.
+                        Through our legal services, our humane posture, fairness and justice for all is clearly
+                        showcased.</p>
+                    <p>TLS legal services can be accessed by the less privilege, the indigent those whose rights have
+                        been
+                        adversely affected and their freedom infringed upon. Interested persons wishing to have access
+                        to
+                        these services can either visit our office for a one-on-one contact or lodge a formal complaint
+                        detailing the matter at stake and requesting our intervention and also we attend to legal
+                        services
+                        based on referrals.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection

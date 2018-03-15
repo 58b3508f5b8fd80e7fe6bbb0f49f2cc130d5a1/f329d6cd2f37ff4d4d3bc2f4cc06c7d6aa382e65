@@ -7,15 +7,15 @@
         <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from wordpressboss.com/tf/mind-demo/index-slider.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 Feb 2018 19:55:11 GMT -->
 <head>
     <!-- META -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{csrf_token()}}">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PAGE TITLE -->
-    <title>{{ 'Home | ' . config('app.name', 'Touching Lives Skills') }}</title>
+    <title>@yield('title', 'Home') | {{ config('app.name', 'Touching Lives Skills') }}</title>
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{{asset($public.'/css/bootstrap.min.css')}}">
     <!-- ALL GOOGLE FONTS -->
@@ -80,9 +80,6 @@
                                          <li><a href="#"><i class="fa fa-google-plus"></i></a>
                                          </li>--}}
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
                             </li>
                             <li>
                                 <a href="{{url('/join')}}" class="btn btn-sm btn-primary">Join</a>
@@ -160,7 +157,7 @@
             <!-- START SINGLE FOOTER DESIGN AREA -->
             <div class="col-md-3 col-sm-6">
                 <div class="single-footer wow fadeInUp" data-wow-delay=".4s">
-                    <h2>Footer menu</h2>
+                    <h2>Navigation</h2>
                     <div class="footer-menu">
                         <ul>
                             <li><a href="{{url('/#home')}}">home</a>
@@ -179,7 +176,7 @@
             <!-- START SINGLE FOOTER DESIGN AREA -->
             <div class="col-md-3 col-sm-6">
                 <div class="single-footer wow fadeInUp" data-wow-delay=".6s">
-                    <h2>Footer menu</h2>
+                    <h2>Inquiries</h2>
                     <div class="footer-menu">
                         <ul>
                             <li><a href="#">faq</a>
@@ -215,9 +212,6 @@
                                     <li><a href="#"><i class="fa fa-youtube"></i></a>
                                     </li>--}}
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="{{url('/login')}}" class="btn btn-sm btn-primary">Login</a>
                             </li>
                             <li>
                                 <a href="{{url('/join')}}" class="btn btn-sm btn-primary">Join</a>

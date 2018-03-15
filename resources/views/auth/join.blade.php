@@ -4,6 +4,7 @@
     $public ='public';
 @endphp
 @extends('layouts.app')
+@section('title', 'Join us')
 @section('content')
     <div id="content" class="container">
         <div class="col-md-12">
@@ -25,8 +26,7 @@
                     </form>
                     <div class="col-md-12 text-center">
                         or<br>
-                        <a href="#" style="color: #fff;" onclick="getRegistrations()" data-toggle="modal"
-                           data-target="#completeReg">Complete registration</a>
+                        <a href="{{url('join/continue')}}" style="color: #fff;">Complete registration</a>
                     </div>
                 </div>
             </div>
@@ -38,16 +38,19 @@
     <script>
         $.ajaxSetup({
             headers: {
+                'X-Requested-With': 'XMLHttpRequest',
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
 
         function getRegistrations() {
-            var data ={};
-            $.post('/join/registrations', data, function (result) {
-                $('#user').html(result.html);
-                $('#user-modal').modal('show');
-            }).fail(function () {
+            var data ={
+                'id':1
+            };
+
+            $.post('http://tlsavings.dev:8000/api/getTransactions', data, function (result) {
+                alert('success');
+            }).fail(function(){
                 alert('Sorry, an error occurred');
             });
             //'first_name': $("input[name=first_name]").val(),

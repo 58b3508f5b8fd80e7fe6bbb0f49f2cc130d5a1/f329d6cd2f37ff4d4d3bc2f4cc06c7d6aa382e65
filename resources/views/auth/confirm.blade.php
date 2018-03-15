@@ -4,6 +4,7 @@
     $public ='public';
 @endphp
 @extends('layouts.app')
+@section('title', 'Confirm Payment')
 @section('styles')
     <style>
         .form-control {
@@ -56,7 +57,7 @@
                         <div class="row">
                             <div class="col-sm-12 pricing-box">
                                 <div class="col-xs-10 col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <form class="form-horizontal" method="POST" action="{{ url('/join/form') }}">
+                                    <form class="form-horizontal" method="POST" action="{{ url('/join/authorize') }}">
                                         {{ csrf_field() }}
                                         <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
                                             <div class="form-material">

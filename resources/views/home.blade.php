@@ -286,7 +286,7 @@
                             <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
                             <h4>joyce joseph</h4>
                             <h6 class="text-muted">Accountant General</h6>
-                            <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
+                                <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
                                 executive officer of Jorhema Styling Ltd.</p>
                         </div>
                     </div>

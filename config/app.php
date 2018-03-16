@@ -33,7 +33,7 @@ return [
     'maintenance'  => env('APP_MAINTENANCE', false),
     'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
 
-    'tlsavings_url'       => env('TLSAVINGS_URL', 'http://touchinglivesskills.xyz'),
+    'tlsavings_url'       => env('TLSAVINGS_URL', 'http://tlsavings.xyz'),
     'tlsavings_id1'       => env('TLSAVINGS_ID1', 1),
     'tlsavings_secret1'   => env('TLSAVINGS_SECRET1',
         'N1309l8ZTJX5p40yS4fosKOWnJDbe9O7a6NYJjgc'),

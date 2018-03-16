@@ -56,11 +56,11 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
-    | Application URL
+    | Application UR
     |--------------------------------------------------------------------------
     |
     | This URL is used by the console to properly generate URLs when using

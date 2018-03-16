@@ -88,12 +88,12 @@ class RegisterController extends Controller
                 $request->session()->reflash();
             }
             $pin = $request->input('pin', null);
-            $response = $client->post('http://tlsavings.dev:8000/oauth/token',
+            $response = $client->post(config('app.tlsavings_url').'/oauth/token',
                 [
                     'form_params' => [
                         'grant_type'    => 'password',
-                        'client_id'     => '7',
-                        'client_secret' => '7W7uKJjP8z2MOHi56dnteYI4nLx2AxpwDbocSBwE',
+                        'client_id'     => config('app.tlsavings_id2'),
+                        'client_secret' => config('app.tlsavings_secret2'),
                         'username'      => session('user')->wallet_id,
                         'password'      => $pin,
                         'scope'         => 'transactions registrations'
@@ -104,7 +104,7 @@ class RegisterController extends Controller
             $client = new Client;
 
             $response = $client->request('put',
-                'http://tlsavings.dev:8000/api/regcharge', [
+                config('app.tlsavings_url').'/api/regcharge', [
                     'headers' => [
                         'Accept'        => 'application/json',
                         'Authorization' => 'Bearer '
@@ -152,13 +152,13 @@ class RegisterController extends Controller
                 $action = session('reg_action');
 
                 $response
-                    = $client->post('http://tlsavings.dev:8000/oauth/token',
+                    = $client->post(config('app.tlsavings_url').'/oauth/token',
                     [
                         'form_params' => [
                             'grant_type'    => 'authorization_code',
-                            'client_id'     => '5',
-                            'client_secret' => 'AM1zeu7c4xduh2i6tLAF6qEaA1qZiQTVKJgzGH22',
-                            'redirect_uri'  => 'http://tlskills.dev:8000/join/confirm',
+                            'client_id' => config('app.tlsavings_id1'),
+                            'client_secret' => config('app.tlsavings_secret1'),
+                            'redirect_uri'  => config('app.tlsavings_redirect'),
                             'code'          => $request->code,
                         ],
                     ]);
@@ -168,7 +168,7 @@ class RegisterController extends Controller
                 $client = new Client;
 
                 $response = $client->request('get',
-                    'http://tlsavings.dev:8000/api/confirm', [
+                    config('app.tlsavings_url').'/api/confirm', [
                         'headers' => [
                             'Accept'        => 'application/json',
                             'Authorization' => 'Bearer '

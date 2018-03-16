@@ -26,12 +26,22 @@ return [
     |
     */
 
-    'email' => 'info@tlskills.com',
-    'phone' => '+2349069911327, +2348035929609',
-    'designer' => 'GreenWhiteDev',
+    'email'        => 'info@tlskills.com',
+    'phone'        => '+2349069911327, +2348035929609',
+    'designer'     => 'GreenWhiteDev',
     'designer_url' => 'http://greenwhitedev.com',
-    'maintenance' => env('APP_MAINTENANCE', false),
-    'mtce_end' => env('APP_MTCE_END','2018/03/07'),
+    'maintenance'  => env('APP_MAINTENANCE', false),
+    'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
+
+    'tlsavings_url'       => env('TLSAVINGS_URL', 'http://touchinglivesskills.xyz'),
+    'tlsavings_id1'       => env('TLSAVINGS_ID1', 1),
+    'tlsavings_secret1'   => env('TLSAVINGS_SECRET1',
+        'N1309l8ZTJX5p40yS4fosKOWnJDbe9O7a6NYJjgc'),
+    'tlsavings_id2'       => env('TLSAVINGS_ID2', 2),
+    'tlsavings_secret2'   => env('TLSAVINGS_SECRET2',
+        'ZzTNeRAotSJu8vFogABrlkCSM5WM7w0CaPFEZ4tj'),
+    'tlsavings_redirect' => env('TLSAVINGS_REDIRECT',
+        'http://touchinglivesskills.xyz/join/confirm'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -60,7 +70,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application UR
+    | Application URL
     |--------------------------------------------------------------------------
     |
     | This URL is used by the console to properly generate URLs when using
@@ -121,7 +131,8 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'base64:IJjfUnbxD9E4eFEA3h7tHWTk2VBJnFXodEKnpnOYeoA='),
+    'key' => env('APP_KEY',
+        'base64:IJjfUnbxD9E4eFEA3h7tHWTk2VBJnFXodEKnpnOYeoA='),
 
     'cipher' => 'AES-256-CBC',
 
@@ -209,39 +220,39 @@ return [
 
     'aliases' => [
 
-        'App' => Illuminate\Support\Facades\App::class,
-        'Artisan' => Illuminate\Support\Facades\Artisan::class,
-        'Auth' => Illuminate\Support\Facades\Auth::class,
-        'Blade' => Illuminate\Support\Facades\Blade::class,
-        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
-        'Bus' => Illuminate\Support\Facades\Bus::class,
-        'Cache' => Illuminate\Support\Facades\Cache::class,
-        'Config' => Illuminate\Support\Facades\Config::class,
-        'Cookie' => Illuminate\Support\Facades\Cookie::class,
-        'Crypt' => Illuminate\Support\Facades\Crypt::class,
-        'DB' => Illuminate\Support\Facades\DB::class,
-        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
-        'Event' => Illuminate\Support\Facades\Event::class,
-        'File' => Illuminate\Support\Facades\File::class,
-        'Gate' => Illuminate\Support\Facades\Gate::class,
-        'Hash' => Illuminate\Support\Facades\Hash::class,
-        'Lang' => Illuminate\Support\Facades\Lang::class,
-        'Log' => Illuminate\Support\Facades\Log::class,
-        'Mail' => Illuminate\Support\Facades\Mail::class,
+        'App'          => Illuminate\Support\Facades\App::class,
+        'Artisan'      => Illuminate\Support\Facades\Artisan::class,
+        'Auth'         => Illuminate\Support\Facades\Auth::class,
+        'Blade'        => Illuminate\Support\Facades\Blade::class,
+        'Broadcast'    => Illuminate\Support\Facades\Broadcast::class,
+        'Bus'          => Illuminate\Support\Facades\Bus::class,
+        'Cache'        => Illuminate\Support\Facades\Cache::class,
+        'Config'       => Illuminate\Support\Facades\Config::class,
+        'Cookie'       => Illuminate\Support\Facades\Cookie::class,
+        'Crypt'        => Illuminate\Support\Facades\Crypt::class,
+        'DB'           => Illuminate\Support\Facades\DB::class,
+        'Eloquent'     => Illuminate\Database\Eloquent\Model::class,
+        'Event'        => Illuminate\Support\Facades\Event::class,
+        'File'         => Illuminate\Support\Facades\File::class,
+        'Gate'         => Illuminate\Support\Facades\Gate::class,
+        'Hash'         => Illuminate\Support\Facades\Hash::class,
+        'Lang'         => Illuminate\Support\Facades\Lang::class,
+        'Log'          => Illuminate\Support\Facades\Log::class,
+        'Mail'         => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
-        'Password' => Illuminate\Support\Facades\Password::class,
-        'Queue' => Illuminate\Support\Facades\Queue::class,
-        'Redirect' => Illuminate\Support\Facades\Redirect::class,
-        'Redis' => Illuminate\Support\Facades\Redis::class,
-        'Request' => Illuminate\Support\Facades\Request::class,
-        'Response' => Illuminate\Support\Facades\Response::class,
-        'Route' => Illuminate\Support\Facades\Route::class,
-        'Schema' => Illuminate\Support\Facades\Schema::class,
-        'Session' => Illuminate\Support\Facades\Session::class,
-        'Storage' => Illuminate\Support\Facades\Storage::class,
-        'URL' => Illuminate\Support\Facades\URL::class,
-        'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
+        'Password'     => Illuminate\Support\Facades\Password::class,
+        'Queue'        => Illuminate\Support\Facades\Queue::class,
+        'Redirect'     => Illuminate\Support\Facades\Redirect::class,
+        'Redis'        => Illuminate\Support\Facades\Redis::class,
+        'Request'      => Illuminate\Support\Facades\Request::class,
+        'Response'     => Illuminate\Support\Facades\Response::class,
+        'Route'        => Illuminate\Support\Facades\Route::class,
+        'Schema'       => Illuminate\Support\Facades\Schema::class,
+        'Session'      => Illuminate\Support\Facades\Session::class,
+        'Storage'      => Illuminate\Support\Facades\Storage::class,
+        'URL'          => Illuminate\Support\Facades\URL::class,
+        'Validator'    => Illuminate\Support\Facades\Validator::class,
+        'View'         => Illuminate\Support\Facades\View::class,
 
     ],
 

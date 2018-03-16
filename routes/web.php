@@ -45,18 +45,25 @@ Route::middleware(['checkMaintenance'])->group(function () {
     });
     Route::prefix('/join')->group(function () {
         Route::get('/', function (\Illuminate\Http\Request $request) {
+//            echo config('app.tlsavings_id1') . '<br>';
+//            echo config('app.tlsavings_id2') . '<br>';
+//            echo config('app.tlsavings_secret1') . '<br>';
+//            echo config('app.tlsavings_secret2') . '<br>';
+//            echo config('app.tlsavings_url') . '<br>';
+//            echo config('app.tlsavings_redirect') . '<br>';
+
             return view('auth.join');
         });
         Route::post('/', function (\Illuminate\Http\Request $request) {
             $request->session()->put('reg_action', 'begin');
             $query = http_build_query([
-                'client_id'     => 5,
-                'redirect_uri'  => 'http://tlskills.dev:8000/join/confirm',
+                'client_id'     => config('app.tlsavings_id1'),
+                'redirect_uri'  => config('app.tlsavings_redirect'),
                 'response_type' => 'code',
                 'scope'         => 'details',
             ]);
 
-            return redirect('http://tlsavings.dev:8000/oauth/authorize?'
+            return redirect(config('app.tlsavings_url') . '/oauth/authorize?'
                 . $query);
         });
         Route::get('/charge', 'Auth\RegisterController@charge');
@@ -99,13 +106,13 @@ Route::middleware(['checkMaintenance'])->group(function () {
         Route::get('/continue', function (\Illuminate\Http\Request $request) {
             $request->session()->put('reg_action', 'continue');
             $query = http_build_query([
-                'client_id'     => 5,
-                'redirect_uri'  => 'http://tlskills.dev:8000/join/confirm',
+                'client_id'     => config('app.tlsavings_id1'),
+                'redirect_uri'  => config('app.tlsavings_redirect'),
                 'response_type' => 'code',
                 'scope'         => 'details',
             ]);
 
-            return redirect('http://tlsavings.dev:8000/oauth/authorize?'
+            return redirect(config('app.tlsavings_url') . '/oauth/authorize?'
                 . $query);
 
         });

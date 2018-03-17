@@ -42,6 +42,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
+
                         <div class="single-slide-item slide-1" data-stellar-background-ratio="0.6">
                             <div class="single-slide-item-table">
                                 <div class="single-slide-item-tablecell">
@@ -286,7 +287,7 @@
                             <img src="{{asset($public.'/jpg/accountant.jpg')}}" alt="">
                             <h4>joyce joseph</h4>
                             <h6 class="text-muted">Accountant General</h6>
-                                <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
+                            <p>A Chartered Accountant and Economist. Hair Stylist, a cosmetologist and currently Chief
                                 executive officer of Jorhema Styling Ltd.</p>
                         </div>
                     </div>
@@ -312,6 +313,35 @@
                         </div>
                     </div>
                     <!-- / END SINGLE TEAM DESIGN AREA -->
+
+                </div>
+                <div style="display: table;">
+                    <div class="col-md-4 col-sm-10">
+                        <div class="single-team">
+                            <h4>Fracis Bassey Etim</h4>
+                            <h6 class="text-muted">Director of Skills and Development</h6>
+                            <p>An electronic specialist. The manager and head of technical operations ALAWNY GLOBAL
+                                TECHNOLOGIES (A.K.A. solar solutions centre). Designs and constructs solar panels and
+                                inverters, Industrial and domestic electrical installations and maintenance, computer
+                                networking, car repairs and maintenance</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-10">
+                        <div class="single-team">
+                            <h4>Rowland Obot</h4>
+                            <h6 class="text-muted">Director of Investment</h6>
+                            <p>The managing Director of Solutions Park Integrated Services Ltd.
+                                Skills: An Petroleum Engineer.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-10">
+                        <div class="single-team">
+                            <h4>Richard Cornelius Banigo</h4>
+                            <h6 class="text-muted">Director Special Duties</h6>
+                            <p>A cosmetologist, make up artist and Designer.
+                                The Managing Director of Eddyz Ltd.</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- / END SINGLE TEAM DESIGN AREA -->
                 <!-- START SINGLE TEAM DESIGN AREA -->

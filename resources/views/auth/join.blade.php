@@ -75,16 +75,17 @@
                             <li class="list-group-item">"Trade and marketing</li>
                         </ul>
 
-                        <p>Registration fee is &#8358; 1500 for each skill you wish to enroll in. This will be charged
+                        <p>Registration fee is PNM 0.182 (&#8358;1500) for each skill you wish to enroll in. This will be
+                            charged
                             from
                             your account with TLSavings, hence you need to have an account on TLSavings to register for
                             any
                             skill on this platform.</p>
-                        <p>The training for each programme lasts for a duration of 24 weeks (Saturdays and Sundays), and
+                        <p>The training for each programme lasts for a duration of 24 weeks, and
                             all
                             who wish to enroll on this platform must be of a legal adult age and willing to learn</p>
-                        <p><strong>Criteria for empowerment:</strong> basically must attend classes, participate in
-                            practical, be successful in all our screening exercises.</p>
+                        <p><strong>Criteria for empowerment:</strong> Students should basically attend classes, participate in
+                            practical, and be successful in all our screening exercises.</p>
                     </div>
                 </div>
             </div>

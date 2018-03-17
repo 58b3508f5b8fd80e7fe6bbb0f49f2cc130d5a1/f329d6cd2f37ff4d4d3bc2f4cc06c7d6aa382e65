@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'email'        => 'info@tlskills.com',
+    'email'        => 'info@touchinglivesskills.xyz',
     'phone'        => '+2349069911327, +2348035929609',
     'designer'     => 'GreenWhiteDev',
     'designer_url' => 'http://greenwhitedev.com',
@@ -34,12 +34,12 @@ return [
     'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
 
     'tlsavings_url'       => env('TLSAVINGS_URL', 'http://tlsavings.xyz'),
-    'tlsavings_id1'       => env('TLSAVINGS_ID1', 1),
+    'tlsavings_id1'       => env('TLSAVINGS_ID1', 3),
     'tlsavings_secret1'   => env('TLSAVINGS_SECRET1',
-        'N1309l8ZTJX5p40yS4fosKOWnJDbe9O7a6NYJjgc'),
-    'tlsavings_id2'       => env('TLSAVINGS_ID2', 2),
+        'w4ru1W6eHz66lSVvY4cmrFK9wB4RMc8TjxBPDk82'),
+    'tlsavings_id2'       => env('TLSAVINGS_ID2', 4),
     'tlsavings_secret2'   => env('TLSAVINGS_SECRET2',
-        'ZzTNeRAotSJu8vFogABrlkCSM5WM7w0CaPFEZ4tj'),
+        'mA9GbQ0yN3UiKf0T2l5ouJgyuWUd8InBxHybmfkg'),
     'tlsavings_redirect' => env('TLSAVINGS_REDIRECT',
         'http://touchinglivesskills.xyz/join/confirm'),
     /*

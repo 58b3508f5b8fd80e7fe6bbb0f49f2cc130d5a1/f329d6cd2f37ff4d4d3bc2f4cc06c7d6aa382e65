@@ -62,8 +62,8 @@
                                         <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
                                             <div class="form-material">
                                                 <label for="amount">Amount</label>
-                                                <input id="amount" type="number" class="form-control" name="amount"
-                                                       value="{{ session('amount') }}" required placeholder="amount"
+                                                <input id="amount" type="text" class="form-control" name="amount"
+                                                       value="PNM 0.182" required placeholder="amount"
                                                        readonly>
 
                                                 @if ($errors->has('amount'))

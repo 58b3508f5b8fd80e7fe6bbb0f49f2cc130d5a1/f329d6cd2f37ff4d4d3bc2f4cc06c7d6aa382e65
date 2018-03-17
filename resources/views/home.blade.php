@@ -300,7 +300,7 @@
                             <h6 class="text-muted">Director of Health</h6>
                             <p>The Managing Director Cheryl Health care and Maternity.
                                 Having a track record of over 35years of no loss or casualty of patients during child
-                                birth or treatment in the clinic.</p>
+                                birth or treatment in her clinic.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-10">
@@ -316,9 +316,9 @@
 
                 </div>
                 <div style="display: table;">
-                    <div class="col-md-4 col-sm-10">
+                    <div class="col-md-3 col-sm-10">
                         <div class="single-team">
-                            <h4>Fracis Bassey Etim</h4>
+                            <h4>Etim Peter Bassey</h4>
                             <h6 class="text-muted">Director of Skills and Development</h6>
                             <p>An electronic specialist. The manager and head of technical operations ALAWNY GLOBAL
                                 TECHNOLOGIES (A.K.A. solar solutions centre). Designs and constructs solar panels and
@@ -326,51 +326,32 @@
                                 networking, car repairs and maintenance</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-10">
+                    <div class="col-md-3 col-sm-10">
                         <div class="single-team">
                             <h4>Rowland Obot</h4>
                             <h6 class="text-muted">Director of Investment</h6>
                             <p>The managing Director of Solutions Park Integrated Services Ltd.
-                                Skills: An Petroleum Engineer.</p>
+                                Skills: A Petroleum Engineer.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-10">
+                    <div class="col-md-3 col-sm-10">
                         <div class="single-team">
                             <h4>Richard Cornelius Banigo</h4>
                             <h6 class="text-muted">Director Special Duties</h6>
-                            <p>A cosmetologist, make up artist and Designer.
-                                The Managing Director of Eddyz Ltd.</p>
+                            <p>A Decorator, Paint Producer and Designer.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-10">
+                        <div class="single-team">
+                            <h4>Francis Bassey Etim</h4>
+                            <h6 class="text-muted"></h6>
+                            <p>A business consultant and Chief Executive/Managing director of Equidius Technologies
+                                Limited. He is a cryptocurrency expert with a wealth of knowledge in cryptocurrencies
+                                exchange, trading, mining, set up and operation of cryptocurrencies masternodes.</p>
                         </div>
                     </div>
                 </div>
-                <!-- / END SINGLE TEAM DESIGN AREA -->
-                <!-- START SINGLE TEAM DESIGN AREA -->
-            {{--<div class="col-md-4 col-sm-10">
-                <div class="single-team">
-                    <img src="{{asset($public.'/jpg/01.jpg')}}" alt="">
-                    <h4>Arfan hridoy</h4>
-                    <h6 class="text-muted">Developer</h6>
-                </div>
-            </div>
-            <!-- / END SINGLE TEAM DESIGN AREA -->
-            <!-- START SINGLE TEAM DESIGN AREA -->
-            <div class="col-md-4 col-sm-10">
-                <div class="single-team">
-                    <img src="{{asset($public.'/jpg/02.jpg')}}" alt="">
-                    <h4>Tarin rahman</h4>
-                    <h6 class="text-muted">Project manager</h6>
-                </div>
-            </div>
-            <!-- / END SINGLE TEAM DESIGN AREA -->
-            <!-- START SINGLE TEAM DESIGN AREA -->
-            <div class="col-md-4 col-sm-10">
-                <div class="single-team">
-                    <img src="{{asset($public.'/jpg/06.jpg')}}" alt="">
-                    <h4>maria sid</h4>
-                    <h6 class="text-muted">programmer</h6>
-                </div>
-            </div>--}}
-            <!-- / END SINGLE TEAM DESIGN AREA -->
+
             </div>
         </div>
     </section>
@@ -384,7 +365,7 @@
                     <div class="get-text text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                          data-wow-offset="0">
                         <h2>are you ready to get started?</h2>
-                        <p>We aim is to reach out to the poor population with skills and empowerment for development,
+                        <p>Our aim is to reach out to the poor population with skills and empowerment for development,
                             hence fulfilling the vision of the United nations development Program UNDP.</p>
                         <a href="{{url('join')}}" class="read-more">get started</a>
                     </div>

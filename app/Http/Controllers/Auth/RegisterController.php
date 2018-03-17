@@ -84,9 +84,6 @@ class RegisterController extends Controller
         $client = new Client;
 
         try {
-            if ($request->session()->has('user')) {
-                $request->session()->reflash();
-            }
             $pin = $request->input('pin', null);
             $response = $client->post(config('app.tlsavings_url').'/oauth/token',
                 [

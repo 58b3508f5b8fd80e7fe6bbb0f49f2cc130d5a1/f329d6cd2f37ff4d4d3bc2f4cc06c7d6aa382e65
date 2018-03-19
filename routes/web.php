@@ -45,13 +45,6 @@ Route::middleware(['checkMaintenance'])->group(function () {
     });
     Route::prefix('/join')->group(function () {
         Route::get('/', function (\Illuminate\Http\Request $request) {
-//            echo config('app.tlsavings_id1') . '<br>';
-//            echo config('app.tlsavings_id2') . '<br>';
-//            echo config('app.tlsavings_secret1') . '<br>';
-//            echo config('app.tlsavings_secret2') . '<br>';
-//            echo config('app.tlsavings_url') . '<br>';
-//            echo config('app.tlsavings_redirect') . '<br>';
-
             return view('auth.join');
         });
         Route::post('/', function (\Illuminate\Http\Request $request) {
@@ -87,6 +80,7 @@ Route::middleware(['checkMaintenance'])->group(function () {
                 'html' => $html
             ]);
         });
+        Route::post('/getlgas', 'Auth\RegisterController@getLGAs');
         Route::post('/authorize',
             'Auth\RegisterController@authorizeTransaction');
         Route::post('/register', 'Auth\RegisterController@register');

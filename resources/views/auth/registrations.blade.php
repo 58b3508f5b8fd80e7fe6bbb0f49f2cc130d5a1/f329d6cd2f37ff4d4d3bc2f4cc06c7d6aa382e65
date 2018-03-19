@@ -178,5 +178,12 @@
             });
             //'first_name': $("input[name=first_name]").val(),
         }
+
+        $("#state_origin").change(function () {
+            var data = {'state': $('#state_origin').val()};
+            $.post('/join/getlgas', data, function (result) {
+                $('#lga_origin').html(result.html);
+            });
+        });
     </script>
 @endsection

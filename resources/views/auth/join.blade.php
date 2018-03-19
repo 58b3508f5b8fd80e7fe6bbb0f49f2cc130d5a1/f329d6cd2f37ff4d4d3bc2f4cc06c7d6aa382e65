@@ -59,20 +59,20 @@
                             become
                             self employed. These Skills are:</p>
                         <ul class="list-group">
-                            <li class="list-group-item">"Accessories production (shoes, bags, beads, etc)</li>
-                            <li class="list-group-item">"Agricultural production (fish, poultry, pig, cash crops)</li>
-                            <li class="list-group-item">"Cosmetics production</li>
-                            <li class="list-group-item">"Fashion and design</li>
-                            <li class="list-group-item">"Furnitures and interiors</li>
-                            <li class="list-group-item">"Media and videos production</li>
-                            <li class="list-group-item">"Metal works</li>
-                            <li class="list-group-item">"Paint production</li>
-                            <li class="list-group-item">"Pastries production</li>
-                            <li class="list-group-item">"Paper production</li>
-                            <li class="list-group-item">"Programming</li>
-                            <li class="list-group-item">"Solar panel production</li>
-                            <li class="list-group-item">"Textile production</li>
-                            <li class="list-group-item">"Trade and marketing</li>
+                            <li class="list-group-item">Accessories production (shoes, bags, beads, etc)</li>
+                            <li class="list-group-item">Agricultural production (fish, poultry, pig, cash crops)</li>
+                            <li class="list-group-item">Cosmetics production</li>
+                            <li class="list-group-item">Fashion and design</li>
+                            <li class="list-group-item">Furnitures and interiors</li>
+                            <li class="list-group-item">Media and videos production</li>
+                            <li class="list-group-item">Metal works</li>
+                            <li class="list-group-item">Paint production</li>
+                            <li class="list-group-item">Pastries production</li>
+                            <li class="list-group-item">Paper production</li>
+                            <li class="list-group-item">Programming</li>
+                            <li class="list-group-item">Solar panel production</li>
+                            <li class="list-group-item">Textile production</li>
+                            <li class="list-group-item">Trade and marketing</li>
                         </ul>
 
                         <p>Registration fee is PNM 0.182 (&#8358;1500) for each skill you wish to enroll in. This will be

@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Touching Lives Skills'),
+    'name'        => env('APP_NAME', 'Touching Lives Skills'),
+    'description' => 'Touching Lives skills is a Project of Touching Lives international in Collaboration with the Government of Developing Geographical Areas. Its aim and objectives is to reach out to the poor population with skills and empowerment for development, that way fulfilling the visions of the United nations development Program UNDP',
 
     /*
     |--------------------------------------------------------------------------
@@ -33,12 +34,12 @@ return [
     'maintenance'  => env('APP_MAINTENANCE', false),
     'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
 
-    'tlsavings_url'       => env('TLSAVINGS_URL', 'http://tlsavings.xyz'),
-    'tlsavings_id1'       => env('TLSAVINGS_ID1', 3),
-    'tlsavings_secret1'   => env('TLSAVINGS_SECRET1',
+    'tlsavings_url'      => env('TLSAVINGS_URL', 'http://tlsavings.xyz'),
+    'tlsavings_id1'      => env('TLSAVINGS_ID1', 3),
+    'tlsavings_secret1'  => env('TLSAVINGS_SECRET1',
         'w4ru1W6eHz66lSVvY4cmrFK9wB4RMc8TjxBPDk82'),
-    'tlsavings_id2'       => env('TLSAVINGS_ID2', 4),
-    'tlsavings_secret2'   => env('TLSAVINGS_SECRET2',
+    'tlsavings_id2'      => env('TLSAVINGS_ID2', 4),
+    'tlsavings_secret2'  => env('TLSAVINGS_SECRET2',
         'mA9GbQ0yN3UiKf0T2l5ouJgyuWUd8InBxHybmfkg'),
     'tlsavings_redirect' => env('TLSAVINGS_REDIRECT',
         'http://touchinglivesskills.xyz/join/confirm'),

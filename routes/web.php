@@ -15,8 +15,41 @@ Auth::routes();
 
 Route::middleware(['checkMaintenance'])->group(function () {
     Auth::routes();
+    Route::middleware(['auth', 'isAdmin', 'isVerified'])->group(function () {
+        Route::namespace('Admin')->group(function () {
+            Route::prefix('/admin')->group(function () {
+                Route::get('/', 'AdminController@index');
+                Route::post('/settings/password',
+                    'AdminController@changePassword');
+                Route::middleware(['adminLevel'])
+                    ->group(function () {
+                        //
+
+                        Route::middleware(['seniorAdminLevel'])
+                            ->group(function () {
+                                //
+
+                                Route::middleware(['superAdminLevel'])
+                                    ->group(function () {
+                                        //
+                                        Route::get('/view/admin',
+                                            'AdminController@viewAdmins');
+                                        Route::get('/create/admin',
+                                            'AdminController@viewCreateAdmin');
+                                        Route::post('/create/admin',
+                                            'AdminController@addAdmin');
+                                    });
+
+                            });
+                    });
+            });
+        });
+    });
     Route::get('/', function () {
         return view('home');
+    });
+    Route::get('/register', function () {
+        return redirect('/join');
     });
     //Route::post('/subscribe', 'GuestController@subscribe');
     Route::post('/contact', function (\Illuminate\Http\Request $request) {
@@ -59,8 +92,8 @@ Route::middleware(['checkMaintenance'])->group(function () {
             return redirect(config('app.tlsavings_url') . '/oauth/authorize?'
                 . $query);
         });
-        Route::get('/charge', 'Auth\RegisterController@charge');
-        Route::get('/confirm', 'Auth\RegisterController@confirm');
+        Route::get('/charge', 'JoinController@charge');
+        Route::get('/confirm', 'JoinController@confirm');
         Route::get('/authorize', function (\Illuminate\Http\Request $request) {
             if ($request->session()->has('user')) {
                 $request->session()->reflash();
@@ -80,10 +113,10 @@ Route::middleware(['checkMaintenance'])->group(function () {
                 'html' => $html
             ]);
         });
-        Route::post('/getlgas', 'Auth\RegisterController@getLGAs');
+        Route::post('/getlgas', 'JoinController@getLGAs');
         Route::post('/authorize',
-            'Auth\RegisterController@authorizeTransaction');
-        Route::post('/register', 'Auth\RegisterController@register');
+            'JoinController@authorizeTransaction');
+        Route::post('/register', 'JoinController@register');
         Route::get('/registrations',
             function (\Illuminate\Http\Request $request) {
                 if ($request->session()->has('user')) {
@@ -108,7 +141,6 @@ Route::middleware(['checkMaintenance'])->group(function () {
 
             return redirect(config('app.tlsavings_url') . '/oauth/authorize?'
                 . $query);
-
         });
     });
 });

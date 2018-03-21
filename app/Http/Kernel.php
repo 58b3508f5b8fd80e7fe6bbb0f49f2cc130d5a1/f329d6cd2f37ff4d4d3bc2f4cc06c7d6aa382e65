@@ -2,7 +2,13 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AdminLevel;
 use App\Http\Middleware\CheckMaintenance;
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsUser;
+use App\Http\Middleware\IsVerified;
+use App\Http\Middleware\SeniorAdminLevel;
+use App\Http\Middleware\SuperAdminLevel;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Laravel\Passport\Http\Middleware\CreateFreshApiToken;
 
@@ -59,6 +65,12 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'checkMaintenance' => CheckMaintenance::class
+        'checkMaintenance' => CheckMaintenance::class,
+        'isUser'     => IsUser::class,
+        'isAdmin'    => IsAdmin::class,
+        'isVerified' => IsVerified::class,
+        'adminLevel'=> AdminLevel::class,
+        'seniorAdminLevel'=>SeniorAdminLevel::class,
+        'superAdminLevel'=>SuperAdminLevel::class,
     ];
 }

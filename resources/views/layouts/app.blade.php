@@ -12,10 +12,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PAGE TITLE -->
     <title>@yield('title', 'Home') | {{ config('app.name', 'Touching Lives Skills') }}</title>
+    <meta name="description"
+          content="{{config('description')}}">
+    <meta name="author" content="{{config('app.name')}}">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="@yield('title')">
+    <meta property="og:site_name" content="{{config('app.description')}}">
+    <meta property="og:description"
+          content="{{config('app.description')}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{{asset($public.'/css/bootstrap.min.css')}}">
     <!-- ALL GOOGLE FONTS -->
@@ -139,7 +149,10 @@
         </div>
     </div>
 </header>
-@yield('content')
+<section style="padding-top: 12px;">
+    @yield('content')
+</section>
+
 <!-- START FOOTER TOP DESIGN AREA -->
 <section class="footer-top-area section-padding">
     <div class="container">

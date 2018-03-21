@@ -48,9 +48,11 @@ $states = [
 @endphp
 <div class="col-sm-12 pricing-box">
     <div class="col-sm-12 col-md-12">
-        <form class="form-horizontal" method="POST" action="{{url('/join/register')}}">
-            {{csrf_field()}}
-            <input {{$readonly}} type="hidden" name="reg_id" value="{{$registration->reg_id}}">
+        <form class="form-horizontal" @if($registration->status == 'pending') method="POST" action="{{url('/join/register')}}" @endif>
+            @if($registration->status == 'pending')
+                {{csrf_field()}}
+            <input readonly type="hidden" name="reg_id" value="{{$registration->reg_id}}">
+            @endif
             <div class="col-md-12">
                 <div class="form-group col-md-4">
                     <label for="first">First name</label>
@@ -269,11 +271,13 @@ $states = [
                     </div>
                 @else
                     <div class="form-group col-md-4">
+                        <label for="programme">Programme</label>
                         <input id="programme" class="form-control" name="programme"
                                value="{{$registration->programme or old('programme')}}" required="" placeholder=""
                                {{$readonly}} type="text">
                     </div>
                     <div class="form-group col-md-4">
+                        <label for="centre">Centre</label>
                         <input id="centre" class="form-control" name="centre"
                                value="{{$registration->centre or old('centre')}}"
                                required="" placeholder=""

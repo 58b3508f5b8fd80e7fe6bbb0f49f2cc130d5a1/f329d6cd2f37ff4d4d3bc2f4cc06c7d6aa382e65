@@ -83,6 +83,9 @@
                                     <li><a href="https://facebook.com/projectproduceabakinitiative/"><i
                                                     class="fa fa-facebook"></i></a>
                                     </li>
+                                    <li><a href="https://instagram.com/touchinglivesskills/"><i
+                                                    class="fa fa-instagram"></i></a>
+                                    </li>
                                     {{--     <li><a href="#"><i class="fa fa-twitter"></i></a>
                                          </li>
                                          <li><a href="#"><i class="fa fa-dribbble"></i></a>
@@ -94,6 +97,16 @@
                             <li>
                                 <a href="{{url('/join')}}" class="btn btn-sm btn-primary">Join</a>
                             </li>
+                            @auth
+                                <li>
+                                    <a href="{{url('/admin')}}" class="btn btn-sm btn-primary">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a class="btn btn-sm btn-primary" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                       title="Logout"><i class="fa fa-sign-out"></i> Logout</a>
+                                </li>
+                            @endauth
                         </ul>
                     </div>
                 </div>
@@ -216,6 +229,9 @@
                                     <li><a href="https://facebook.com/projectproduceabakinitiative/"><i
                                                     class="fa fa-facebook"></i></a>
                                     </li>
+                                    <li><a href="https://instagram.com/touchinglivesskills/"><i
+                                                    class="fa fa-instagram"></i></a>
+                                    </li>
                                     {{--<li><a href="#"><i class="fa fa-twitter"></i></a>
                                     </li>
                                     <li><a href="#"><i class="fa fa-dribbble"></i></a>
@@ -292,6 +308,9 @@
 <script src="{{asset($public.'/js/scripts.js')}}"></script>
 @yield('scripts')
 
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>
 </body>
 
 

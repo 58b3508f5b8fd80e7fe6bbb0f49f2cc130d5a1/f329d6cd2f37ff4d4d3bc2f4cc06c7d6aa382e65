@@ -6,6 +6,10 @@
 @extends('layouts.app')
 @section('styles')
     <style>
+        .form-group{
+            float: left;
+            margin-left: 0 !important;
+        }
         .single-team p {
             font-size: 12px;
             line-height: 12px;
@@ -446,8 +450,8 @@
                 <div class="filters col-md-12">
                     <ul id="filters">
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".commissioning">Commissioning</li>
-                        <li data-filter=".inauguration">Inauguration</li>
+                        <li data-filter=".commissioning">Opening Day</li>
+                        <li data-filter=".inauguration">Graduation</li>
                         <li data-filter=".interview">Interview</li>
                         {{--<li data-filter=".typography">Typography</li>
                         <li data-filter=".web">Web Design</li>--}}
@@ -499,7 +503,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Graduation</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>
@@ -515,7 +519,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Graduation</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>
@@ -531,7 +535,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Graduation</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>
@@ -547,7 +551,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Graduation</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>
@@ -563,7 +567,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Graduation</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>
@@ -579,7 +583,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Graduation</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>
@@ -595,7 +599,7 @@
                             </a>
                         </div>
                         <div class="description">
-                            <h2>Opening day</h2>
+                            <h2>Interview</h2>
                             <p>Staff photos</p>
                         </div>
                     </div>

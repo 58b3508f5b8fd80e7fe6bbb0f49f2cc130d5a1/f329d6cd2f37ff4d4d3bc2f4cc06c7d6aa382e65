@@ -366,14 +366,18 @@
                         <i class="fa fa-navicon"></i>
                     </button>
                 @endif
-{{--
-                <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout"
-                        data-action="header_search_on">
-                    <i class="fa fa-search"></i>
-                </button>
---}}
+                {{--
+                                <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout"
+                                        data-action="header_search_on">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                --}}
             </div>
             <div class="content-header-section">
+                <a class="btn btn-rounded btn-dual-secondary" data-toggle="layout"  href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        data-action="side_overlay_toggle"><i class="fa fa-sign-out ml-5"></i> Logout
+                </a>
                 <button type="button" class="btn btn-rounded btn-dual-secondary" data-toggle="layout"
                         data-action="side_overlay_toggle">
                     {{substr(Auth::user()->first_name,0,1).'. '.Auth::user()->last_name}}<i

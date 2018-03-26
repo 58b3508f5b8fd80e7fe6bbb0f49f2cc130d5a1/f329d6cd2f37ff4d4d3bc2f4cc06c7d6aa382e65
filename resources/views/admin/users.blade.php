@@ -24,20 +24,17 @@
             <div class="block-content">
                 @if(isset($users) && sizeof($users)>0)
                     <div class="table-responsive">
-                        <table class="table table-striped table-vcenter">
+                        <table id = "general-table" class="table table-striped table-vcenter">
                             <thead>
                             <tr>
                                 <th
                                 >S/No.
                                 </th>
                                 <th>Name</th>
-                                <th>@if($action=='registered' || $action=='unregistered')Wallet Address @else
-                                        Username @endif</th>
-                                <th>@if($action=='registered' || $action=='unregistered')Private Key @else Wallet
-                                    ID @endif</th>
-                                <th>@if($type=='admin') Level @else Account No. @endif</th>
+                                <th>Username</th>
+                                <th>Level</th>
                                 <th>Status</th>
-                                @if(Auth::user()->access_level>=3)
+                                @if(Auth::user()->access_level>=4)
                                     <th class="text-center">Actions</th>
                                 @endif
                             </tr>
@@ -60,23 +57,8 @@
                                     <td>{{$i}}</td>
                                     <td class="font-w600">{{$user->first_name." ".$user->last_name}}
                                     </td>
-                                    @if($action=='registered' || $action=='unregistered')
-                                        <td>
-                                            <a href="javascript:void(0)">{{$user->wallet_address}}</a>
-                                        </td>
-                                        <td>
-                                            <a href="javascript:void(0)" class="js-tooltip-enabled" data-toggle="tooltip"
-                                               data-original-title="Click me to Copy" title="Click me to copy"
-                                               onclick="copyToClipboard('#wallet{{$i}}')"><span id="wallet{{$i}}">{{$user->private_key}}</span></a>
-                                        </td>
-                                    @else
-                                        <td><a href="javascript:void(0)">{{$user->name}}</a></td>
-                                        <td><a href="javascript:void(0)" class="js-tooltip-enabled" data-toggle="tooltip"
-                                               data-original-title="Click me to Copy" title="Click me to copy"
-                                               onclick="copyToClipboard('#wallet{{$i}}')"><span id="wallet{{$i}}">{{$user->wallet_id}}</span>   </a>
-                                        </td>
-                                    @endif
-                                    <td>@if($type=='admin') {{ $user->access_level }} @else {{$user->account_number}} @endif</td>
+                                    <td><a href="javascript:void(0)">{{$user->name}}</a></td>
+                                    <td> {{ $user->access_level }} </td>
                                     <td>
                                         <span class="badge {{$badge}}">{{$user->status}}</span>
                                     </td>

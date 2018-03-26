@@ -28,16 +28,37 @@ Route::middleware(['checkMaintenance'])->group(function () {
                         Route::middleware(['seniorAdminLevel'])
                             ->group(function () {
                                 //
+                                // drg >> route for centres
+                                Route::get('/view/centre',
+                                    'AdminController@viewCentres');
 
                                 Route::middleware(['superAdminLevel'])
                                     ->group(function () {
-                                        //
-                                        Route::get('/view/admin',
-                                            'AdminController@viewAdmins');
-                                        Route::get('/create/admin',
-                                            'AdminController@viewCreateAdmin');
-                                        Route::post('/create/admin',
-                                            'AdminController@addAdmin');
+
+                                        // drg >> route for users
+                                        Route::get('/view/user',
+                                            'AdminController@viewUsers');
+                                        Route::get('/create/user',
+                                            'AdminController@viewCreateUser');
+                                        Route::post('/create/user',
+                                            'AdminController@addUser');
+
+                                        // drg >> route for centres
+                                        Route::get('/centre/view',
+                                            'AdminController@viewCentres');
+                                        Route::get('/centre/create',
+                                            'AdminController@viewAddCentre');
+                                        Route::post('/centre/create',
+                                            'AdminController@addCentre');
+
+                                        // drg >> route for assign centre
+                                        Route::get('/centre/assign',
+                                            'AdminController@viewAssignCentre');
+                                        Route::post('centre/assign',
+                                            'AdminController@assignCentre');
+
+                                        Route::post('/centre/verify',
+                                            'AdminController@verifyCentre');
                                     });
 
                             });

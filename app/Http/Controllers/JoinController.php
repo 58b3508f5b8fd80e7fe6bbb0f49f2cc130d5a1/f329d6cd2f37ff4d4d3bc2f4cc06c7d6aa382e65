@@ -71,6 +71,7 @@ class JoinController extends Controller
 
             $request->session()->flash('user', $details->user);
             $request->session()->flash('amount', $details->amount);
+            $request->session()->flash('pnm', $details->pnm);
 
             if ($details->status) {
                 $registration = new Registration;
@@ -100,8 +101,6 @@ class JoinController extends Controller
     function confirm(Request $request)
     {
         $client = new Client;
-
-        //var_dump($request);
 
         try {
             if ($request->session()->has('reg_action')) {
@@ -137,6 +136,7 @@ class JoinController extends Controller
 
                 $request->session()->flash('user', $details->user);
                 $request->session()->flash('amount', $details->amount);
+                $request->session()->flash('pnm', $details->pnm);
 
                 switch ($action) {
                     case 'begin':

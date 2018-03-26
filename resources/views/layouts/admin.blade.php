@@ -18,6 +18,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>@yield('title', 'Home') | {{ config('app.name', 'Touching Lives Skills') }}</title>
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="description"
           content="{{config('description')}}">
     <meta name="author" content="{{config('app.name')}}">
@@ -35,6 +36,7 @@
     <link rel="apple-touch-icon" sizes="180x180"
           href="{{asset($public.'/backendDashboard/png/apple-touch-icon-180x180.png')}}">
     <link rel="stylesheet" id="css-main" href="{{asset($public.'/backendDashboard/css/codebase.min.css')}}">
+    <link rel="stylesheet" id="css-main" href="{{asset($public.'/css/datatables.min.css')}}">
     @yield('style')
 </head>
 <body>
@@ -443,6 +445,12 @@
     </footer>
 </div>
 <script src="{{asset($public.'/backendDashboard/js/codebase.min-1.4.js')}}"></script>
+<script src="{{asset($public.'/js/datatables.min.js')}}"></script>
+<script>
+    $(document).ready( function () {
+        $('#general-table').DataTable();
+    } );
+</script>
 <script>
     jQuery(function () {
         Codebase.helpers('table-tools');

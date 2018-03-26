@@ -1,5 +1,5 @@
 <div class="block-content">
-    <table class="js-table-sections table table-hover">
+    <table id="general-table" class="js-table-sections table table-hover">
         <thead>
         <tr>
             <th style="width: 30px;"></th>

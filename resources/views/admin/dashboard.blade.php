@@ -9,10 +9,20 @@
 @endsection
 @section('content')
     <div class="content">
-
-        @includeWhen(Auth::user()->access_level==2,'admin.partials.centreStudents')
-        @includeWhen(Auth::user()->access_level==3,'admin.partials.stateStudents')
-        @includeWhen(Auth::user()->access_level>=4,'admin.partials.allStudents')
+        @if(isset($students) && sizeof($students)>0)
+            @includeWhen(Auth::user()->access_level==2,'admin.partials.centreStudents')
+            @includeWhen(Auth::user()->access_level==3,'admin.partials.stateStudents')
+            @includeWhen(Auth::user()->access_level>=4,'admin.partials.allStudents')
+        @else
+            <div class="col-sm-12 col-lg-12">
+                <div class="block">
+                    <div class="alert alert-warning">
+                        <h2>No data to display</h2>
+                        <p>Sorry, but there are no users to display from the database.</p>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
     <div id="studentModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">

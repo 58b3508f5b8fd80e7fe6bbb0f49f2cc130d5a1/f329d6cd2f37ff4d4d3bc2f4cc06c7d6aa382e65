@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Centre;
 use App\Registration;
 use App\User;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
 
 class AdminController extends Controller
 {
@@ -25,7 +27,7 @@ class AdminController extends Controller
         return view('admin.dashboard', $data);
     }
 
-    public function addAdmin(Request $request)
+    public function addUser(Request $request)
     {
         $details = $request->all();
         $admin = false;
@@ -34,16 +36,16 @@ class AdminController extends Controller
 
         if (Auth::user()->access_level <= $level + 1) {
             $admin = User::create([
-                'first_name'     => $details['first_name'],
-                'last_name'      => $details['last_name'],
-                'wallet_id'      => md5($details['email'] . date('YmdHis')),
-                'name'           => $details['name'],
-                'email'          => $details['email'],
-                'password'       => bcrypt(md5($details['email'])),
-                'private_key'    => md5($details['email']),
-                'type'           => 'admin',
-                'status'         => 'active',
-                'access_level'   => "$level",
+                'first_name'   => $details['first_name'],
+                'last_name'    => $details['last_name'],
+                'wallet_id'    => md5($details['email'] . date('YmdHis')),
+                'name'         => $details['name'],
+                'email'        => $details['email'],
+                'password'     => bcrypt(md5($details['email'])),
+                'private_key'  => md5($details['email']),
+                'type'         => 'admin',
+                'status'       => 'active',
+                'access_level' => "$level",
             ]);
         }
 
@@ -102,7 +104,7 @@ class AdminController extends Controller
         }
     }
 
-    public function validateAdmin(array $data)
+    public function validateUsers(array $data)
     {
         return Validator::make($data, [
             'name'  => 'required|string|unique:users|max:255',
@@ -111,7 +113,58 @@ class AdminController extends Controller
         ]);
     }
 
-    public function viewAdmins()
+    public function verifyCentre(Request $request)
+    {
+        $id = $request->input('id');
+        $action = $request->input('action');
+        $for = $request->input('for');
+        $centre = Centre::find($id - 1107);
+        $message = '';
+
+        switch ($action) {
+            case('activate'):
+                $centre->status = 'active';
+                $message = 'Admin has been activated successully';
+                break;
+            case('deactivate'):
+                $centre->status = 'inactive';
+                $message = 'The admin has been deactivated';
+                break;
+        }
+
+        if ($centre->save()) {
+            $data['action'] = 'centres';
+            $data['centres'] = Centre::orderBy('zone', 'asc')
+                ->orderBy('centre', 'asc')->orderBy('coordinator', 'asc')
+                ->orderBy('status', 'asc')->get();
+
+            $html = View::make('admin.partials.centres', $data);
+            $html = $html->render();
+
+            return response()->json([
+                'status'  => 'success',
+                'message' => $message,
+                'html'    => $html
+            ]);
+        }
+
+
+        return response()->json([
+            'status'  => 'failed',
+            'message' => 'Sorry, an error occurred.'
+        ]);
+    }
+
+    public function viewCentres()
+    {
+        $data['action'] = 'centres';
+        $data['centres'] = Centre::orderBy('zone', 'asc')
+            ->orderBy('centre', 'asc')->orderBy('coordinator', 'asc')
+            ->orderBy('status', 'asc')->get();
+        return view('admin.centres', $data);
+    }
+
+    public function viewUsers()
     {
         $data['action'] = 'admin';
         $data['type'] = 'admin';

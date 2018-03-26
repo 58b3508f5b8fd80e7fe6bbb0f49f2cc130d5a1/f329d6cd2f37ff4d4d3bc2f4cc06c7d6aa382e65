@@ -51,33 +51,36 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="{{url('/admin')}}"><i class="si si-cup"></i><span
+                    <a class="" href="{{url('/admin')}}"><i class="si si-cup"></i><span
                                 class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-cup"></i><span
-                                class="sidebar-mini-hide">Admin</span></a>
+                                class="sidebar-mini-hide">Users</span></a>
                     <ul>
                         <li>
-                            <a href="{{url('/admin/view/admin')}}">View</a>
+                            <a href="{{url('/admin/user/view')}}">View</a>
                         </li>
                         <li>
-                            <a href="{{url('/admin/create/admin')}}">Create</a>
+                            <a href="{{url('/admin/user/create')}}">Create</a>
                         </li>
                     </ul>
                 </li>
-                {{--<li>
+                <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-cup"></i><span
                                 class="sidebar-mini-hide">Centres</span></a>
                     <ul>
                         <li>
-                            <a href="{{url('/admin/view/centre')}}">View</a>
+                            <a href="{{url('/admin/centre/view')}}">View</a>
+                        </li>
+{{--                        <li>
+                            <a href="{{url('/admin/centre/create')}}">Create</a>
                         </li>
                         <li>
-                            <a href="{{url('/admin/create/centre')}}">Create</a>
-                        </li>
+                            <a href="{{url('/admin/centre/assign')}}">Assign Centre</a>
+                        </li>--}}
                     </ul>
-                </li>--}}
+                </li>
             </ul>
         </div>
     </div>

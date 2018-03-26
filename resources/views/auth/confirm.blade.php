@@ -51,7 +51,7 @@
                                     <h2>Confirm transaction</h2>
                                 </div>
                                 <p>Welcome {{session('user')->first_name.' '.session('user')->last_name}}. You will
-                                    be charged #{{session('amount')}}, and we need you to confirm this transaction.</p>
+                                    be charged &#8358;{{session('amount')}} (PNM {{session('amount')/session('pnm')}}), and we need you to confirm this transaction.</p>
                             </div>
                         </div>
                         <div class="row">
@@ -63,7 +63,7 @@
                                             <div class="form-material">
                                                 <label for="amount">Amount</label>
                                                 <input id="amount" type="text" class="form-control" name="amount"
-                                                       value="PNM 0.182" required placeholder="amount"
+                                                       value="PNM {{session('amount')/session('pnm')}}" required placeholder="amount"
                                                        readonly>
 
                                                 @if ($errors->has('amount'))

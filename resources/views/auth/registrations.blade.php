@@ -116,6 +116,12 @@
             background-color: #f5d5d3
         }
 
+        #general-table_wrapper{
+            font-size: 14px;
+        }
+        #general-table_wrapper .form-control{
+            font-size: 12px;
+        }
     </style>
 @endsection
 @section('content')

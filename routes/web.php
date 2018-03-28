@@ -36,11 +36,11 @@ Route::middleware(['checkMaintenance'])->group(function () {
                                     ->group(function () {
 
                                         // drg >> route for users
-                                        Route::get('/view/user',
+                                        Route::get('/user/view',
                                             'AdminController@viewUsers');
-                                        Route::get('/create/user',
+                                        Route::get('/user/create',
                                             'AdminController@viewCreateUser');
-                                        Route::post('/create/user',
+                                        Route::post('/user/create',
                                             'AdminController@addUser');
 
                                         // drg >> route for centres
@@ -50,10 +50,49 @@ Route::middleware(['checkMaintenance'])->group(function () {
                                             'AdminController@viewAddCentre');
                                         Route::post('/centre/create',
                                             'AdminController@addCentre');
+                                        Route::post('/centre/viewCentre',
+                                            function (
+                                                \Illuminate\Http\Request $request
+                                            ) {
+                                            $id = (int)$request->input('id',null) - 9407;
+                                                return \App\Centre::where('id', $id)
+                                                    ->first();
+                                            });
 
                                         // drg >> route for assign centre
                                         Route::get('/centre/assign',
                                             'AdminController@viewAssignCentre');
+                                        Route::get('/centre/coordinator',
+                                            function (
+                                                \Illuminate\Http\Request $request
+                                            ) {
+                                                $user = $request->input('q',
+                                                    null);
+                                                return \App\User::where('type',
+                                                    'admin')
+                                                    ->where('status', 'active')
+                                                    ->where(function ($query
+                                                    ) use ($user) {
+                                                        $query->where('first_name',
+                                                            'like', "%$user%")
+                                                            ->orWhere('last_name',
+                                                                'like',
+                                                                "%$user%")
+                                                            ->orWhere('email',
+                                                                'like',
+                                                                "%$user%")
+                                                            ->orWhere('access_level',
+                                                                'like',
+                                                                "%$user%")
+                                                            ->orWhere('name',
+                                                                'like',
+                                                                "%$user%");
+                                                    })
+                                                    ->select('first_name',
+                                                        'last_name', 'name',
+                                                        'access_level')
+                                                    ->get();
+                                            });
                                         Route::post('centre/assign',
                                             'AdminController@assignCentre');
 

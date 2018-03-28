@@ -419,15 +419,17 @@
         <div class="bg-image bg-image-bottom" style="background-image: url('jpg/photo34%402x.jpg');">
             <div class="bg-primary-dark-op">
                 <div class="content content-top text-center overflow-hidden">
-                    <div class="pt-50 pb-20">
+                    <div class="pt-50 pb-20 ">
                         <h1 class="font-w700 text-white mb-10 invisible" data-toggle="appear"
                             data-class="animated fadeInUp">@yield('title')</h1>
+                        <div id ="_"></div>
                         <h2 class="h4 font-w400 text-white-op invisible" data-toggle="appear"
                             data-class="animated fadeInUp">View your @yield('title') here!</h2>
                     </div>
                 </div>
             </div>
         </div>
+
         @yield('content')
     </main>
     <footer id="page-footer" class="opacity-0">

@@ -73,12 +73,12 @@
                         <li>
                             <a href="{{url('/admin/centre/view')}}">View</a>
                         </li>
-{{--                        <li>
+                        <li>
                             <a href="{{url('/admin/centre/create')}}">Create</a>
                         </li>
                         <li>
                             <a href="{{url('/admin/centre/assign')}}">Assign Centre</a>
-                        </li>--}}
+                        </li>
                     </ul>
                 </li>
             </ul>

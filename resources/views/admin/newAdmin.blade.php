@@ -19,11 +19,11 @@
             </h3>
         </div>
         <div class="block-content">
-            @if(isset($data['message']))
+            @if(null != session('message'))
                 <div class="col-sm-12 col-lg-12">
                     <div class="block">
-                        <div class="alert alert-{{$data['alert']}}">
-                            <h2>{{$data['message']}}</h2>
+                        <div class="alert alert-{{session('data')['alert']}}">
+                            <h2>{{session('message')}}</h2>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="row justify-content-center px-5">
                 <div class="col-sm-8 col-md-6 col-xl-4">
-                    <form class="js-validation-signup" action="{{url('/admin/create/admin')}}"
+                    <form class="js-validation-signup" action="{{url('/admin/user/create')}}"
                           method="post">
                         {{csrf_field()}}
                         <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}  row">
@@ -100,7 +100,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group{{ $errors->has('level') ? ' is-invalid' : '' }}  row">
                             <label class="col-12">Access Level</label>
                             <div class="col-12">
                                 @if(Auth::user()->access_level>=4)
@@ -140,8 +140,8 @@
 @endsection
 @section('scripts')
     <script>
-        @if(isset($data['message']))
-        alert('{{$data['message']}}');
+        @if(null != session('message'))
+        alert('{{session('message')}}');
         @endif
     </script>
 @endsection

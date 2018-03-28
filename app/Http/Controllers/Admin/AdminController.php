@@ -27,14 +27,46 @@ class AdminController extends Controller
         return view('admin.dashboard', $data);
     }
 
+    public function addCentre(Request $request)
+    {
+        $details = $request->all();
+        $centre = false;
+        $this->validateCentre($details)->validate();
+
+        if (Auth::user()->access_level >= 4) {
+            $centre = Centre::create([
+                'zone'        => $details['zone'],
+                'centre'      => $details['centre'],
+                'coordinator' => $details['coordinator'],
+                'status'      => $details['status'],
+            ]);
+        }
+
+        if ($centre) {
+            $data['alert'] = 'success';
+            $request->session()
+                ->flash('message', 'New Centre was created successfully');
+
+        } else {
+            $data['alert'] = 'danger';
+            $request->session()
+                ->flash('message', 'There was an error in creating the centre');
+
+        }
+        $data['action'] = 'new centre';
+
+        return redirect('/admin/centre/view')->with('data', $data);
+
+    }
+
     public function addUser(Request $request)
     {
         $details = $request->all();
         $admin = false;
-        $this->validateAdmin($details)->validate();
+        $this->validateUsers($details)->validate();
         $level = $details['level'] % 17;
 
-        if (Auth::user()->access_level <= $level + 1) {
+        if (Auth::user()->access_level >= $level + 1) {
             $admin = User::create([
                 'first_name'   => $details['first_name'],
                 'last_name'    => $details['last_name'],
@@ -51,20 +83,21 @@ class AdminController extends Controller
 
         if ($admin) {
             $data['alert'] = 'success';
-            $data['message'] = "New Admin was created successfully";
+            $request->session()
+                ->flash('message', 'New Admin was created successfully');
 
         } else {
             $data['alert'] = 'danger';
-            $data['message'] = "There was an error in creating the admin";
+            $request->session()
+                ->flash('message', 'There was an error in creating the admin');
 
         }
         $data['action'] = 'new admin';
 
-        return redirect('admin/create/admin')->with('data', $data);
+        return redirect('admin/user/create')->with('data', $data);
 
         // return view('admin.newAdmin', $data);
     }
-
 
     public function getAllStudents($request)
     {
@@ -102,6 +135,16 @@ class AdminController extends Controller
                 ->add('current', 'Your current password is incorrect');
             return redirect('/admin')->withErrors($validator);
         }
+    }
+
+    public function validateCentre(array $data)
+    {
+        return Validator::make($data, [
+            'zone'        => 'required|string|max:255',
+            'centre'      => 'required|string|max:255',
+            'coordinator' => 'required|string|max:255',
+            'status'      => 'required|string|in:active,inactive',
+        ]);
     }
 
     public function validateUsers(array $data)
@@ -158,9 +201,12 @@ class AdminController extends Controller
     public function viewCentres()
     {
         $data['action'] = 'centres';
-        $data['centres'] = Centre::orderBy('zone', 'asc')
-            ->orderBy('centre', 'asc')->orderBy('coordinator', 'asc')
-            ->orderBy('status', 'asc')->get();
+        $data['centres'] = Centre::leftJoin('users', 'users.name', '=',
+            'centres.coordinator')->orderBy('centres.zone', 'asc')
+            ->orderBy('centres.centre', 'asc')->orderBy('centres.coordinator', 'asc')
+            ->orderBy('centres.status', 'asc')->select('centres.*','users.first_name',
+                'users.last_name', 'users.name',
+                'users.access_level')->get();
         return view('admin.centres', $data);
     }
 
@@ -173,7 +219,7 @@ class AdminController extends Controller
         return view('admin.users', $data);
     }
 
-    public function viewCreateAdmin()
+    public function viewCreateUser()
     {
         $data['action'] = 'new admin';
         return view('admin.newAdmin', $data);

@@ -84,7 +84,7 @@ $states = [
                 <div class="form-group col-md-4">
                     <label for="dob">Date of birth</label>
                     <input id="dob" class="form-control" name="dob" value="{{$registration->dob or old('dob')}}"
-                           required="" placeholder="" {{$readonly}} type="date">
+                           required="" placeholder="YYYY-MM-DD" {{$readonly}} type="date">
                 </div>
             </div>
             <div class="col-md-12">
@@ -139,8 +139,7 @@ $states = [
                     @else--}}
                         <input id="lga_origin" class="form-control" name="lga_origin"
                                value="{{$registration->lga_origin or old('lga_origin')}}" required=""
-                               placeholder=""
-                               {{$readonly}} type="text">
+                               placeholder="" {{$readonly}} type="text">
                     {{--@endif--}}
                 </div>
                 <div class="form-group col-md-6">

@@ -172,7 +172,6 @@ class JoinController extends Controller
 
     public function register(Request $request)
     {
-        echo "wow";
         try {
             $details = $request->all();
 

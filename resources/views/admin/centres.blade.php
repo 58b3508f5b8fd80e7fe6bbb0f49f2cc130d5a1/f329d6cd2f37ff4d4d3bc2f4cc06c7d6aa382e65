@@ -52,7 +52,6 @@
         </div>
         <div id="centres" class="block block-bordered">
             @include('admin.partials.centres')
-            <input id="modid" style="display: none;">
         </div>
     </div>
     <div aria-hidden="true" style="display: none;" class="modal modal-dialog-top modal-dialog-popout" id="centre-modal"
@@ -70,89 +69,7 @@
                         </div>
                     </div>
                     <div class="block-content" id="mcentre">
-                        <div class="col-sm-12 col-md-10" style="float: none;margin: auto;">
-                            <form class="js-validation-signup" action="{{url('/admin/centre/create')}}"
-                                  method="post">
-                                {{csrf_field()}}
-                                <input value="" name="mid" style="display: none;">
-                                <div class="form-group col-md-6{{ $errors->has('zone') ? ' is-invalid' : '' }}  row">
-                                    <div class="col-12">
-                                        <div class="form-material floating">
-                                            <input class="form-control" id="mzone" name="zone" type="text"
-                                                   value="" required>
-                                            <label for="zone">Zone</label>
-                                        </div>
-                                        @if ($errors->has('zone'))
-                                            <span class="invalid-feedback">
-                                                {{ $errors->first('zone') }}
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6{{ $errors->has('centre') ? ' is-invalid' : '' }}  row">
-                                    <div class="col-12">
-                                        <div class="form-material floating">
-                                            <input class="form-control" id="mcentre" name="centre" type="text"
-                                                   value=""
-                                                   required>
-                                            <label for="mcentre">Centre</label>
-                                        </div>
-                                        @if ($errors->has('centre'))
-                                            <span class="invalid-feedback">
-                                                {{ $errors->first('centre') }}
-                                            </span>
-                                        @endif
-                                    </div>
 
-                                </div>
-                                <div class="form-group col-md-6{{ $errors->has('coordinator') ? ' is-invalid' : '' }} row">
-                                    <div class="col-12">
-                                        <div class="form-material">
-                                            <input id="mcoord" name="coordinator" style="display: none;"
-                                                   value="{{old('coordinator')}}" required>
-                                            <input class="form-control" id="mcoordinator" type="text"
-                                                   value="" required>
-                                            <label for="coordinator">Coordinator</label>
-                                        </div>
-                                        @if ($errors->has('coordinator'))
-                                            <span class="invalid-feedback">
-                                                {{ $errors->first('coordinator') }}
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="form-group{{ $errors->has('status') ? ' is-invalid' : '' }} col-md-6 row">
-                                    <label class="col-12">Status</label>
-                                    <div class="col-12">
-                                        <label class="css-control css-control-primary css-radio text-success"
-                                               style="font-weight: bold;">
-                                            <input id="mactive" class="css-control-input" name="status" type="radio"
-                                                   value="active">
-                                            <span class="css-control-indicator"></span> Active
-                                        </label>
-                                        <label class="css-control css-control-primary css-radio text-danger"
-                                               style="font-weight: bold;">
-                                            <input id="minactive" class="css-control-input" name="status" type="radio"
-                                                   value="inactive">
-                                            <span class="css-control-indicator"></span> Inactive
-                                        </label>
-                                    </div>
-                                    @if ($errors->has('status'))
-                                        <span class="invalid-feedback">
-                                            {{ $errors->first('status') }}
-                                        </span>
-                                    @endif
-                                </div>
-                                <div class="form-group col-md-12 row gutters-tiny">
-                                    <div class="col-12 mb-10 pr-20 text-right">
-                                        <button type="submit"
-                                                class="btn btn-hero btn-noborder btn-rounded btn-alt-success">
-                                            <i class="si si-user-follow mr-10"></i> Create Centre
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -214,92 +131,90 @@
 
         $("#coordinator").easyAutocomplete(options);
 
-        var options = {
-            url: function (phrase) {
-                return "/admin/centre/coordinator?q=" + phrase;
-            },
-
-            getValue: function (element) {
-                return element.first_name + ' ' + element.last_name +
-                    ' (' + element.name + ') L-' + element.access_level;
-            },
-
-            ajaxSettings: {
-                dataType: "json",
-                method: "GET",
-                data: {
-                    dataType: "json",
-                }
-            },
-
-            preparePostData: function (data) {
-                data.phrase = $("#coordinator").val();
-                return data;
-            },
-
-            list: {
-                onChooseEvent: function () {
-                    var selectedItemValue = $("#mcoordinator").getSelectedItemData().name;
-                    $("#coord").val(selectedItemValue).trigger("change");
-                },
-                onSelectItemEvent: function () {
-                    var selectedItemValue = $("#mcoordinator").getSelectedItemData().name;
-                    $("#mcoord").val(selectedItemValue).trigger("change");
-                }
-            },
-
-            requestDelay: 300,
-
-            theme: "round"
-        };
-
-        $("#mcoordinator").easyAutocomplete(options);
 
         $('#centre-modal').on('shown.bs.modal', function () {
             var data = {
-                'id': $('#modid').val()
+                'id': $('#modid').text()
             };
-            $.post('/admin/centre/viewCentre', data, function (result) {
-                alert(result.zone);
-                $('#mid').val(result.id);
-                $('#mzone').val(result.zone);
-                $('#mcentre').val(result.centre);
-                $('#mcoord').val(result.coordinator);
-                $('#mcoordinator').val(result.coordinator);
-                if (result.status == 'active') {
-                    $('#mactive').attr('checked', '');
-                } else if (result.status == 'inactive') {
-                    $('#minactive').attr('checked', '');
-                }
-                $('#centre-modal').modal('show');
-            }).fail(function () {
-                alert('Sorry, an error occurred');
-            });
+
+            var options = {
+                url: function (phrase) {
+                    return "/admin/centre/coordinator?q=" + phrase;
+                },
+
+                getValue: function (element) {
+                    return element.first_name + ' ' + element.last_name +
+                        ' (' + element.name + ') L-' + element.access_level;
+                },
+
+                ajaxSettings: {
+                    dataType: "json",
+                    method: "GET",
+                    data: {
+                        dataType: "json",
+                    }
+                },
+
+                preparePostData: function (data) {
+                    data.phrase = $("#mcoordinator").val();
+                    return data;
+                },
+
+                list: {
+                    onChooseEvent: function () {
+                        var selectedItemValue = $("#mcoordinator").getSelectedItemData().name;
+                        $("#mcoord").val(selectedItemValue).trigger("change");
+                    },
+                    onSelectItemEvent: function () {
+                        var selectedItemValue = $("#mcoordinator").getSelectedItemData().name;
+                        $("#mcoord").val(selectedItemValue).trigger("change");
+                    }
+                },
+
+                requestDelay: 300,
+
+                theme: "round"
+            };
+
+            $("#mcoordinator").easyAutocomplete(options);
+
         });
 
-        function viewEditCentre(id, type) {
-            $('#centre-modal').modal('show');
-            $('#modid').val(id)
+        function editCentre() {
 
-            /*var data = {
+            var data = {
+                'id': $('#mid').val(),
+                'zone': $('#mzone').val(),
+                'centre' :$('#mycentre').val(),
+            };
+
+            $.post('/admin/centre/update', data, function (result) {
+                $('#centre-modal').modal('hide');
+                alert(result.message);
+
+                $('#centres').fadeOut(300);
+                $('#centres').html(result.html);
+                $('#general-table').DataTable();
+                $('#centres').fadeIn(300);
+            }).fail(function () {
+                $('#centre-modal').modal('hide');
+                alert('Sorry, an error occurred');
+            });
+        }
+
+        function viewEditCentre(id, type) {
+
+            var data = {
                 'id': id
             };
             $.post('/admin/centre/viewCentre', data, function (result) {
-                alert(result.zone);
-                $('#mid').val(result.id);
-                $('#mzone').val(result.zone);
-                $('#mcentre').val(result.centre);
-                $('#mcoord').val(result.coordinator);
-                $('#mcoordinator').val(result.coordinator);
-                if(result.status=='active') {
-                    $('#mactive').attr('checked', '');
-                }else if(result.status=='inactive') {
-                    $('#minactive').attr('checked', '');
-                }
-                $('#centre-modal').modal('show');
+
+                $('#mcentre').html(result.html);
             }).fail(function () {
                 alert('Sorry, an error occurred');
-            });*/
+            });
+
+            $('#centre-modal').modal('show');
         }
 
         function verifyCentre(id, action, element) {
@@ -323,4 +238,5 @@
         }
 
     </script>
+
 @endsection

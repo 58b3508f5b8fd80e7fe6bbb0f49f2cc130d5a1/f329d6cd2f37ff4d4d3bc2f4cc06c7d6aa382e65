@@ -50,13 +50,28 @@ Route::middleware(['checkMaintenance'])->group(function () {
                                             'AdminController@viewAddCentre');
                                         Route::post('/centre/create',
                                             'AdminController@addCentre');
+                                        Route::post('/centre/update',
+                                            'AdminController@updateCentre');
                                         Route::post('/centre/viewCentre',
                                             function (
                                                 \Illuminate\Http\Request $request
                                             ) {
-                                            $id = (int)$request->input('id',null) - 9407;
-                                                return \App\Centre::where('id', $id)
+
+                                                $id = (int)$request->input('id',
+                                                        null) - 9407;
+                                                $data['centre']
+                                                    = \App\Centre::where('id',
+                                                    $id)
                                                     ->first();
+                                                $html
+                                                    = \Illuminate\Support\Facades\View::make('admin.partials.createCentre',
+                                                    $data);
+                                                $html = $html->render();
+
+                                                return response()->json([
+
+                                                    'html' => $html
+                                                ]);
                                             });
 
                                         // drg >> route for assign centre

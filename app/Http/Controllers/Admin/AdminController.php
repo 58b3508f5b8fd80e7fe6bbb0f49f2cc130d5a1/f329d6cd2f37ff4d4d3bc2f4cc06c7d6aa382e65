@@ -137,6 +137,36 @@ class AdminController extends Controller
         }
     }
 
+    public function updateCentre(Request $request){
+        $id = $request->input('id');
+        $centre = Centre::find($id - 1107);
+
+        $centre->zone = $request->input('zone');
+        $centre->centre = $request->input('centre');
+
+        if ($centre->save()) {
+            $message = "Centre was edited successfully";
+            $data['action'] = 'centres';
+            $data['centres'] = Centre::orderBy('zone', 'asc')
+                ->orderBy('centre', 'asc')->orderBy('coordinator', 'asc')
+                ->orderBy('status', 'asc')->get();
+
+            $html = View::make('admin.partials.centres', $data);
+            $html = $html->render();
+
+            return response()->json([
+                'status'  => 'success',
+                'message' => $message,
+                'html'    => $html
+            ]);
+        } else {
+            $message = "There was an error in editing the centre";
+            return response()->json([
+                'status'  => 'failed',
+                'message' => $message
+            ]);
+        }
+    }
     public function validateCentre(array $data)
     {
         return Validator::make($data, [

@@ -71,13 +71,7 @@
                                 class="sidebar-mini-hide">Centres</span></a>
                     <ul>
                         <li>
-                            <a href="{{url('/admin/centre/view')}}">View</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/admin/centre/create')}}">Create</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/admin/centre/assign')}}">Assign Centre</a>
+                            <a href="{{url('/admin/centre/manage')}}">Manage</a>
                         </li>
                     </ul>
                 </li>

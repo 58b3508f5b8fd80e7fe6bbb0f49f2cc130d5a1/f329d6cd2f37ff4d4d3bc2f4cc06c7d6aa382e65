@@ -44,7 +44,7 @@ Route::middleware(['checkMaintenance'])->group(function () {
                                             'AdminController@addUser');
 
                                         // drg >> route for centres
-                                        Route::get('/centre/view',
+                                        Route::get('/centre/manage',
                                             'AdminController@viewCentres');
                                         Route::get('/centre/create',
                                             'AdminController@viewAddCentre');

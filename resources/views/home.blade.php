@@ -55,7 +55,7 @@
                                             <div class="header-text">
                                                 <div class="col-md-10 col-md-offset-1">
                                                     <h3>Our Mission</h3>
-                                                    <h2>To raise businesses and establish good living.</h2>
+                                                    <h2>To advance the nascency of men and women who will come into their dignity and pride to fulfill love’s dream.</h2>
                                                     <a class="slide-btn smoth-scroll" href="#about">learn more</a>
                                                 </div>
                                             </div>
@@ -74,7 +74,7 @@
                                             <div class="header-text">
                                                 <div class="col-md-10 col-md-offset-1">
                                                     <h3>Our Vision</h3>
-                                                    <h2>To raise a global productive business society.</h2>
+                                                    <h2>To give lives eminence and build a peaceful and prosperous world with love.</h2>
                                                     <a class="slide-btn smoth-scroll" href="#about">learn more</a>
                                                 </div>
                                             </div>
@@ -92,8 +92,8 @@
                                         <div class="row">
                                             <div class="header-text">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <h3>What we are.</h3>
-                                                    <h2>We are a non-profit, non-govermental organization.</h2>
+                                                    <h3>Our Purpose</h3>
+                                                    <h2>To bring them into their dignity and pride.</h2>
                                                     <a class="slide-btn smoth-scroll" href="#about">learn more</a>
                                                 </div>
                                             </div>
@@ -248,7 +248,7 @@
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/ceo.jpg')}}" alt="">
                             <h4>Gospel Christian</h4>
-                            <h6 class="text-muted">CEO/Founder</h6>
+                            <h6 class="text-muted">Chief Executive Officer</h6>
                             <p>A preacher and Pastor of a Believers Loveworld Inc Church branch AKA
                                 Christ Embassy. A motivational speaker who has pioneered over 30 successful projects and
                                 humanitarian services. The Managing Director of Gr8 Coins

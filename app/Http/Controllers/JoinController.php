@@ -156,6 +156,7 @@ class JoinController extends Controller
         (BadResponseException $e) {
             echo "Unable to retrieve access token. " . $e->getMessage();
         }
+        return redirect('/');
     }
 
     public function join(Request $request)
@@ -178,16 +179,12 @@ class JoinController extends Controller
             //$this->validateUser($details)->validate();
             $details['updated_at'] = now();
             $details['status'] = 'registered';
-            echo "<br>";
-            var_dump($details);
+
             $centre = explode('-', $details['centre']);
-            echo "<br>";
-            var_dump($centre);
+
             $details['zone'] = $centre[0] ?: null;
             $details['centre'] = $centre[1] ?: null;
-            echo "<br>";
-            var_dump($details);
-            array_splice($details, 0, 1);
+
             $register = Registration::where('reg_id', $request->reg_id)
                 ->update($details);
             if ($register) {
@@ -206,7 +203,7 @@ class JoinController extends Controller
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
-        //return redirect('/');
+        return redirect('/');
     }
 
     public function getLGAs(Request $request)

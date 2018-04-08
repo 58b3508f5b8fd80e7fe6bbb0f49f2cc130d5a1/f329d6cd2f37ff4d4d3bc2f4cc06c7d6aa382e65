@@ -196,7 +196,7 @@ class JoinController extends Controller
                 ->update($details);
             if ($register) {
                 try {
-/*                    $response = $client->request('post',
+                    $response = $client->request('post',
                         'https://www.bulksmsnigeria.com/api/v1/sms/create', [
                             'query' => [
                                 'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
@@ -207,8 +207,7 @@ class JoinController extends Controller
                         ]);
                     $response->getBody();
                     Mail::to($details['email'])
-                        ->send(new \App\Mail\RegistrationConfirmation($request->reg_id ));;*/
-                    $a = 1;
+                        ->send(new \App\Mail\RegistrationConfirmation($request->reg_id ));
                 } catch (\Exception $e) {
 
                 }

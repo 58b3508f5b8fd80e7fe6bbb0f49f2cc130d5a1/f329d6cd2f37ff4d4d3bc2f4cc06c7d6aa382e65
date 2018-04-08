@@ -180,6 +180,8 @@ Route::middleware(['checkMaintenance'])->group(function () {
             $request->session()->reflash();
             $data['registration'] = \App\Registration::where('reg_id',
                 $request->input('reg_id', ''))->first();
+            $data['centres'] = \App\Centre::orderBy('zone', 'asc')
+                ->orderBy('centre', 'desc')->get();
             $html
                 = \Illuminate\Support\Facades\View::make('auth.partials.register',
                 $data);
@@ -195,7 +197,7 @@ Route::middleware(['checkMaintenance'])->group(function () {
         Route::get('/registrations',
             function (\Illuminate\Http\Request $request) {
                 if ($request->session()->has('user')) {
-                    $request->session()->keep(['user']);
+                    $request->session()->reflash();
                     $data['registrations']
                         = \App\Registration::where('wallet_id',
                         session('user')->wallet_id)
@@ -226,3 +228,35 @@ Route::get('/maintenance', function () {
         return redirect('/');
     }
 });
+Route::get('sendmail', function () {
+    return new \App\Mail\RegistrationConfirmation(1);
+    \Illuminate\Support\Facades\Mail::to('nduovictor@gmail.com')
+        ->send(new \App\Mail\RegistrationConfirmation(1));
+
+    /*$client = new \GuzzleHttp\Client();
+    $query = http_build_query([
+        'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
+        'from'      => 'TL Skills',
+        'to'        => '07038606396',
+        'body'      => 'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.'
+    ]);
+    $url = 'https://www.bulksmsnigeria.com/api/v1/sms/create?' . $query;
+
+//    return redirect('https://www.bulksmsnigeria.com/api/v1/sms/create?'.$query);
+    try {
+        $response = $client->request('post',
+            'https://www.bulksmsnigeria.com/api/v1/sms/create', [
+                'query' => [
+                    'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
+                    'from'      => 'TLskIL',
+                    'to'        => '07038606396',
+                    'body'      => 'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.'
+                ]
+            ]);
+
+             $response->getBody();
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }*/
+});
+

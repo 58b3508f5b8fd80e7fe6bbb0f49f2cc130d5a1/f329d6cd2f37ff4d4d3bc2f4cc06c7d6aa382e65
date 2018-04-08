@@ -48,10 +48,11 @@ $states = [
 @endphp
 <div class="col-sm-12 pricing-box">
     <div class="col-sm-12 col-md-12">
-        <form class="form-horizontal" @if($registration->status == 'pending') method="POST" action="{{url('/join/register')}}" @endif>
+        <form class="form-horizontal" @if($registration->status == 'pending') method="POST"
+              action="{{url('/join/register')}}" @endif enctype="multipart/form-data">
             @if($registration->status == 'pending')
                 {{csrf_field()}}
-            <input readonly type="hidden" name="reg_id" value="{{$registration->reg_id}}">
+                <input readonly type="hidden" name="reg_id" value="{{$registration->reg_id}}">
             @endif
             <div class="col-md-12">
                 <div class="form-group col-md-4">
@@ -74,33 +75,70 @@ $states = [
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-12">
                     <label for="address">Permanent address</label>
                     <input id="" class="form-control" name="address"
                            value="{{$registration->address or old('address')}}"
                            required=""
                            placeholder="Enter your permanent address" {{$readonly}} type="text">
                 </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-5">
+                    <label for="marital_status">Marital status</label>
+                    <div>
+                        <label style="font-weight:normal;">
+                            <input {{$readonly}} class="css-control-input" name="marital_status" type="radio"
+                                   value="single" id="single"
+                                   @if($registration->marital_status=='single') checked @endif >
+                            <span class="css-control-indicator"></span> Single
+                        </label>
+                        <label style="font-weight:normal;">
+                            <input {{$readonly}} class="css-control-input" name="marital_status" type="radio"
+                                   value="married" id="married"
+                                   @if($registration->marital_status=='married') checked @endif>
+                            <span class="css-control-indicator"></span> Married
+                        </label>
+                        <label style="font-weight:normal;">
+                            <input {{$readonly}} class="css-control-input" name="marital_status" type="radio"
+                                   value="divorced" id="divorced"
+                                   @if($registration->marital_status=='divorced') checked @endif>
+                            <span class="css-control-indicator"></span> Divorced
+                        </label>
+                    </div>
+                </div>
                 <div class="form-group col-md-4">
+                    <label for="gender">Gender</label>
+                    <div>
+                        <label style="font-weight:normal;">
+                            <input {{$readonly}} class="css-control-input" name="gender" type="radio"
+                                   value="male" id="male"
+                                   @if($registration->gender=='male') checked @endif >
+                            <span class="css-control-indicator"></span> Male
+                        </label>
+                        <label style="font-weight:normal;">
+                            <input {{$readonly}} class="css-control-input" name="gender" type="radio"
+                                   value="female" id="female"
+                                   @if($registration->gender=='female') checked @endif >
+                            <span class="css-control-indicator"></span> Female
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
                     <label for="dob">Date of birth</label>
-                    <input id="dob" class="form-control" name="dob" value="{{$registration->dob or old('dob')}}"
+                    <input id="dob" class="form-control" name="dob"
+                           value="{{date('Y-m-d',strtotime($registration->dob))}}"
                            required="" placeholder="YYYY-MM-DD" {{$readonly}} type="date">
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="form-group col-md-4">
-                    <label for="marital_status">Marital status</label>
-                    <input id="marital_status" class="form-control" name="marital_status"
-                           value="{{$registration->marital_status or old('marital_status')}}" required=""
-                           placeholder="" {{$readonly}} type="text">
+                <div class="form-group col-md-7">
+                    <label for="phone_no">Email address</label>
+                    <input id="phone_no" class="form-control" name="email"
+                           value="{{$registration->email or old('email')}}" required=""
+                           placeholder="Email address" {{$readonly}} type="email">
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="gender">Gender</label>
-                    <input id="gender" class="form-control" name="gender"
-                           value="{{$registration->gender or old('gender')}}" required="" placeholder=""
-                           {{$readonly}} type="text">
-                </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-5">
                     <label for="phone_no">Phone Number</label>
                     <input id="phone_no" class="form-control" name="phone_no"
                            value="{{$registration->phone_no or old('phone_no')}}" required=""
@@ -108,12 +146,12 @@ $states = [
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="nationality">Nationality</label>
                     <input id="nationality" class="form-control" name="nationality" value="Nigerian" readonly
                            required="" placeholder="" {{$readonly}} type="text">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="state_origin">State of Origin</label>
                     @if($registration->status == 'pending')
                         <select id="state_origin" class="form-control" name="state_origin">
@@ -128,22 +166,34 @@ $states = [
                                placeholder="" {{$readonly}} type="text">
                     @endif
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-group col-md-6">
-                    <label for="lga_origin">Local Government Area</label>
-                    {{--@if($registration->status == 'pending')
+
+                <div class="form-group col-md-4">
+                    <label for="lga_origin">L.G.A</label>
+                    @if($registration->status == 'pending')
                         <select class="form-control form-control-lg" id="lga_origin" name="lga_origin">
                             <option selected disabled>Select LGA</option>
                         </select>
-                    @else--}}
+                    @else
                         <input id="lga_origin" class="form-control" name="lga_origin"
                                value="{{$registration->lga_origin or old('lga_origin')}}" required=""
                                placeholder="" {{$readonly}} type="text">
-                    {{--@endif--}}
+                    @endif
                 </div>
-                <div class="form-group col-md-6">
-
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ward">Ward</label>
+                    <input id="ward" class="form-control" name="ward"
+                           value="{{$registration->ward or old('ward')}}" required="" placeholder=""
+                           {{$readonly}} type="text">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="clan">Clan</label>
+                    <input id="clan" class="form-control" name="clan"
+                           value="{{$registration->clan or old('clan')}}" required="" placeholder=""
+                           {{$readonly}} type="text">
+                </div>
+                <div class="form-group col-md-4">
                     <label for="village">Village</label>
                     <input id="village" class="form-control" name="village"
                            value="{{$registration->village or old('village')}}" required="" placeholder=""
@@ -152,9 +202,10 @@ $states = [
             </div>
             <div class="col-md-12">
                 @if($registration->status == 'pending')
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label for="programme">Programme</label>
                         <select id="programme" name="programme" class="form-control">
+                            <option selected disabled>Select Programme</option>
                             <option>Accessories production (shoes, bags, beads, etc)</option>
                             <option>Agricultural production (fish, poultry, pig, cash crops)</option>
                             <option>Cosmetics production</option>
@@ -172,121 +223,76 @@ $states = [
                         </select>
                     </div>
 
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label for="centre">Centre</label>
                         <select id="programme" name="centre" class="form-control">
-                            <optgroup label="Akwa Ibom state">
-                                <option value="Akwa Ibom state-Abak Center 1">Abak Center 1</option>
-                                <option value="Akwa Ibom state-Abak Center 2">Abak Center 2</option>
-                                <option value="Akwa Ibom state-Abak center 3">Abak center 3</option>
-                                <option value="Akwa Ibom state-Eket center 1">Eket center 1</option>
-                                <option value="Akwa Ibom state-Eket center 2">Eket center 2</option>
-                                <option value="Akwa Ibom state-Essien Udim center">Essien Udim center</option>
-                                <option value="Akwa Ibom state-Etinan center 1">Etinan center 1</option>
-                                <option value="Akwa Ibom state-Esit Eket">Esit Eket</option>
-                                <option value="Akwa Ibom state-Ibesikpo center 1">Ibesikpo center 1</option>
-                                <option value="Akwa Ibom state-Ibesikpo center 2">Ibesikpo center 2</option>
-                                <option value="Akwa Ibom state-Ibeno center">Ibeno center</option>
-                                <option value="Akwa Ibom state-Ibiono center">Ibiono center</option>
-                                <option value="Akwa Ibom state-Ika center">Ika center</option>
-                                <option value="Akwa Ibom state-Ikono center">Ikono center</option>
-                                <option value="Akwa Ibom state-Ikot Ekpene center">Ikot Ekpene center</option>
-                                <option value="Akwa Ibom state-Ikot Abasi center ">Ikot Abasi center</option>
-                                <option value="Akwa Ibom state-Ini center">Ini center</option>
-                                <option value="Akwa Ibom state-Itu center">Itu center</option>
-                                <option value="Akwa Ibom state-Nsit Atai center">Nsit Atai center</option>
-                                <option value="Akwa Ibom state-Nsit Ibom center">Nsit Ibom center</option>
-                                <option value="Akwa Ibom state-Nsit Ubium Center">Nsit Ubium Center</option>
-                                <option value="Akwa Ibom state-Obot Akara Centre">Obot Akara Centre</option>
-                                <option value="Akwa Ibom state-Onna center">Onna center</option>
-                                <option value="Akwa Ibom state-Oron center 1">Oron center 1</option>
-                                <option value="Akwa Ibom state-Oron center 2">Oron center 2</option>
-                                <option value="Akwa Ibom state-Oron center 3">Oron center 3</option>
-                                <option value="Akwa Ibom state-Oron center 4">Oron center 4</option>
-                                <option value="Akwa Ibom state-Oron center 5">Oron center 5</option>
-                                <option value="Akwa Ibom state-Oruk Anam center">Oruk Anam center</option>
-                                <option value="Akwa Ibom state-Uyo center 1(Abak Rd)">Uyo center 1(Abak Rd)</option>
-                                <option value="Akwa Ibom state-Uyo center 2(Nwaniba)">Uyo center 2(Nwaniba)</option>
-                                <option value="Akwa Ibom state-Uyo center 3(hospital Rd)">Uyo center 3(hospital Rd)
-                                </option>
-                                <option value="Akwa Ibom state-Uyo center 4(Anua Obio)">Uyo center 4(Anua Obio)</option>
-                                <option value="Akwa Ibom state-Uyo center 5(Ikot Okubo)">Uyo center 5(Ikot Okubo)
-                                </option>
-                                <option value="Akwa Ibom state-Uyo center 6(Ikot Akpanabia)">Uyo center 6(Ikot
-                                    Akpanabia)
-                                </option>
-                                <option value="Akwa Ibom state-Uruan center">Uruan center</option>
-                            </optgroup>
-                            <optgroup label="Rivers state">
-                                <option value="Rivers state-Phalga">Phalga</option>
-                                <option value="Rivers state-Obia Okpor">Obia Okpor</option>
-                                <option value="Rivers state-Rumuomasi">Rumuomasi</option>
-                                <option value="Rivers state-Elelenwo">Elelenwo</option>
-                                <option value="Rivers state-Igbo Etche">Igbo Etche</option>
-                                <option value="Rivers state-Abuloma">Abuloma</option>
-                                <option value="Rivers state-Kaa">Kaa</option>
-                                <option value="Rivers state-Gokana">Gokana</option>
-                                <option value="Rivers state-Khana 1">Khana 1</option>
-                                <option value="Rivers state-Khana 2">Khana 2</option>
-                                <option value="Rivers state-Okirika">Okirika</option>
-                                <option value="Rivers state-Boni">Boni</option>
-                            </optgroup>
-                            <optgroup label="Bayelsa state">
-                                <option value="Bayelsa state-Yenegua">Yenegua</option>
-                            </optgroup>
-                            <optgroup label="Delta state">
-                                <option value="Delta state-Warri 1">Warri 1</option>
-                                <option value="Delta state-Warri 2">Warri 2</option>
-                                <option value="Delta state-Warri 3">Warri 3</option>
-                                <option value="Delta state-Asaba 1">Asaba 1</option>
-                                <option value="Delta state-Asaba 2">Asaba 2</option>
-                            </optgroup>
-                            <optgroup label="Edo state">
-                                <option value="Edo state-Benin">Benin</option>
-                            </optgroup>
-                            <optgroup label="Abia state">
-                                <option value="Abia State-Aba">Aba</option>
-                                <option value="Abia State-Umuahia">Umuahia</option>
-                            </optgroup>
-                            <optgroup label="Imo state">
-                                <option value="Imo state-Owerri">Owerri</option>
-                            </optgroup>
-                            <optgroup label="Cross Rivers state">
-                                <option value="Cross Rivers state-Calabar 1">Calabar 1</option>
-                                <option value="Cross Rivers state-Calabar 2">Calabar 2</option>
-                                <option value="Cross Rivers state-Calabar 3">Calabar 3</option>
-                                <option value="Cross Rivers state-Calabar 4">Calabar 4</option>
-                                <option value="Cross Rivers state-Calabar 5">Calabar 5</option>
-                                <option value="Cross Rivers state-Obudu">Obudu</option>
-                                <option value="Cross Rivers state-Ikom center">Ikom center</option>
-                            </optgroup>
+                            <option selected disabled>Select Centre</option>
+                            @foreach($centres as $centre)
+                                @if ($loop->first)
+                                    @php $zone=$centre->zone;@endphp
+                                    <optgroup label="{{$centre->zone}}">
+                                        @endif
+                                        @if(!($zone==$centre->zone))
+                                            @php $zone=$centre->zone; @endphp
+                                            <optgroup label="{{$centre->zone}}">
+                                                @endif
+                                                <option value="{{$centre->zone ."-".$centre->centre}}">{{$centre->centre}}</option>
+                                                @if(!($zone==$centre->zone))
+                                            </optgroup>
+                                            @if ($loop->first)
+                                    </optgroup>
+                                @endif
+                                @endif
+                            @endforeach
                         </select>
                     </div>
-
-                    <div class="form-group col-md-4 text-center" style="padding-top:32px;">
-                        <button {{$readonly}} type="submit" class="btn btn-primary btn-lg">
-                            <i class="fa fa-sign-in"></i> Register
-                        </button>
-                    </div>
                 @else
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label for="programme">Programme</label>
                         <input id="programme" class="form-control" name="programme"
                                value="{{$registration->programme or old('programme')}}" required="" placeholder=""
                                {{$readonly}} type="text">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label for="centre">Centre</label>
                         <input id="centre" class="form-control" name="centre"
                                value="{{$registration->centre or old('centre')}}"
                                required="" placeholder=""
                                {{$readonly}} type="text">
                     </div>
-                    <div class="form-group col-md-4 text-center" style="padding-top:32px;">
-                        <button {{$readonly}} type="button" class="btn btn-danger btn-lg" data-dismiss="modal">
-                            <i class="fa fa-times"></i> Close
-                        </button>
+
+                @endif
+            </div>
+            <div class="col-md-12">
+                <div class="form-group{{ $errors->has('passport') ? ' is-invalid' : '' }} row col-lg-7 col-xs-12">
+                    <label for="#">Passport</label>
+                    <div class="form-group input-group">
+                        <label class="input-group-btn"> <span class="btn btn-primary">
+									Browse<input type="file" name="passport" accept=".png,.jpg,.gif,.jpeg"
+                                                 style="display: none;" id="passport" required>
+							</span>
+                        </label><input type="text" id="file-info" class="form-control"
+                                       readonly>
                     </div>
+                    @if ($errors->has('passport'))
+                        <span class="invalid-feedback">
+                                    {{ $errors->first('passport') }}
+                                </span>
+                    @endif
+                </div>
+                <div class="col-md-5 col-xs-12">
+                    <div id="passportImage"></div>
+                </div>
+            </div>
+            <div class="form-group col-md-12 text-center" style="padding-top:32px;">
+                @if($registration->status == 'pending')
+                    <button {{$readonly}} type="submit" class="btn btn-primary btn-lg">
+                        <i class="fa fa-sign-in"></i> Register
+                    </button>
+                @else
+                    <button {{$readonly}} type="button" class="btn btn-danger btn-lg" data-dismiss="modal">
+                        <i class="fa fa-times"></i> Close
+                    </button>
                 @endif
             </div>
         </form>

@@ -14,6 +14,7 @@ return [
     */
 
     'name'        => env('APP_NAME', 'Touching Lives Skills'),
+    'nameAbbr'        => 'TLSkills',
     'description' => 'Touching Lives skills is a Project of Touching Lives international in Collaboration with the Government of Developing Geographical Areas. Its aim and objectives is to reach out to the poor population with skills and empowerment for development, that way fulfilling the visions of the United nations development Program UNDP',
 
     /*

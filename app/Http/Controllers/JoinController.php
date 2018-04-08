@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationConfirmation;
 use App\Registration;
 use App\Setting;
 use App\User;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Controller;
 use GuzzleHttp\Exception\BadResponseException;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use GuzzleHttp\Exception\GuzzleException;
@@ -173,6 +175,7 @@ class JoinController extends Controller
 
     public function register(Request $request)
     {
+        $client = new Client;
         try {
             $details = $request->all();
 
@@ -184,10 +187,31 @@ class JoinController extends Controller
 
             $details['zone'] = $centre[0] ?: null;
             $details['centre'] = $centre[1] ?: null;
+            $utilityImage = $request->file('passport');
+            $details['passport']
+                = $utilityImage->store('tlskills/public/images/passports');
+            unset($details['_token']);
 
             $register = Registration::where('reg_id', $request->reg_id)
                 ->update($details);
             if ($register) {
+                try {
+/*                    $response = $client->request('post',
+                        'https://www.bulksmsnigeria.com/api/v1/sms/create', [
+                            'query' => [
+                                'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
+                                'from'      => config('app.nameAbbr'),
+                                'to'        => $details['phone_no'],
+                                'body'      => 'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.'
+                            ]
+                        ]);
+                    $response->getBody();
+                    Mail::to($details['email'])
+                        ->send(new \App\Mail\RegistrationConfirmation($request->reg_id ));;*/
+                    $a = 1;
+                } catch (\Exception $e) {
+
+                }
                 $data['alert'] = 'success';
                 $data['message'] = $details['first_name'] . " "
                     . $details['last_name']
@@ -203,11 +227,12 @@ class JoinController extends Controller
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
-        return redirect('/');
+
     }
 
-    public function getLGAs(Request $request)
-    {
+    public function getLGAs(
+        Request $request
+    ) {
         $state = $request->input('state');
         $lgas = $this->LGAs();
         $html = "<option selected disabled>Select LGA</option>";
@@ -221,7 +246,8 @@ class JoinController extends Controller
         ]);
     }
 
-    public function LGAs()
+    public
+    function LGAs()
     {
         $states = [
             ["Abia", "Aba North"],

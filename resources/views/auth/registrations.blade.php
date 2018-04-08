@@ -7,13 +7,15 @@
 @section('title', 'Registrations')
 @section('styles')
     <style>
-        label{
-            font-weight:600;
+        label {
+            font-weight: 600;
             font-size: 15px;
         }
-        .form-group{
+
+        .form-group {
             margin-left: 8px !important;
         }
+
         .form-control {
             display: block;
             width: 100%;
@@ -35,11 +37,12 @@
         input::-moz-placeholder {
             color: #999 !important;
         }
+
         .form-control:focus {
             border-color: #66afe9;
             outline: 0;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
         }
 
         #registrations {
@@ -116,10 +119,11 @@
             background-color: #f5d5d3
         }
 
-        #general-table_wrapper{
+        #general-table_wrapper {
             font-size: 14px;
         }
-        #general-table_wrapper .form-control{
+
+        #general-table_wrapper .form-control {
             font-size: 12px;
         }
     </style>
@@ -191,5 +195,60 @@
                 $('#lga_origin').html(result.html);
             });
         });
+
+        $('.modal').on('shown.bs.modal', function () {
+            $("#state_origin").change(function () {
+                var data = {'state': $('#state_origin').val()};
+                $.post('/join/getlgas', data, function (result) {
+                    $('#lga_origin').html(result.html);
+                });
+            });
+
+            function filePreview(input, id) {
+                $(id).html('');
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $(id).siblings('embed').remove();
+                        $(id).after('<embed src="' + e.target.result + '" style = "max-width: 100%; max-height: 20em;"/>');
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#passport").change(function () {
+                filePreview(this, '#passportImage');
+            });
+        });
+
+        $(function () {
+
+            // We can attach the `fileselect` event to all file inputs on the page
+            $(document).on('change', ':file', function () {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                //$('#file-info').val(label);
+                input.trigger('fileselect', [numFiles, label]);
+            });
+
+            // We can watch for our custom `fileselect` event like this
+            $(document).ready(function () {
+                $(':file').on('fileselect', function (event, numFiles, label) {
+
+                    var input = $(this).parents('.input-group').find(':text'),
+                        log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                    if (input.length) {
+                        input.val(log);
+                    } else {
+                        if (log) alert(log);
+                    }
+
+                });
+            });
+
+        });
+
     </script>
 @endsection

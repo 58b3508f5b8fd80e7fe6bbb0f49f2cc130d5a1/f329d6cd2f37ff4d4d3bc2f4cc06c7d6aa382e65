@@ -348,7 +348,7 @@
                     <div class="col-md-3 col-sm-10">
                         <div class="single-team">
                             <h4>Francis Bassey Etim</h4>
-                            <h6 class="text-muted"></h6>
+                            <h6 class="text-muted">Director Human Resource</h6>
                             <p>A business consultant and Chief Executive/Managing director of Equidius Technologies
                                 Limited. He is a cryptocurrency expert with a wealth of knowledge in cryptocurrencies
                                 exchange, trading, mining, set up and operation of cryptocurrencies masternodes.</p>

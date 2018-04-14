@@ -14,7 +14,7 @@ return [
     */
 
     'name'        => env('APP_NAME', 'Touching Lives Skills'),
-    'nameAbbr'        => 'TLSkills',
+    'nameAbbr'    => 'TLSkills',
     'description' => 'Touching Lives skills is a Project of Touching Lives international in Collaboration with the Government of Developing Geographical Areas. Its aim and objectives is to reach out to the poor population with skills and empowerment for development, that way fulfilling the visions of the United nations development Program UNDP',
 
     /*
@@ -31,7 +31,7 @@ return [
     'email'        => 'info@touchinglivesskills.xyz',
     'phone'        => '+2349069911327, +2348035929609',
     'designer'     => 'GreenWhiteDev',
-    'designer_url' => 'http://greenwhitedev.com',
+    'designer_url' => 'http://greenwhitedev.com.ng',
     'maintenance'  => env('APP_MAINTENANCE', false),
     'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
 

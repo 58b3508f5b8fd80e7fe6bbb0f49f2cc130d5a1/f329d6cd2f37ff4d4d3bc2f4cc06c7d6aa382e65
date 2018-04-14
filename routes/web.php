@@ -229,9 +229,9 @@ Route::get('/maintenance', function () {
     }
 });
 Route::get('sendmail', function () {
-    return new \App\Mail\RegistrationConfirmation(1);
+    /*return new \App\Mail\RegistrationConfirmation(1);
     \Illuminate\Support\Facades\Mail::to('nduovictor@gmail.com')
-        ->send(new \App\Mail\RegistrationConfirmation(1));
+        ->send(new \App\Mail\RegistrationConfirmation(1));*/
 
     /*$client = new \GuzzleHttp\Client();
     $query = http_build_query([

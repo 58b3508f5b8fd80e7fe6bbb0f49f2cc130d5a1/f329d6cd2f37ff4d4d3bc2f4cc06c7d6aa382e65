@@ -33,11 +33,11 @@ return [
     'email'        => 'info@touchinglivesskills.xyz',
     'phone'        => '+2349069911327, +2348035929609',
     'designer'     => 'GreenWhiteDev',
-    'designer_url' => 'http://greenwhitedev.com.ng',
+    'designer_url' => 'https://greenwhitedev.com.ng',
     'maintenance'  => env('APP_MAINTENANCE', false),
     'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
 
-    'tlsavings_url'      => env('TLSAVINGS_URL', 'http://tlsavings.xyz'),
+    'tlsavings_url'      => env('TLSAVINGS_URL', 'https://tlsavings.xyz'),
     'tlsavings_id1'      => env('TLSAVINGS_ID1', 3),
     'tlsavings_secret1'  => env('TLSAVINGS_SECRET1',
         'w4ru1W6eHz66lSVvY4cmrFK9wB4RMc8TjxBPDk82'),
@@ -45,7 +45,7 @@ return [
     'tlsavings_secret2'  => env('TLSAVINGS_SECRET2',
         'mA9GbQ0yN3UiKf0T2l5ouJgyuWUd8InBxHybmfkg'),
     'tlsavings_redirect' => env('TLSAVINGS_REDIRECT',
-        'http://touchinglivesskills.xyz/join/confirm'),
+        'https://touchinglivesskills.xyz/join/confirm'),
 
 
     /*
@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://touchinglivesskills.xyz'),
+    'url' => env('APP_URL', 'https://touchinglivesskills.xyz'),
 
     /*
     |--------------------------------------------------------------------------

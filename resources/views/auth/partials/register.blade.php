@@ -281,7 +281,10 @@ $states = [
                     @endif
                 </div>
                 <div class="col-md-5 col-xs-12">
-                    <div id="passportImage"></div>
+                    @php
+                        $passport = $registration->passport ?: old('passport');
+                    @endphp
+                    <div id="passportImage"><img src="{{Storage::url($passport)}}"></div>
                 </div>
             </div>
             <div class="form-group col-md-12 text-center" style="padding-top:32px;">

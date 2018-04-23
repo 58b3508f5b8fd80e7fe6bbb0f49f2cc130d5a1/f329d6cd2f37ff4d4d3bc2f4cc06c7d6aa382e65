@@ -16,6 +16,8 @@ return [
     'name'        => env('APP_NAME', 'Touching Lives Skills'),
     'nameAbbr'    => 'TLSkills',
     'description' => 'Touching Lives skills is a Project of Touching Lives international in Collaboration with the Government of Developing Geographical Areas. Its aim and objectives is to reach out to the poor population with skills and empowerment for development, that way fulfilling the visions of the United nations development Program UNDP',
+    'gw_url'=>env('GW_URL','http://www.greenwhitedev.com.ng'),
+    'gw_secret'=>env('GW_SECRET','$2y$10$H5mdrjrob6fR6AKZV1tS3O6/fIa09KiEN7t0LvSFKXWp8yA5Ehf72'),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,6 +46,8 @@ return [
         'mA9GbQ0yN3UiKf0T2l5ouJgyuWUd8InBxHybmfkg'),
     'tlsavings_redirect' => env('TLSAVINGS_REDIRECT',
         'http://touchinglivesskills.xyz/join/confirm'),
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

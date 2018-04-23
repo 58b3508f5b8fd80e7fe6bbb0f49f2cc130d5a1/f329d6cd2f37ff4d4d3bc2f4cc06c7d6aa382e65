@@ -27,7 +27,6 @@ Route::middleware(['checkMaintenance'])->group(function () {
 
                         Route::middleware(['seniorAdminLevel'])
                             ->group(function () {
-                                //
                                 // drg >> route for centres
                                 Route::get('/view/centre',
                                     'AdminController@viewCentres');

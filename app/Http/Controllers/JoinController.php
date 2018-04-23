@@ -59,7 +59,6 @@ class JoinController extends Controller
                 ]);
             // You'd typically save this payload in the session
             $auth = json_decode((string)$response->getBody());
-            $client = new Client;
 
             $response = $client->request('put',
                 config('app.tlsavings_url') . '/api/regcharge', [
@@ -196,18 +195,11 @@ class JoinController extends Controller
                 ->update($details);
             if ($register) {
                 try {
-                    $response = $client->request('post',
-                        'https://www.bulksmsnigeria.com/api/v1/sms/create', [
-                            'query' => [
-                                'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
-                                'from'      => config('app.nameAbbr'),
-                                'to'        => $details['phone_no'],
-                                'body'      => 'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.'
-                            ]
-                        ]);
-                    $response->getBody();
+                    $sms = new SendSMS();
+                    $response = $sms->sendSMS($details['phone_no'],
+                        'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.');
                     Mail::to($details['email'])
-                        ->send(new \App\Mail\RegistrationConfirmation($request->reg_id ));
+                        ->send(new \App\Mail\RegistrationConfirmation($request->reg_id));
                 } catch (\Exception $e) {
 
                 }

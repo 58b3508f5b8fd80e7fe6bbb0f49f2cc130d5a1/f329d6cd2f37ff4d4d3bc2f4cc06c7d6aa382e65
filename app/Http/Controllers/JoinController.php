@@ -176,6 +176,9 @@ class JoinController extends Controller
     {
         $client = new Client;
         try {
+            if ($request->session()->has('user')) {
+                $request->session()->reflash();
+            }
             $details = $request->all();
 
             //$this->validateUser($details)->validate();
@@ -221,9 +224,11 @@ class JoinController extends Controller
 
     }
 
-    public function getLGAs(
-        Request $request
-    ) {
+    public function getLGAs(Request $request)
+    {
+        if ($request->session()->has('user')) {
+            $request->session()->reflash();
+        }
         $state = $request->input('state');
         $lgas = $this->LGAs();
         $html = "<option selected disabled>Select LGA</option>";
@@ -237,8 +242,7 @@ class JoinController extends Controller
         ]);
     }
 
-    public
-    function LGAs()
+    public function LGAs()
     {
         $states = [
             ["Abia", "Aba North"],

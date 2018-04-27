@@ -16,12 +16,13 @@ return [
     'name'        => env('APP_NAME', 'Touching Lives Skills'),
     'nameAbbr'    => 'TLSkills',
     'description' => 'Touching Lives skills is a Project of Touching Lives international in Collaboration with the Government of Developing Geographical Areas. Its aim and objectives is to reach out to the poor population with skills and empowerment for development, that way fulfilling the visions of the United nations development Program UNDP',
-    'gw_url'=>env('GW_URL','http://www.greenwhitedev.com.ng'),
-    'gw_secret'=>env('GW_SECRET','$2y$10$H5mdrjrob6fR6AKZV1tS3O6/fIa09KiEN7t0LvSFKXWp8yA5Ehf72'),
+    'gw_url'      => env('GW_URL', 'https://greenwhitedev.com.ng'),
+    'gw_secret'   => env('GW_SECRET',
+        '$2y$10$H5mdrjrob6fR6AKZV1tS3O6/fIa09KiEN7t0LvSFKXWp8yA5Ehf72'),
 
     /*
     |--------------------------------------------------------------------------
-    | Application miscellaneous
+    | Application miscellaneous`
     |--------------------------------------------------------------------------
     |
     | This value is the email of your application. This value is used when the

@@ -166,61 +166,62 @@ class JoinController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
+        /*$this->guard()->login($user);
 
         return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+            ?: redirect($this->redirectPath());*/
     }
 
     public function register(Request $request)
     {
         $client = new Client;
-        try {
-            if ($request->session()->has('user')) {
-                $request->session()->reflash();
-            }
-            $details = $request->all();
 
-            //$this->validateUser($details)->validate();
-            $details['updated_at'] = now();
-            $details['status'] = 'registered';
-
-            $centre = explode('-', $details['centre']);
-
-            $details['zone'] = $centre[0] ?: null;
-            $details['centre'] = $centre[1] ?: null;
-            $utilityImage = $request->file('passport');
-            $details['passport']
-                = $utilityImage->store('tlskills/public/images/passports');
-            unset($details['_token']);
-
-            $register = Registration::where('reg_id', $request->reg_id)
-                ->update($details);
-            if ($register) {
-                try {
-                    $sms = new SendSMS();
-                    $response = $sms->sendSMS($details['phone_no'],
-                        'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.');
-                    Mail::to($details['email'])
-                        ->send(new \App\Mail\RegistrationConfirmation($request->reg_id));
-                } catch (\Exception $e) {
-
-                }
-                $data['alert'] = 'success';
-                $data['message'] = $details['first_name'] . " "
-                    . $details['last_name']
-                    . " has been registered successfully";
-            } else {
-                $data['alert'] = 'danger';
-                $data['message'] = 'Your registration was not successful';
-            }
+        if ($request->session()->has('user')) {
             $request->session()->reflash();
-
-            return redirect('join/registrations')->with('status',
-                (object)$data);
-        } catch (\Exception $e) {
-            echo $e->getMessage();
         }
+        $details = $request->all();
+
+        //$this->validateUser($details)->validate();
+        $details['updated_at'] = now();
+        $details['status'] = 'registered';
+
+        $centre = explode('-', $details['centre']);
+
+        $details['zone'] = $centre[0] ?: null;
+        $details['centre'] = $centre[1] ?: null;
+        $utilityImage = $request->file('passport');
+        $details['passport']
+            = $utilityImage->store('tlskills/public/images/passports');
+        unset($details['_token']);
+
+        $register = Registration::where('reg_id', $request->reg_id)
+            ->update($details);
+
+        if ($register) {
+            try {
+                $sms = new SendSMS();
+                $response = $sms->sendSMS($details['phone_no'],
+                    'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.');
+
+                Mail::to($details['email'])
+                    ->send(new \App\Mail\RegistrationConfirmation($request->reg_id));
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+            $data['alert'] = 'success';
+            $data['message'] = $details['first_name'] . " "
+                . $details['last_name']
+                . " has been registered successfully";
+        } else {
+            $data['alert'] = 'danger';
+            $data['message'] = 'Your registration was not successful';
+        }
+
+        $request->session()->reflash();
+
+        return redirect('join/registrations')->with('status',
+            (object)$data);
+
 
     }
 

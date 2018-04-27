@@ -228,7 +228,19 @@ Route::get('/maintenance', function () {
     }
 });
 Route::get('sendmail', function () {
-    /*return new \App\Mail\RegistrationConfirmation(1);
+    echo "<br>Two";
+    try {
+        \Illuminate\Support\Facades\Mail::to("greenwhitedev@gmail.com")
+            ->send(new \App\Mail\RegistrationConfirmation('edc568c9d27645a2a3f1192c2f138c39'));
+
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+        echo "<br>Three";
+    }
+    echo "<br>Four";
+
+    /*return new \App\Mail\RegistrationConfirmation('edc568c9d27645a2a3f1192c2f138c39');
     \Illuminate\Support\Facades\Mail::to('nduovictor@gmail.com')
         ->send(new \App\Mail\RegistrationConfirmation(1));*/
 

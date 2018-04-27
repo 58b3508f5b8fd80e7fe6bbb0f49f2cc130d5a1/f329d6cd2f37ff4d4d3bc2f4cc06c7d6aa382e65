@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@touchinglivesskills.xyz'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@touchinglivesskills.xyz'),
         'name' => env('MAIL_FROM_NAME', 'Touching Lives Skills'),
     ],
 
@@ -84,9 +84,8 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','no-reply@touchinglivesskills.xyz'),
-
-    'password' => env('MAIL_PASSWORD',':l|w3Lf/6GwI+C5N|p'),
+    'username' => env('MAIL_USERNAME','noreply@touchinglivesskills.xyz'),
+    'password' => env('MAIL_PASSWORD','`@Q3h/j^Gg>6kxq:mA'),
 
     /*
     |--------------------------------------------------------------------------

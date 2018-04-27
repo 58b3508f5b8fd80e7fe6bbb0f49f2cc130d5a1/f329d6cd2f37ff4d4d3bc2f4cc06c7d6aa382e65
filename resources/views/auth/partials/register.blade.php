@@ -281,23 +281,26 @@ $states = [
                     @endif
                 </div>
                 <div class="col-md-5 col-xs-12">
-                    @php
-                        $passport = $registration->passport ?: old('passport');
-                    @endphp
-                    <div id="passportImage"><img src="{{Storage::url($passport)}}"></div>
+
+                    @if(null !== $registration->passport)
+                        <div id="passportImage"><img src="{{Storage::url($registration->passport)}}"></div>
+                    @else
+                        <div id="passportImage">
+
+                        </div>
+                    @endif
                 </div>
-            </div>
-            <div class="form-group col-md-12 text-center" style="padding-top:32px;">
-                @if($registration->status == 'pending')
-                    <button {{$readonly}} type="submit" class="btn btn-primary btn-lg">
-                        <i class="fa fa-sign-in"></i> Register
-                    </button>
-                @else
-                    <button {{$readonly}} type="button" class="btn btn-danger btn-lg" data-dismiss="modal">
-                        <i class="fa fa-times"></i> Close
-                    </button>
-                @endif
-            </div>
+                <div class="form-group col-md-12 text-center" style="padding-top:32px;">
+                    @if($registration->status == 'pending')
+                        <button {{$readonly}} type="submit" class="btn btn-primary btn-lg">
+                            <i class="fa fa-sign-in"></i> Register
+                        </button>
+                    @else
+                        <button {{$readonly}} type="button" class="btn btn-danger btn-lg" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close
+                        </button>
+                    @endif
+                </div>
         </form>
     </div>
 </div>

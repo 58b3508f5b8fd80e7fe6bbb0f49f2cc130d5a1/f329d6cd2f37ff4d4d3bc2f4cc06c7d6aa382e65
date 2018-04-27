@@ -40,7 +40,7 @@ empowerment for development, that way fulfilling the visions of the United natio
 </tr>
 </table>
 </blockquote>
-@component('mail::button', ['url' => config('app.app.url')])
+@component('mail::button', ['url' => config('app.url')])
 Visit Us
 @endcomponent
 Thanks,<br>

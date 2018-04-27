@@ -201,7 +201,9 @@ class JoinController extends Controller
             try {
                 $sms = new SendSMS();
                 $response = $sms->sendSMS($details['phone_no'],
-                    'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.');
+                    'Congratulations ' . $details['first_name'] . ' '
+                    . $details['last_name']
+                    . ', you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.');
 
                 Mail::to($details['email'])
                     ->send(new \App\Mail\RegistrationConfirmation($request->reg_id));

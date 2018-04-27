@@ -13,12 +13,11 @@ return [
     |
     */
 
-    'name'        => env('APP_NAME', 'Touching Lives Skills'),
+    'name'        => env('APP_NAME'),
     'nameAbbr'    => 'TLSkills',
     'description' => 'Touching Lives skills is a Project of Touching Lives international in Collaboration with the Government of Developing Geographical Areas. Its aim and objectives is to reach out to the poor population with skills and empowerment for development, that way fulfilling the visions of the United nations development Program UNDP',
-    'gw_url'      => env('GW_URL', 'https://greenwhitedev.com.ng'),
-    'gw_secret'   => env('GW_SECRET',
-        '$2y$10$H5mdrjrob6fR6AKZV1tS3O6/fIa09KiEN7t0LvSFKXWp8yA5Ehf72'),
+    'gw_url'      => env('GW_URL'),
+    'gw_secret'   => env('GW_SECRET'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,20 +32,17 @@ return [
 
     'email'        => 'info@touchinglivesskills.xyz',
     'phone'        => '+2349069911327, +2348035929609',
-    'designer'     => 'GreenWhiteDev',
+         'designer'     => 'GreenWhiteDev',
     'designer_url' => 'https://greenwhitedev.com.ng',
     'maintenance'  => env('APP_MAINTENANCE', false),
     'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
 
-    'tlsavings_url'      => env('TLSAVINGS_URL', 'https://tlsavings.xyz'),
-    'tlsavings_id1'      => env('TLSAVINGS_ID1', 3),
-    'tlsavings_secret1'  => env('TLSAVINGS_SECRET1',
-        'w4ru1W6eHz66lSVvY4cmrFK9wB4RMc8TjxBPDk82'),
-    'tlsavings_id2'      => env('TLSAVINGS_ID2', 4),
-    'tlsavings_secret2'  => env('TLSAVINGS_SECRET2',
-        'mA9GbQ0yN3UiKf0T2l5ouJgyuWUd8InBxHybmfkg'),
-    'tlsavings_redirect' => env('TLSAVINGS_REDIRECT',
-        'https://touchinglivesskills.xyz/join/confirm'),
+    'tlsavings_url'      => env('TLSAVINGS_URL'),
+    'tlsavings_id1'      => env('TLSAVINGS_ID1'),
+    'tlsavings_secret1'  => env('TLSAVINGS_SECRET1'),
+    'tlsavings_id2'      => env('TLSAVINGS_ID2'),
+    'tlsavings_secret2'  => env('TLSAVINGS_SECRET2'),
+    'tlsavings_redirect' => env('TLSAVINGS_REDIRECT'),
 
 
     /*
@@ -138,8 +134,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY',
-        'base64:IJjfUnbxD9E4eFEA3h7tHWTk2VBJnFXodEKnpnOYeoA='),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 

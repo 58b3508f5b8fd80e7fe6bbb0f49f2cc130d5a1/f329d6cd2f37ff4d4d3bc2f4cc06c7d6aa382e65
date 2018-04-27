@@ -1,5 +1,5 @@
 <div class="block-content">
-    <table id="general-table" class="js-table-sections table table-hover">
+    <table class="js-table-sections table table-hover">
         <thead>
         <tr>
             <th style="width: 30px;"></th>
@@ -11,7 +11,7 @@
         </thead>
         @foreach($centres as $centre)
 
-            <tbody class="js-table-sections-header show table-active">
+            <tbody class="js-table-sections-header @if($loop->first) show table-active @endif">
             <tr>
                 <td class="text-center">
                     <i class="fa fa-angle-right"></i>
@@ -27,9 +27,10 @@
             </tr>
             </tbody>
             @php($i=0)
+            <tbody>
             @foreach($students as $student)
                 @if($student->zone==$centre->zone && $student->centre==$centre->centre)
-                    <tbody>
+
                     <tr>
                         <td class="text-center"></td>
                         <td class="font-w600 text-success">{{$student->first_name.' '.$student->last_name}}</td>
@@ -45,9 +46,9 @@
                             </button>
                         </td>
                     </tr>
-                    </tbody>
                 @endif
             @endforeach
+            </tbody>
         @endforeach
     </table>
 </div>

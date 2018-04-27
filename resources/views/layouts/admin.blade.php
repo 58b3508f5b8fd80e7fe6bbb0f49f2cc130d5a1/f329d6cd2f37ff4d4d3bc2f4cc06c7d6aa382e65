@@ -436,11 +436,11 @@
         <div class="content py-20 font-size-xs clearfix">
             <div class="float-right">
                 <i class="fa fa-gear fa-spin text-success"></i> Designed by <a class="font-w600"
-                                                                               href="{{config('app.designerWebsite')}}"
+                                                                               href="{{config('app.designer_url')}}"
                                                                                arget="_blank">{{config('app.designer')}}</a>
             </div>
             <div class="float-left">
-                <a class="font-w600" href="https://goo.gl/po9Usv" target="_blank">Codebase 1.4</a> &copy; <span
+                <a class="font-w600" href="https://goo.gl/po9Usv" target="_blank">{{config('app.name')}}</a> &copy; <span
                         class="js-year-copy">{{date('Y')}}</span>
             </div>
         </div>

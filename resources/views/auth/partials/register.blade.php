@@ -283,9 +283,10 @@ $states = [
                 <div class="col-md-5 col-xs-12">
 
                     @if(null !== $registration->passport)
-                        <div id="passportImage"><img src="{{Storage::url($registration->passport)}}"></div>
+                        <div id="passportImage" style="padding:14px"><img
+                                    src="{{Storage::url($registration->passport)}}" class="img img-thumbnail"></div>
                     @else
-                        <div id="passportImage">
+                        <div id="passportImage" style="padding:14px">
 
                         </div>
                     @endif

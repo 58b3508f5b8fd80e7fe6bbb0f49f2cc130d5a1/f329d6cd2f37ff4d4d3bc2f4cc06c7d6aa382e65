@@ -1,6 +1,6 @@
 @php
     $public='';
-    if(config('app.env') == 'production')
+    if(App::environment('production'))
     $public ='public';
 @endphp
         <!doctype html>

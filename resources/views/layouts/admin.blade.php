@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="content-side">
-                {{--<div class="block pull-t pull-r-l">
+                {{--<div class="block pull-t pul    l-r-l">
                     <div class="block-content block-content-full block-content-sm bg-body-light">
                         <form action="https://demo.pixelcave.com/codebase/be_pages_generic_search.php" method="post">
                             <div class="input-group">

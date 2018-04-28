@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+@php
+    $public='';
+    if(App::environment('production'))
+    $public ='public';
+@endphp
+        <!DOCTYPE html>
 <html lang="en">
 
 
@@ -10,22 +15,22 @@
     <title>Careerfy</title>
     
     <!-- Css -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/flaticon.css" rel="stylesheet">
-    <link href="css/slick-slider.css" rel="stylesheet">
-    <link href="css/fancybox.css" rel="stylesheet">
-    <link href="css/plugin.css" rel="stylesheet">
-    <link href="css/color.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/cssf043.css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic-ext,vietnamese" rel="stylesheet">
+    <link href="{{asset($public.'/cssbootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssfont-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssflaticon.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssslick-slider.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssfancybox.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssplugin.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/csscolor.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssstyle.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/cssresponsive.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/csscssf043.css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic-ext,vietnamese" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')}}"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script>
     <![endif]-->
 </head>
 
@@ -38,7 +43,7 @@
         <header id="careerfy-header" class="careerfy-header-one">
             <div class="container">
                 <div class="row">
-                    <aside class="col-md-2"> <a href="index-2.html" class="careerfy-logo"><img src="png/logo.png" alt=""></a> </aside>
+                    <aside class="col-md-2"> <a href="index-2.html" class="careerfy-logo"><img src="{{asset($public.'/pnglogo.png')}}" alt=""></a> </aside>
                     <aside class="col-md-6">
                         <nav class="careerfy-navigation">
                             <div class="navbar-header">
@@ -265,7 +270,7 @@
                                 <a href="#" class="careerfy-static-btn careerfy-bgcolor"><span>Search Jobs</span></a>
                             </div>
                         </aside>
-                        <aside class="col-md-6 careerfy-typo-wrap"> <div class="careerfy-right"><img src="png/parallex-thumb-1.png" alt=""></div> </aside>
+                        <aside class="col-md-6 careerfy-typo-wrap"> <div class="careerfy-right"><img src="{{asset($public.'/pngparallex-thumb-1.png')}}" alt=""></div> </aside>
 
                     </div>
                 </div>
@@ -289,7 +294,7 @@
                                     <li class="careerfy-column-6">
                                         <div class="careerfy-table-layer">
                                             <div class="careerfy-table-row">
-                                                <figure><a href="#"><img src="jpg/featured-listing-1.jpg" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-1.jpg')}}" alt=""></a></figure>
                                                 <div class="careerfy-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="careerfy-like-list"><i class="careerfy-icon careerfy-heart"></i></a>
@@ -308,7 +313,7 @@
                                     <li class="careerfy-column-6">
                                         <div class="careerfy-table-layer">
                                             <div class="careerfy-table-row">
-                                                <figure><a href="#"><img src="jpg/featured-listing-2.jpg" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-2.jpg')}}" alt=""></a></figure>
                                                 <div class="careerfy-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="careerfy-like-list"><i class="careerfy-icon careerfy-heart"></i></a>
@@ -327,7 +332,7 @@
                                     <li class="careerfy-column-6">
                                         <div class="careerfy-table-layer">
                                             <div class="careerfy-table-row">
-                                                <figure><a href="#"><img src="jpg/featured-listing-3.jpg" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-3.jpg')}}" alt=""></a></figure>
                                                 <div class="careerfy-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="careerfy-like-list"><i class="careerfy-icon careerfy-heart"></i></a>
@@ -346,7 +351,7 @@
                                     <li class="careerfy-column-6">
                                         <div class="careerfy-table-layer">
                                             <div class="careerfy-table-row">
-                                                <figure><a href="#"><img src="jpg/featured-listing-4.jpg" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-4.jpg')}}" alt=""></a></figure>
                                                 <div class="careerfy-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="careerfy-like-list"><i class="careerfy-icon careerfy-heart"></i></a>
@@ -365,7 +370,7 @@
                                     <li class="careerfy-column-6">
                                         <div class="careerfy-table-layer">
                                             <div class="careerfy-table-row">
-                                                <figure><a href="#"><img src="jpg/featured-listing-5.jpg" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-5.jpg')}}" alt=""></a></figure>
                                                 <div class="careerfy-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="careerfy-like-list"><i class="careerfy-icon careerfy-heart"></i></a>
@@ -384,7 +389,7 @@
                                     <li class="careerfy-column-6">
                                         <div class="careerfy-table-layer">
                                             <div class="careerfy-table-row">
-                                                <figure><a href="#"><img src="jpg/featured-listing-6.jpg" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-6.jpg')}}" alt=""></a></figure>
                                                 <div class="careerfy-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="careerfy-like-list"><i class="careerfy-icon careerfy-heart"></i></a>
@@ -419,7 +424,7 @@
                         <div class="careerfy-typo-wrap">
                             <div class="careerfy-testimonial-section">
                                 <div class="row">
-                                    <aside class="col-md-5"> <img src="jpg/testimonial-thumb-1.jpg" alt=""> </aside>
+                                    <aside class="col-md-5"> <img src="{{asset($public.'/jpgtestimonial-thumb-1.jpg')}}" alt=""> </aside>
                                     <aside class="col-md-7">
                                         <div class="careerfy-testimonial-slider">
                                             <div class="careerfy-testimonial-slide-layer">
@@ -466,7 +471,7 @@
                             <div class="careerfy-blog careerfy-blog-grid">
                                 <ul class="row">
                                     <li class="col-md-4">
-                                        <figure><a href="#"><img src="jpg/blog-grid-1.jpg" alt=""></a></figure>
+                                        <figure><a href="#"><img src="{{asset($public.'/jpgblog-grid-1.jpg')}}" alt=""></a></figure>
                                         <div class="careerfy-blog-grid-text">
                                             <div class="careerfy-blog-tag"> <a href="#">Culture</a> </div>
                                             <h2><a href="#">Are You Paid Fairly? See Your Market Worth in Seconds</a></h2>
@@ -479,7 +484,7 @@
                                         </div>
                                     </li>
                                     <li class="col-md-4">
-                                        <figure><a href="#"><img src="jpg/blog-grid-2.jpg" alt=""></a></figure>
+                                        <figure><a href="#"><img src="{{asset($public.'/jpgblog-grid-2.jpg')}}" alt=""></a></figure>
                                         <div class="careerfy-blog-grid-text">
                                             <div class="careerfy-blog-tag"> <a href="#">ENTERTAINMENT</a> </div>
                                             <h2><a href="#">Are You Paid Fairly? See Your Market Worth in Seconds</a></h2>
@@ -492,7 +497,7 @@
                                         </div>
                                     </li>
                                     <li class="col-md-4">
-                                        <figure><a href="#"><img src="jpg/blog-grid-3.jpg" alt=""></a></figure>
+                                        <figure><a href="#"><img src="{{asset($public.'/jpgblog-grid-3.jpg')}}" alt=""></a></figure>
                                         <div class="careerfy-blog-grid-text">
                                             <div class="careerfy-blog-tag"> <a href="#">Living</a> </div>
                                             <h2><a href="#">Are You Paid Fairly? See Your Market Worth in Seconds</a></h2>
@@ -525,7 +530,7 @@
                                 <a href="#" class="careerfy-static-btn careerfy-bgcolor"><span>Search Jobs</span></a>
                             </div>
                         </aside>
-                        <aside class="col-md-6 careerfy-typo-wrap"> <div class="careerfy-logo-thumb"><img src="jpg/multiple-logos.jpg" alt=""></div> </aside>
+                        <aside class="col-md-6 careerfy-typo-wrap"> <div class="careerfy-logo-thumb"><img src="{{asset($public.'/jpgmultiple-logos.jpg')}}" alt=""></div> </aside>
 
                     </div>
                 </div>
@@ -543,7 +548,7 @@
                     <div class="row">
                         <aside class="widget col-md-4 widget_contact_info">
                             <div class="widget_contact_wrap">
-                                <a class="careerfy-footer-logo" href="index-2.html"><img src="png/footer-logo.png" alt=""></a>
+                                <a class="careerfy-footer-logo" href="index-2.html"><img src="{{asset($public.'/pngfooter-logo.png')}}" alt=""></a>
                                 <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper. Sed coquat sapien faucibus quam.</p>
                                 <a href="#" class="careerfy-classic-btn careerfy-bgcolor">Learn more</a>
                             </div>
@@ -737,7 +742,7 @@
                                 </div>
                             </li>
                             <li class="careerfy-user-form-coltwo-full">
-                                <img src="png/login-robot.png" alt="">
+                                <img src="{{asset($public.'/pnglogin-robot.png')}}" alt="">
                             </li>
                             <li class="careerfy-user-form-coltwo-full">
                                 <input type="submit" value="Sign Up">
@@ -762,14 +767,14 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/slick-slider.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/fancybox.pack.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="js/functions-2.js"></script>
+    <script src="{{asset($public.'/jsjquery.js')}}"></script>
+    <script src="{{asset($public.'/jsbootstrap.js')}}"></script>
+    <script src="{{asset($public.'/jsslick-slider.js')}}"></script>
+    <script src="{{asset($public.'/jscounter.js')}}"></script>
+    <script src="{{asset($public.'/jsfancybox.pack.js')}}"></script>
+    <script src="{{asset($public.'/jsisotope.min.js')}}"></script>
+    <script src="{{asset($public.'/jsfunctions.js')}}"></script>
+    <script src="{{asset($public.'/jsfunctions-2.js')}}"></script>
 
 </body>
 

@@ -13,15 +13,15 @@
     <title>{{config('app.name')}}</title>
     
     <!-- Css -->
-    <link href="{{asset($public.'/cssbootstrap.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssfont-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssflaticon.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssslick-slider.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssfancybox.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssplugin.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/csscolor.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssstyle.css')}}" rel="stylesheet">
-    <link href="{{asset($public.'/cssresponsive.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/flaticon.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/slick-slider.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/fancybox.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/plugin.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/color.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset($public.'/css/responsive.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <header id="{{config('app.name')}}-header" class="{{config('app.name')}}-header-one">
             <div class="container">
                 <div class="row">
-                    <aside class="col-md-2"> <a href="index-2.html" class="{{config('app.name')}}-logo"><img src="{{asset($public.'/pnglogo.png')}}" alt=""></a> </aside>
+                    <aside class="col-md-2"> <a href="index-2.html" class="{{config('app.name')}}-logo"><img src="{{asset($public.'/png/logo.png')}}" alt=""></a> </aside>
                     <aside class="col-md-6">
                         <nav class="{{config('app.name')}}-navigation">
                             <div class="navbar-header">
@@ -260,7 +260,7 @@
                                 <a href="#" class="{{config('app.name')}}-static-btn {{config('app.name')}}-bgcolor"><span>Search Jobs</span></a>
                             </div>
                         </aside>
-                        <aside class="col-md-6 {{config('app.name')}}-typo-wrap"> <div class="{{config('app.name')}}-right"><img src="{{asset($public.'/pngparallex-thumb-1.png')}}" alt=""></div> </aside>
+                        <aside class="col-md-6 {{config('app.name')}}-typo-wrap"> <div class="{{config('app.name')}}-right"><img src="{{asset($public.'/png/parallex-thumb-1.png')}}" alt=""></div> </aside>
 
                     </div>
                 </div>
@@ -284,7 +284,7 @@
                                     <li class="{{config('app.name')}}-column-6">
                                         <div class="{{config('app.name')}}-table-layer">
                                             <div class="{{config('app.name')}}-table-row">
-                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-1.jpg')}}" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpg/featured-listing-1.jpg')}}" alt=""></a></figure>
                                                 <div class="{{config('app.name')}}-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="{{config('app.name')}}-like-list"><i class="{{config('app.name')}}-icon {{config('app.name')}}-heart"></i></a>
@@ -303,7 +303,7 @@
                                     <li class="{{config('app.name')}}-column-6">
                                         <div class="{{config('app.name')}}-table-layer">
                                             <div class="{{config('app.name')}}-table-row">
-                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-2.jpg')}}" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpg/featured-listing-2.jpg')}}" alt=""></a></figure>
                                                 <div class="{{config('app.name')}}-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="{{config('app.name')}}-like-list"><i class="{{config('app.name')}}-icon {{config('app.name')}}-heart"></i></a>
@@ -322,7 +322,7 @@
                                     <li class="{{config('app.name')}}-column-6">
                                         <div class="{{config('app.name')}}-table-layer">
                                             <div class="{{config('app.name')}}-table-row">
-                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-3.jpg')}}" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpg/featured-listing-3.jpg')}}" alt=""></a></figure>
                                                 <div class="{{config('app.name')}}-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="{{config('app.name')}}-like-list"><i class="{{config('app.name')}}-icon {{config('app.name')}}-heart"></i></a>
@@ -341,7 +341,7 @@
                                     <li class="{{config('app.name')}}-column-6">
                                         <div class="{{config('app.name')}}-table-layer">
                                             <div class="{{config('app.name')}}-table-row">
-                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-4.jpg')}}" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpg/featured-listing-4.jpg')}}" alt=""></a></figure>
                                                 <div class="{{config('app.name')}}-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="{{config('app.name')}}-like-list"><i class="{{config('app.name')}}-icon {{config('app.name')}}-heart"></i></a>
@@ -360,7 +360,7 @@
                                     <li class="{{config('app.name')}}-column-6">
                                         <div class="{{config('app.name')}}-table-layer">
                                             <div class="{{config('app.name')}}-table-row">
-                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-5.jpg')}}" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpg/featured-listing-5.jpg')}}" alt=""></a></figure>
                                                 <div class="{{config('app.name')}}-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="{{config('app.name')}}-like-list"><i class="{{config('app.name')}}-icon {{config('app.name')}}-heart"></i></a>
@@ -379,7 +379,7 @@
                                     <li class="{{config('app.name')}}-column-6">
                                         <div class="{{config('app.name')}}-table-layer">
                                             <div class="{{config('app.name')}}-table-row">
-                                                <figure><a href="#"><img src="{{asset($public.'/jpgfeatured-listing-6.jpg')}}" alt=""></a></figure>
+                                                <figure><a href="#"><img src="{{asset($public.'/jpg/featured-listing-6.jpg')}}" alt=""></a></figure>
                                                 <div class="{{config('app.name')}}-featured-listing-text">
                                                     <h2><a href="#">Dropbox -- UX designer</a></h2>
                                                     <a href="#" class="{{config('app.name')}}-like-list"><i class="{{config('app.name')}}-icon {{config('app.name')}}-heart"></i></a>
@@ -414,7 +414,7 @@
                         <div class="{{config('app.name')}}-typo-wrap">
                             <div class="{{config('app.name')}}-testimonial-section">
                                 <div class="row">
-                                    <aside class="col-md-5"> <img src="{{asset($public.'/jpgtestimonial-thumb-1.jpg')}}" alt=""> </aside>
+                                    <aside class="col-md-5"> <img src="{{asset($public.'/jpg/testimonial-thumb-1.jpg')}}" alt=""> </aside>
                                     <aside class="col-md-7">
                                         <div class="{{config('app.name')}}-testimonial-slider">
                                             <div class="{{config('app.name')}}-testimonial-slide-layer">
@@ -461,7 +461,7 @@
                             <div class="{{config('app.name')}}-blog {{config('app.name')}}-blog-grid">
                                 <ul class="row">
                                     <li class="col-md-4">
-                                        <figure><a href="#"><img src="{{asset($public.'/jpgblog-grid-1.jpg')}}" alt=""></a></figure>
+                                        <figure><a href="#"><img src="{{asset($public.'/jpg/blog-grid-1.jpg')}}" alt=""></a></figure>
                                         <div class="{{config('app.name')}}-blog-grid-text">
                                             <div class="{{config('app.name')}}-blog-tag"> <a href="#">Culture</a> </div>
                                             <h2><a href="#">Are You Paid Fairly? See Your Market Worth in Seconds</a></h2>
@@ -474,7 +474,7 @@
                                         </div>
                                     </li>
                                     <li class="col-md-4">
-                                        <figure><a href="#"><img src="{{asset($public.'/jpgblog-grid-2.jpg')}}" alt=""></a></figure>
+                                        <figure><a href="#"><img src="{{asset($public.'/jpg/blog-grid-2.jpg')}}" alt=""></a></figure>
                                         <div class="{{config('app.name')}}-blog-grid-text">
                                             <div class="{{config('app.name')}}-blog-tag"> <a href="#">ENTERTAINMENT</a> </div>
                                             <h2><a href="#">Are You Paid Fairly? See Your Market Worth in Seconds</a></h2>
@@ -487,7 +487,7 @@
                                         </div>
                                     </li>
                                     <li class="col-md-4">
-                                        <figure><a href="#"><img src="{{asset($public.'/jpgblog-grid-3.jpg')}}" alt=""></a></figure>
+                                        <figure><a href="#"><img src="{{asset($public.'/jpg/blog-grid-3.jpg')}}" alt=""></a></figure>
                                         <div class="{{config('app.name')}}-blog-grid-text">
                                             <div class="{{config('app.name')}}-blog-tag"> <a href="#">Living</a> </div>
                                             <h2><a href="#">Are You Paid Fairly? See Your Market Worth in Seconds</a></h2>
@@ -520,7 +520,7 @@
                                 <a href="#" class="{{config('app.name')}}-static-btn {{config('app.name')}}-bgcolor"><span>Search Jobs</span></a>
                             </div>
                         </aside>
-                        <aside class="col-md-6 {{config('app.name')}}-typo-wrap"> <div class="{{config('app.name')}}-logo-thumb"><img src="{{asset($public.'/jpgmultiple-logos.jpg')}}" alt=""></div> </aside>
+                        <aside class="col-md-6 {{config('app.name')}}-typo-wrap"> <div class="{{config('app.name')}}-logo-thumb"><img src="{{asset($public.'/jpg/multiple-logos.jpg')}}" alt=""></div> </aside>
 
                     </div>
                 </div>
@@ -538,7 +538,7 @@
                     <div class="row">
                         <aside class="widget col-md-4 widget_contact_info">
                             <div class="widget_contact_wrap">
-                                <a class="{{config('app.name')}}-footer-logo" href="index-2.html"><img src="{{asset($public.'/pngfooter-logo.png')}}" alt=""></a>
+                                <a class="{{config('app.name')}}-footer-logo" href="index-2.html"><img src="{{asset($public.'/png/footer-logo.png')}}" alt=""></a>
                                 <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper. Sed coquat sapien faucibus quam.</p>
                                 <a href="#" class="{{config('app.name')}}-classic-btn {{config('app.name')}}-bgcolor">Learn more</a>
                             </div>
@@ -732,7 +732,7 @@
                                 </div>
                             </li>
                             <li class="{{config('app.name')}}-user-form-coltwo-full">
-                                <img src="{{asset($public.'/pnglogin-robot.png')}}" alt="">
+                                <img src="{{asset($public.'/png/login-robot.png')}}" alt="">
                             </li>
                             <li class="{{config('app.name')}}-user-form-coltwo-full">
                                 <input type="submit" value="Sign Up">
@@ -757,14 +757,14 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{asset($public.'/jsjquery.js')}}"></script>
-    <script src="{{asset($public.'/jsbootstrap.js')}}"></script>
-    <script src="{{asset($public.'/jsslick-slider.js')}}"></script>
-    <script src="{{asset($public.'/jscounter.js')}}"></script>
-    <script src="{{asset($public.'/jsfancybox.pack.js')}}"></script>
-    <script src="{{asset($public.'/jsisotope.min.js')}}"></script>
-    <script src="{{asset($public.'/jsfunctions.js')}}"></script>
-    <script src="{{asset($public.'/jsfunctions-2.js')}}"></script>
+    <script src="{{asset($public.'/js/jquery.js')}}"></script>
+    <script src="{{asset($public.'/js/bootstrap.js')}}"></script>
+    <script src="{{asset($public.'/js/slick-slider.js')}}"></script>
+    <script src="{{asset($public.'/js/counter.js')}}"></script>
+    <script src="{{asset($public.'/js/fancybox.pack.js')}}"></script>
+    <script src="{{asset($public.'/js/isotope.min.js')}}"></script>
+    <script src="{{asset($public.'/js/functions.js')}}"></script>
+    <script src="{{asset($public.'/js/functions-2.js')}}"></script>
 
 </body>
 

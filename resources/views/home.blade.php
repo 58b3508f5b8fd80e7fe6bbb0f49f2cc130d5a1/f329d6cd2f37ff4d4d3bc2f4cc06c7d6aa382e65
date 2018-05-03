@@ -244,25 +244,12 @@
             <div class="row">
                 <!-- START SINGLE TEAM DESIGN AREA -->
                 <div class="col-md-12" style="display: table;">
-                    <div class="col-md-4 col-sm-10">
-                        <div class="single-team">
-                            <img src="{{asset($public.'/jpg/ceo.jpg')}}" alt="">
-                            <h4>Gospel Christian</h4>
-                            <h6 class="text-muted">Chief Executive Officer</h6>
-                            <p>A preacher and Pastor of a Believers Loveworld Inc Church branch AKA
-                                Christ Embassy. A motivational speaker who has pioneered over 30 successful projects and
-                                humanitarian services. The Managing Director of Gr8 Coins
-                                Ltd, The Chief Executive Officer of Klinkings Ltd. A business Consultant and a team
-                                builder.</p>
-                        </div>
-                    </div>
-                    <!-- / END SINGLE TEAM DESIGN AREA -->
                     <!-- START SINGLE TEAM DESIGN AREA -->
                     <div class="col-md-4 col-sm-10">
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/governor.jpg')}}" alt="">
                             <h4>Elisha Wealth</h4>
-                            <h6 class="text-muted">Governor/Executive Director</h6>
+                            <h6 class="text-muted">Chief Executive Officer</h6>
                             <p>A preacher and Pastor of a branch of Believers Loveworld Inc. (Christ Embassy).
                                 A business Man, Business consultant and Managing Director of Praesto Technologies Ltd.
                                 Also skilled in Programming and a passionate musician. Networking and fibre optics,
@@ -276,7 +263,7 @@
                         <div class="single-team">
                             <img src="{{asset($public.'/jpg/deputygovernor.jpg')}}" alt="">
                             <h4>pastor linus effiong</h4>
-                            <h6 class="text-muted">Deputy Governor</h6>
+                            <h6 class="text-muted">Governor/Executive Director</h6>
                             <p>A Pastor of a branch of Assemblies of God Church.
                                 The Managing Director of Linae Construction Company Ltd.
                                 Skill in Making furniture, wood work, carvings and sculptures.</p>

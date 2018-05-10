@@ -34,8 +34,8 @@ return [
     'phone'        => '+2349069911327, +2348035929609',
          'designer'     => 'GreenWhiteDev',
     'designer_url' => 'https://greenwhitedev.com.ng',
-    'maintenance'  => env('APP_MAINTENANCE', false),
-    'mtce_end'     => env('APP_MTCE_END', '2018/03/07'),
+    'maintenance'  => env('APP_MAINTENANCE'),
+    'mtce_end'     => env('APP_MTCE_END', '2018/05/07'),
 
     'tlsavings_url'      => env('TLSAVINGS_URL'),
     'tlsavings_id1'      => env('TLSAVINGS_ID1'),

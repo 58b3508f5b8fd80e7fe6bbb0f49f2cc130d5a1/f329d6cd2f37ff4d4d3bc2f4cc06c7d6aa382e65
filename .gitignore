@@ -9,15 +9,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
-
-/career/node_modules
-/career/public/hot
-/career/public/storage
-/career/storage/*.key
-/career/.idea
-/career/.vagrant
-/career/Homestead.json
-/career/Homestead.yaml
-/career/npm-debug.log
-/career/yarn-error.log
-/career.env
+/careers

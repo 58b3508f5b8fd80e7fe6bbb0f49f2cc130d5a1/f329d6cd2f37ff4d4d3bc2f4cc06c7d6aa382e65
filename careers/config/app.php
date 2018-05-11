@@ -15,6 +15,13 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'gw_url'      => env('GW_URL'),
+    'gw_secret'   => env('GW_SECRET'),
+
+    'maintenance'  => env('APP_MAINTENANCE'),
+    'mtce_end'     => env('APP_MTCE_END'),
+
+
     'owner'     => env('OWNER'),
     'owner_url' => env('OWNER_URL'),
 

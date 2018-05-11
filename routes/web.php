@@ -227,47 +227,16 @@ Route::get('/maintenance', function () {
         return redirect('/');
     }
 });
-Route::get('sendmail', function () {
-    echo "<br>Two";
+Route::get('/debug', function () {
     try {
-        \Illuminate\Support\Facades\Mail::to("greenwhitedev@gmail.com")
-            ->send(new \App\Mail\RegistrationConfirmation('edc568c9d27645a2a3f1192c2f138c39'));
-
-    }
-    catch(Exception $e){
+        Mail::raw('Sending emails with Mailgun and Laravel is easy!',
+            function ($message) {
+                $message->subject('Mailgun and Laravel are awesome!');
+                $message->from('noreply@touchinglivesskills.xyz', 'TLSkills');
+                $message->to('nduovictor@gmail.com');
+            });
+    }catch(Exception $e){
         echo $e->getMessage();
-        echo "<br>Three";
     }
-    echo "<br>Four";
-
-    /*return new \App\Mail\RegistrationConfirmation('edc568c9d27645a2a3f1192c2f138c39');
-    \Illuminate\Support\Facades\Mail::to('nduovictor@gmail.com')
-        ->send(new \App\Mail\RegistrationConfirmation(1));*/
-
-    /*$client = new \GuzzleHttp\Client();
-    $query = http_build_query([
-        'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
-        'from'      => 'TL Skills',
-        'to'        => '07038606396',
-        'body'      => 'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.'
-    ]);
-    $url = 'https://www.bulksmsnigeria.com/api/v1/sms/create?' . $query;
-
-//    return redirect('https://www.bulksmsnigeria.com/api/v1/sms/create?'.$query);
-    try {
-        $response = $client->request('post',
-            'https://www.bulksmsnigeria.com/api/v1/sms/create', [
-                'query' => [
-                    'api_token' => 'VhvIIGSo31lbQcF1Emftg0C5LfhnLJ4z7BJmW4gBRbrPmSPUBOaqod83INGo',
-                    'from'      => 'TLskIL',
-                    'to'        => '07038606396',
-                    'body'      => 'Congratulations, you have been registered on the Touching Lives Skills Programme. Check your email for a confirmation letter.'
-                ]
-            ]);
-
-             $response->getBody();
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }*/
 });
 

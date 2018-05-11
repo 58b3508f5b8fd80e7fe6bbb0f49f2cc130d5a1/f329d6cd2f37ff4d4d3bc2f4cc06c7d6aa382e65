@@ -70,6 +70,7 @@ class JoinController extends Controller
                 ]);
             $details = json_decode((string)$response->getBody());
 
+
             $request->session()->flash('user', $details->user);
             $request->session()->flash('amount', $details->amount);
             $request->session()->flash('pnm', $details->pnm);
@@ -89,7 +90,7 @@ class JoinController extends Controller
         } catch (BadResponseException $e) {
             echo "Unable to retrieve access token. " . $e->getMessage();
         }
-        return redirect('/');
+        return redirect()->back()->with('error','Oops! Sorry, an error occured');
     }
 
     public function getRegistrations()

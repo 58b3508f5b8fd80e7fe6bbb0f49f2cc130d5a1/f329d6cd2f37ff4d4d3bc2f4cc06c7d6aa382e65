@@ -35,7 +35,7 @@ trait RegistersUsers
         $this->guard()->login($user);
 
         return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+                        ?: redirect($this->redirectPath())->with(['status'=>'Your registration was successful. Please update your profile details.']);
     }
 
     /**

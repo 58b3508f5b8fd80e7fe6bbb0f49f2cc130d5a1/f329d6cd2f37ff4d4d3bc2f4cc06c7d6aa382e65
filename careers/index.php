@@ -5,9 +5,6 @@
  *
  * @package  Laravel
  * @author   Taylor Otwell <taylor@laravel.com>
- * 
- * v}^r]dHA;AlO
- * %+vs]G@x8t!Z --> qserver
  */
 
 define('LARAVEL_START', microtime(true));

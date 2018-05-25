@@ -15,18 +15,6 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
-    'gw_url'      => env('GW_URL'),
-    'gw_secret'   => env('GW_SECRET'),
-
-    'maintenance'  => env('APP_MAINTENANCE'),
-    'mtce_end'     => env('APP_MTCE_END'),
-
-
-    'owner'     => env('OWNER'),
-    'owner_url' => env('OWNER_URL'),
-
-    'designer'     => 'GreenWhiteDev',
-    'designer_url' => 'https://greenwhitedev.com.ng',
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -122,6 +110,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Logging Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the log settings for your application. Out of
+    | the box, Laravel uses the Monolog PHP logging library. This gives
+    | you a variety of powerful log handlers / formatters to utilize.
+    |
+    | Available Settings: "single", "daily", "syslog", "errorlog"
+    |
+    */
+
+    'log' => env('APP_LOG', 'single'),
+
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -158,7 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Laravel\Socialite\SocialiteServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -220,7 +225,7 @@ return [
         'URL'          => Illuminate\Support\Facades\URL::class,
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
-
+        'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::get('api/jobs/applied','Api\JobController@index');
+Route::resource('jobs/applied', 'Api\JobController')
+    ->only(['index', 'store', 'show']);
+
+Route::put('signatures/{signature}/report', 'Api\ReportSignature@update');

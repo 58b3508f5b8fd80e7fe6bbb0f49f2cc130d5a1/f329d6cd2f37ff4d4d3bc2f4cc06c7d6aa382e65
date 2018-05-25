@@ -1,69 +1,76 @@
 @extends('layouts.app')
-
+@section('title','Login')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 panel">
+        <div class="careerfy-typo-wrap panel-body">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="text-danger">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="text-danger">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="careerfy-modal-title-box">
+                <h2 class="text-center col-xs-12">Login to your account</h2>
             </div>
+            <form method="post" action="{{route('login')}}">
+                {{csrf_field()}}
+                <div class="careerfy-user-options">
+                    <ul>
+                        <li class="active" style="width:100%;">
+                            <a href="#">
+                                <i class="careerfy-icon careerfy-user"></i>
+                                <span>Candidate</span>
+                                <small>I want to be a part of Touching Lives Skills.</small>
+                            </a>
+                        </li>
+                        @if ($errors->has('email'))
+                            <li style="width:100%;">
+                                <h4 class="text-center text-danger">{{ $errors->first('email') }}</h4>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+
+                <div class="careerfy-user-form">
+                    <ul>
+                        <li>
+                            <label>Email Address:</label>
+                            <input placeholder="Enter Your Email Address" type="email" name="email"
+                                   value="{{old('email')}}" class="form-control">
+                            <i class="careerfy-icon careerfy-mail"></i>
+                        </li>
+                        <li>
+                            <label>Password:</label>
+                            <input placeholder="Enter Password" name="password" type="password" class="form-control">
+                            <i class="careerfy-icon careerfy-multimedia"></i>
+                        </li>
+                        <li>
+                            <input type="submit" value="Sign In">
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="careerfy-user-form-info">
+                        <p><a href="{{route('password.request')}}">Forgot Password?</a> | <a
+                                    href="{{route('register')}}">Sign Up</a></p>
+                        <div class="careerfy-checkbox">
+                            <input type="checkbox" id="r10" name="remember"/>
+                            <label for="r10"><span></span> Remember Password</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="careerfy-box-title careerfy-box-title-sub">
+                    <span>Or Sign In With</span>
+                </div>
+                <div class="clearfix"></div>
+                <ul class="careerfy-login-media">
+                    <li><a href="#"><i class="fa fa-facebook"></i> Sign In with Facebook</a></li>
+                    <li><a href="#" data-original-title="google"><i class="fa fa-google"></i> Sign In with
+                            Google</a>
+                    </li>
+                    <li><a href="#" data-original-title="twitter"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
+                    </li>
+                    <li><a href="#" data-original-title="linkedin"><i class="fa fa-linkedin"></i> Sign In with
+                            LinkedIn</a>
+                    </li>
+                </ul>
+            </form>
+
         </div>
     </div>
-</div>
 @endsection

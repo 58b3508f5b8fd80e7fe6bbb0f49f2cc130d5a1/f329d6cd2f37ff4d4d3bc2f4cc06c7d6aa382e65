@@ -10,31 +10,44 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('welcome', ['title' => 'home']);
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['checkMaintenance'])->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
+    Route::middleware(['checkUserStatus'])->group(function (
+    ) {
+        Route::get('/profile', 'ProfileController@index')->name('profile');
+        Route::get('/resume', 'ResumeController@index')->name('resume');
+        Route::get('/jobs', 'JobController@index')->name('jobs');
+        Route::get('/jobs/applied', 'JobController@applied')->name('applied');
+//Route::get('/{any}', 'HomeController@index')->where('any', '.*');
     });
 
-    Auth::routes();
-
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::post('profile/update', 'ProfileController@profile')
+        ->name('update_profile');
+    Route::prefix('/resume')->group(function () {
+        Route::post('/coverletter', 'ResumeController@coverLetter');
+        Route::post('/education', 'ResumeController@education');
+        Route::post('/experiences', 'ResumeController@experience');
+        Route::post('/honors', 'ResumeController@honors');
+        Route::post('/curriculumvitae', 'ResumeController@curriculumVitae');
+    });
 });
-Route::get('/maintenance', function () {
-    if (config('app.maintenance') == true) {
-        return view('errors.503');
-    } else {
-        return redirect('/');
+Route::post('getlgas', function (\Illuminate\Support\Facades\Request $request) {
+    $state = $request->input('state');
+    $lgas = $this->LGAs();
+    $html = "<option selected disabled>Select LGA</option>";
+    foreach ($lgas as $lga) {
+        if ($lga[0] == $state) {
+            $html .= "<option>$lga[1]</option>";
+        }
     }
-});
-Route::get('/debug', function () {
-    try {
-        Mail::raw('Sending emails with Mailgun and Laravel is easy!',
-            function ($message) {
-                $message->subject('Mailgun and Laravel are awesome!');
-                $message->from('noreply@touchinglivesskills.xyz', 'TLSkills');
-                $message->to('nduovictor@gmail.com');
-            });
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-});
+    return response()->json([
+        'html' => $html
+    ]);
+})->middleware('checkMaintenance');

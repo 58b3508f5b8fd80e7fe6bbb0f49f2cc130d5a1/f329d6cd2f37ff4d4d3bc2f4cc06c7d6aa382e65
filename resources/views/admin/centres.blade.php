@@ -1,4 +1,4 @@
-@php    $public='';    if(App::environment('production'))    $public ='public'; @endphp @extends('layouts.admin')
+@php    $public='';    if(App::environment('production'))    $public ='main/public'; @endphp @extends('layouts.admin')
 @section('title', title_case($action))
 @section('style')
     <link rel="stylesheet" href="{{asset($public.'/css/easy-autocomplete.min.css')}}">

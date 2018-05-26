@@ -1,7 +1,7 @@
 @php
     $public='';
     if(App::environment('production'))
-    $public ='public';
+    $public ='main/public';
 @endphp
 @component('mail::message')
 <div style="background-image: url('{{asset('jpg/background.jpg')}}');background-size: 100%;">

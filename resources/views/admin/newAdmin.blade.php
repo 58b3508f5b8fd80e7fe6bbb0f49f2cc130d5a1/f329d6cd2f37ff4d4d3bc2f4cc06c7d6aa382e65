@@ -2,7 +2,7 @@
     $data = session('data');
 @endphp
 
-@php    $public='';    if(App::environment('production'))    $public ='public'; @endphp
+@php    $public='';    if(App::environment('production'))    $public ='main/public'; @endphp
 
 @extends('layouts.admin')
 

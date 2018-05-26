@@ -32,7 +32,7 @@ return [
 
     'email'        => 'info@touchinglivesskills.xyz',
     'phone'        => '+2349069911327, +2348035929609',
-         'designer'     => 'GreenWhiteDev',
+    'designer'     => 'GreenWhiteDev',
     'designer_url' => 'https://greenwhitedev.com.ng',
     'maintenance'  => env('APP_MAINTENANCE'),
     'mtce_end'     => env('APP_MTCE_END', '2018/05/07'),

@@ -1,7 +1,7 @@
 @php
     $public='';
     if(App::environment('production'))
-    $public ='public';
+    $public ='main/public';
 @endphp
 @extends('layouts.app')
 @section('title', 'Registrations')

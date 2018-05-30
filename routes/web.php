@@ -23,8 +23,6 @@ Route::middleware(['checkMaintenance'])->group(function () {
                     'AdminController@changePassword');
                 Route::middleware(['adminLevel'])
                     ->group(function () {
-                        //
-
                         Route::middleware(['seniorAdminLevel'])
                             ->group(function () {
                                 // drg >> route for centres

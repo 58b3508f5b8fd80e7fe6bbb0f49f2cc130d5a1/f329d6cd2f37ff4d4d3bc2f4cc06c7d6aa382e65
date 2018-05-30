@@ -90,7 +90,7 @@ class JoinController extends Controller
         } catch (BadResponseException $e) {
             echo "Unable to retrieve access token. " . $e->getMessage();
         }
-        return redirect()->back()->with('error','Oops! Sorry, an error occured');
+        //return redirect()->back()->with('error','Oops! Sorry, an error occured');
     }
 
     public function getRegistrations()

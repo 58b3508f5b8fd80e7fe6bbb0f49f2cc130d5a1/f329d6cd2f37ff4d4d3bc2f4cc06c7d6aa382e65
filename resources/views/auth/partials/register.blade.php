@@ -127,7 +127,7 @@ $states = [
                 <div class="form-group col-md-3">
                     <label for="dob">Date of birth</label>
                     <input id="dob" class="form-control" name="dob"
-                           value="{{date('Y-m-d',strtotime($registration->dob))}}"
+                           value="@if(null !== $registration->dob){{date('Y-m-d',strtotime($registration->dob))}}@endif"
                            required="" placeholder="YYYY-MM-DD" {{$readonly}} type="date">
                 </div>
             </div>

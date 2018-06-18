@@ -42,7 +42,7 @@ $states = [
 ?>
 @php
     $readonly='';
-    if($registration->status != 'pending'){
+    if(isset($registration->status) && $registration->status != 'pending'){
         $readonly ='readonly';
     }
 @endphp

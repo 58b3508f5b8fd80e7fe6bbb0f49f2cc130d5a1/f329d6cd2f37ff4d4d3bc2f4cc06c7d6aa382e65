@@ -40,11 +40,12 @@ class JoinController extends Controller
     {
         $client = new Client;
 
-        try {
+//        try {
             if ($request->session()->has('user')) {
                 $request->session()->reflash();
             }
             $pin = $request->input('pin', null);
+            //echo $pin;
             $response = $client->post(config('app.tlsavings_url')
                 . '/oauth/token',
                 [
@@ -57,6 +58,7 @@ class JoinController extends Controller
                         'scope'         => 'transactions registrations'
                     ]
                 ]);
+
             // You'd typically save this payload in the session
             $auth = json_decode((string)$response->getBody());
 
@@ -87,9 +89,9 @@ class JoinController extends Controller
             return redirect('join/registrations')->with('status',
                 $details->data);
 
-        } catch (BadResponseException $e) {
-            echo "Unable to retrieve access token. " . $e->getMessage();
-        }
+//        } catch (BadResponseException $e) {
+//            echo "Unable to retrieve access token. " . $e->getMessage();
+//        }
         //return redirect()->back()->with('error','Oops! Sorry, an error occured');
     }
 

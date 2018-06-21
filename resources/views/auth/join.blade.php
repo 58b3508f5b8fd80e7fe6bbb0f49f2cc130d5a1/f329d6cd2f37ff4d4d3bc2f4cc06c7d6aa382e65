@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 contact-area section-padding">
+            <div class="col-sm-12 contact-area section-padding pull-left">
                 <div class="col-sm-12">
                     <div class="section-title white-title">
                         <h2>Want to join?</h2>

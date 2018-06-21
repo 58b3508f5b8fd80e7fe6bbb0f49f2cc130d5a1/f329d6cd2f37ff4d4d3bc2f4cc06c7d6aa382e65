@@ -221,7 +221,6 @@ class AdminController extends Controller
             ]);
         }
 
-
         return response()->json([
             'status'  => 'failed',
             'message' => 'Sorry, an error occurred.'

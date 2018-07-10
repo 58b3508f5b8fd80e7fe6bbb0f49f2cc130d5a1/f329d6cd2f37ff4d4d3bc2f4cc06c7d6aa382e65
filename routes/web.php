@@ -15,6 +15,11 @@ Auth::routes();
 
 Route::middleware(['checkMaintenance'])->group(function () {
     Auth::routes();
+    Route::middleware(['auth', 'isUser', 'isVerified'])->group(function () {
+        Route::get('/home', function () {
+            return null;
+        });
+    });
     Route::middleware(['auth', 'isAdmin', 'isVerified'])->group(function () {
         Route::namespace('Admin')->group(function () {
             Route::prefix('/admin')->group(function () {
@@ -234,7 +239,7 @@ Route::get('/debug', function () {
                 $message->to('nduovictor@gmail.com');
 
             });
-    }catch(Exception $e){
+    } catch (Exception $e) {
         echo $e->getMessage();
     }
 });

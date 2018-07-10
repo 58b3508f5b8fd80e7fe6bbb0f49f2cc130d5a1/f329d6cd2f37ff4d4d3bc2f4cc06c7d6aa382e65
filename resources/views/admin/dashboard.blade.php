@@ -11,7 +11,7 @@
     <div class="content">
         @if(isset($students) && sizeof($students)>0)
             @includeWhen(Auth::user()->access_level==2,'admin.partials.centreStudents')
-            @includeWhen(Auth::user()->access_level==3,'admin.partials.stateStudents')
+            @includeWhen(Auth::user()->access_level==3,'admin.partials.allStudents')
             @includeWhen(Auth::user()->access_level>=4,'admin.partials.allStudents')
         @else
             <div class="col-sm-12 col-lg-12">

@@ -232,6 +232,7 @@ Route::get('/debug', function () {
                 $message->subject('Mailgun and Laravel are awesome!');
                 $message->from('noreply@touchinglivesskills.xyz', 'TLSkills');
                 $message->to('nduovictor@gmail.com');
+
             });
     }catch(Exception $e){
         echo $e->getMessage();

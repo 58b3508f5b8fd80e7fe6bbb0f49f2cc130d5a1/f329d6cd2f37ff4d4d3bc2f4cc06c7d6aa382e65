@@ -4,6 +4,7 @@
         <tr>
             <th style="width: 30px;"></th>
             <th>Name</th>
+            <th></th>
             <th style="width: 15%;">Programme</th>
             <th class="d-none d-sm-table-cell" style="width: 20%;">Date</th>
             <th>Action</th>
@@ -17,6 +18,8 @@
                     <i class="fa fa-angle-right"></i>
                 </td>
                 <td class="font-w600">{{$centre->zone.' '.$centre->centre}}</td>
+
+                <td></td>
                 <td>
                     <span class="badge badge-primary">{{$centre->amount}} person(s) registered</span>
                 </td>
@@ -26,14 +29,20 @@
                 <td></td>
             </tr>
             </tbody>
-            @php($i=0)
+            @php
+                $i=0;
+            @endphp
             <tbody>
             @foreach($students as $student)
                 @if($student->zone==$centre->zone && $student->centre==$centre->centre)
-
+                    @php
+                        $regid1 = substr($student->reg_id,0,6 );
+                        $regid2 = substr($student->reg_id,-6);
+                    @endphp
                     <tr>
                         <td class="text-center"></td>
                         <td class="font-w600 text-success">{{$student->first_name.' '.$student->last_name}}</td>
+                        <td class="font-w600 text-success">{{"$regid1......$regid2"}}</td>
                         <td class="font-size-sm">{{$student->programme}}</td>
                         <td class="d-none d-sm-table-cell">
                             <span class="font-size-sm text-muted">{{$student->updated_at}}</span>

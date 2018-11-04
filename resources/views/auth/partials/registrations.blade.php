@@ -23,7 +23,7 @@
                 $action='continue';
             }
             elseif ($registration->status == 'registered'){
-                $label='label-success';;
+                $label='label-success';
                 $button='btn-info';
                 $action='view';
             }

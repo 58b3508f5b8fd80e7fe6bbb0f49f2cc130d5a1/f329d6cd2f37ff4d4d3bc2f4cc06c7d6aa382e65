@@ -232,7 +232,7 @@
     <!-- / END SERVICES DESIGN AREA -->
 
     <!-- START TEAM DESIGN AREA -->
-    <section id="team" class="team-area section-padding">
+    {{--<section id="team" class="team-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -345,7 +345,7 @@
 
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- / END TEAM DESIGN AREA -->
 
     <!-- GET STARTED DESIGN AREA -->

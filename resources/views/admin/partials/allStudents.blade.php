@@ -4,7 +4,7 @@
         <tr>
             <th style="width: 30px;"></th>
             <th>Name</th>
-            <th></th>
+            <th>ID</th>
             <th style="width: 15%;">Programme</th>
             <th class="d-none d-sm-table-cell" style="width: 20%;">Date</th>
             <th>Action</th>
@@ -42,7 +42,7 @@
                     <tr>
                         <td class="text-center"></td>
                         <td class="font-w600 text-success">{{$student->first_name.' '.$student->last_name}}</td>
-                        <td class="font-w600 text-success">{{"$regid1......$regid2"}}</td>
+                        <td class="font-w600">{{"$regid1......$regid2"}}</td>
                         <td class="font-size-sm">{{$student->programme}}</td>
                         <td class="d-none d-sm-table-cell">
                             <span class="font-size-sm text-muted">{{$student->updated_at}}</span>
